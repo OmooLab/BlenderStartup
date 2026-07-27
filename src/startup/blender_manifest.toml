@@ -1,0 +1,18 @@
+schema_version = "1.0.0"
+
+id = "startup"
+version = "0.1.0"
+name = "OmooLab Startup"
+tagline = "Use OmooLab startup files and keymap presets"
+maintainer = "OmooLab"
+type = "add-on"
+
+blender_version_min = "4.5.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  ".*",
+  "*.zip",
+]
