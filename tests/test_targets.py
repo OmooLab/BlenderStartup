@@ -7,6 +7,8 @@ from pack import KEYCONFIG_SUFFIX
 from pack import SPLASH_NAME
 from pack import STARTUP_PREFIX
 from pack import STARTUP_SUFFIX
+from pack import USERPREF_PREFIX
+from pack import USERPREF_SUFFIX
 from pack import find_target_bundles
 from pack import parse_target_version
 from pack import target_id_from_filename
@@ -70,6 +72,10 @@ class TargetVersionTest(unittest.TestCase):
     @staticmethod
     def create_bundle(template_root, target_id):
         (template_root / f"startup.{target_id}.blend").touch()
+        (
+            template_root
+            / f"{USERPREF_PREFIX}{target_id}{USERPREF_SUFFIX}"
+        ).touch()
         (
             template_root
             / f"keyconfig.{target_id}.py"

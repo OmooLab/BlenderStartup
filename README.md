@@ -69,6 +69,8 @@ macOS 使用 `Cmd+V`，Windows 与 Linux 使用 `Ctrl+V`。
 │   ├── splash.png
 │   ├── startup.b45.blend
 │   ├── startup.b52.blend
+│   ├── userpref.b45.blend
+│   ├── userpref.b52.blend
 │   ├── keyconfig.b45.py
 │   └── keyconfig.b52.py
 └── tests/
@@ -76,7 +78,8 @@ macOS 使用 `Cmd+V`，Windows 与 Linux 使用 `Ctrl+V`。
 
 `src/startup` 只包含所有构建目标共用的运行时代码。`template` 保存 App Template 的构建
 素材：`splash.png` 为所有版本共用；`startup.b<major><minor>.blend` 和
-`keyconfig.b<major><minor>.py` 通过文件名后缀区分 Blender 版本。
+`userpref.b<major><minor>.blend`、`keyconfig.b<major><minor>.py` 通过文件名后缀区分
+Blender 版本。
 
 ## 构建
 
@@ -95,6 +98,7 @@ uv run python pack.py
 O_General/
 ├── __init__.py
 ├── startup.blend
+├── userpref.blend
 ├── splash.png
 ├── keyconfig.py
 ├── camera_bookmark.py
@@ -102,19 +106,20 @@ O_General/
 └── toggle_phantom.py
 ```
 
-构建时，公共脚本和 `splash.png` 会写入所有 ZIP；带版本后缀的 Startup File 和 Keymap
-会分别映射为 `startup.blend`、`keyconfig.py`。模板注册时再把 `keyconfig.py` 同步为用户
+构建时，公共脚本和 `splash.png` 会写入所有 ZIP；带版本后缀的 Startup File、Preferences
+和 Keymap 会分别映射为 `startup.blend`、`userpref.blend`、`keyconfig.py`。模板注册时再把 `keyconfig.py` 同步为用户
 脚本目录中的 `presets/keyconfig/Refined_Industry_Compatible.py`，但不执行
 `bpy.utils.keyconfig_set()`，因此不会改变当前 Keymap。ZIP 内显式保留
 `O_General/` 根目录条目，以便 Blender 安装器正确识别并替换同 ID 的已有模板。
 
 ## 添加构建目标
 
-在 `template` 下提供带相同 `b<major><minor>` 后缀的两个文件。例如 Blender 5.3 使用
+在 `template` 下提供带相同 `b<major><minor>` 后缀的三个文件。例如 Blender 5.3 使用
 `b53`：
 
 ```text
 template/startup.b53.blend
+template/userpref.b53.blend
 template/keyconfig.b53.py
 ```
 

@@ -15,6 +15,8 @@ APP_TEMPLATE_ID = "O_General"
 SPLASH_NAME = "splash.png"
 STARTUP_PREFIX = "startup."
 STARTUP_SUFFIX = ".blend"
+USERPREF_PREFIX = "userpref."
+USERPREF_SUFFIX = ".blend"
 KEYCONFIG_ARCHIVE_NAME = "keyconfig.py"
 KEYCONFIG_PREFIX = "keyconfig."
 KEYCONFIG_SUFFIX = ".py"
@@ -25,6 +27,7 @@ class TargetBundle:
     version: tuple[int, int]
     root: Path
     startup_file: Path
+    userpref_file: Path
     keyconfig_file: Path
     splash_file: Path
 
@@ -54,6 +57,7 @@ def find_target_ids(template_root):
             continue
         for prefix, suffix in (
             (STARTUP_PREFIX, STARTUP_SUFFIX),
+            (USERPREF_PREFIX, USERPREF_SUFFIX),
             (KEYCONFIG_PREFIX, KEYCONFIG_SUFFIX),
         ):
             target_id = target_id_from_filename(
@@ -80,6 +84,10 @@ def find_target_bundles(template_root=TEMPLATE_ROOT):
                 template_root
                 / f"{STARTUP_PREFIX}{target_id}{STARTUP_SUFFIX}"
             ),
+            userpref_file=(
+                template_root
+                / f"{USERPREF_PREFIX}{target_id}{USERPREF_SUFFIX}"
+            ),
             keyconfig_file=(
                 template_root
                 / f"{KEYCONFIG_PREFIX}{target_id}{KEYCONFIG_SUFFIX}"
@@ -99,6 +107,7 @@ def validate_target_bundle(bundle):
         path
         for path in (
             bundle.startup_file,
+            bundle.userpref_file,
             bundle.keyconfig_file,
             bundle.splash_file,
         )
@@ -193,6 +202,10 @@ def write_archive(archive_file, bundle):
             (root / "startup.blend").as_posix(),
         )
         template_archive.write(
+            bundle.userpref_file,
+            (root / "userpref.blend").as_posix(),
+        )
+        template_archive.write(
             bundle.keyconfig_file,
             (root / KEYCONFIG_ARCHIVE_NAME).as_posix(),
         )
@@ -208,6 +221,7 @@ def validate_archive(archive_file):
         f"{APP_TEMPLATE_ID}/",
         (root / "__init__.py").as_posix(),
         (root / "startup.blend").as_posix(),
+        (root / "userpref.blend").as_posix(),
         (root / SPLASH_NAME).as_posix(),
         (root / KEYCONFIG_ARCHIVE_NAME).as_posix(),
     }

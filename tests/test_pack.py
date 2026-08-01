@@ -34,6 +34,9 @@ class PackTest(unittest.TestCase):
                     startup_data = archive.read(
                         f"{APP_TEMPLATE_ID}/startup.blend"
                     )
+                    userpref_data = archive.read(
+                        f"{APP_TEMPLATE_ID}/userpref.blend"
+                    )
                     keyconfig_data = archive.read(
                         f"{APP_TEMPLATE_ID}/{KEYCONFIG_ARCHIVE_NAME}"
                     )
@@ -44,6 +47,10 @@ class PackTest(unittest.TestCase):
                 self.assertEqual(
                     startup_data,
                     (TEMPLATE_ROOT / f"startup.{target_id}.blend").read_bytes(),
+                )
+                self.assertEqual(
+                    userpref_data,
+                    (TEMPLATE_ROOT / f"userpref.{target_id}.blend").read_bytes(),
                 )
                 self.assertEqual(
                     keyconfig_data,
@@ -65,8 +72,8 @@ class PackTest(unittest.TestCase):
         self.assertIn(root, entries)
         self.assertIn(f"{root}__init__.py", entries)
         self.assertIn(f"{root}startup.blend", entries)
+        self.assertIn(f"{root}userpref.blend", entries)
         self.assertIn(f"{root}splash.png", entries)
-        self.assertNotIn(f"{root}userpref.blend", entries)
         self.assertIn(f"{root}{KEYCONFIG_ARCHIVE_NAME}", entries)
         self.assertIn(f"{root}camera_bookmark.py", entries)
         self.assertIn(f"{root}clipboard_image/__init__.py", entries)
