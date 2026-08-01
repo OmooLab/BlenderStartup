@@ -151,7 +151,7 @@ keyconfig_data = \
        ],
       },
      ),
-    ("view3d.navigate", {"type": 'ACCENT_GRAVE', "value": 'PRESS', "shift": True}, None),
+    ("view3d.navigate", {"type": 'ACCENT_GRAVE', "value": 'PRESS', "shift": True, "ctrl": True}, None),
     ("view3d.view_camera", {"type": 'NUMPAD_0', "value": 'PRESS'}, None),
     ("view3d.view_axis",
      {"type": 'NUMPAD_1', "value": 'PRESS'},
