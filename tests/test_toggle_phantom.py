@@ -46,7 +46,6 @@ class PhantomTest(unittest.TestCase):
             StringProperty=lambda **options: options,
         )
         fake_bpy.types = SimpleNamespace(
-            AddonPreferences=object,
             GizmoGroup=object,
             Image=object,
             Menu=object,
@@ -57,7 +56,7 @@ class PhantomTest(unittest.TestCase):
         )
         sys.modules["bpy"] = fake_bpy
 
-        from startup import phantom
+        from startup import toggle_phantom as phantom
 
         cls.phantom = phantom
 
@@ -112,22 +111,6 @@ class PhantomTest(unittest.TestCase):
         self.assertTrue(self.phantom.is_phantom(obj))
         self.assertEqual(operator.execute(context), {"FINISHED"})
         self.assertFalse(self.phantom.is_phantom(obj))
-
-    def test_preference_can_disable_phantom(self):
-        preferences = SimpleNamespace(
-            addons={
-                "startup": SimpleNamespace(
-                    preferences=SimpleNamespace(enable_phantom=False),
-                ),
-            },
-        )
-        context = SimpleNamespace(
-            object=FakeObject(),
-            preferences=preferences,
-        )
-
-        self.assertFalse(self.phantom.is_enabled(context))
-        self.assertFalse(self.phantom.O_OT_toggle_phantom.poll(context))
 
     def test_works_without_raycast_visibility_property(self):
         obj = FakeObject()

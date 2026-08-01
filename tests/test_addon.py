@@ -40,14 +40,8 @@ class FakeViewPie(FakeMenu):
 
 class FakeUtils:
     def __init__(self):
-        self.config_directory = None
-        self.keyconfig_files = []
         self.registered_classes = []
         self.scripts_directory = None
-
-    def keyconfig_set(self, filepath):
-        self.keyconfig_files.append(filepath)
-        return True
 
     def register_class(self, operator_class):
         self.registered_classes.append(operator_class)
@@ -56,15 +50,10 @@ class FakeUtils:
         self.registered_classes.remove(operator_class)
 
     def user_resource(self, resource_type, path="", create=False):
-        base_directory = None
-        if resource_type == "CONFIG":
-            base_directory = self.config_directory
-        if resource_type == "SCRIPTS":
-            base_directory = self.scripts_directory
-        if base_directory is None:
+        if resource_type != "SCRIPTS" or self.scripts_directory is None:
             return ""
 
-        resource_path = Path(base_directory) / path
+        resource_path = Path(self.scripts_directory) / path
         if create:
             resource_path.mkdir(parents=True, exist_ok=True)
         return str(resource_path)
@@ -76,10 +65,6 @@ class FakeOperator:
 
     def report(self, levels, message):
         self.reports.append((levels, message))
-
-
-class FakeAddonPreferences:
-    pass
 
 
 class FakePropertyGroup:
@@ -131,7 +116,7 @@ class FakeKeyMaps:
         return keymap
 
 
-class AddonRegistrationTest(unittest.TestCase):
+class TemplateRegistrationTest(unittest.TestCase):
     def setUp(self):
         FakeMenu.callbacks = []
         FakeMenu.registration_method = None
@@ -139,29 +124,38 @@ class AddonRegistrationTest(unittest.TestCase):
         FakeObjectContextMenu.registration_method = None
         FakeViewPie.callbacks = []
         FakeViewPie.registration_method = None
+        self.template_directory = tempfile.TemporaryDirectory()
         self.scripts_directory = tempfile.TemporaryDirectory()
-        self.fake_bpy = self.create_fake_bpy("Blender")
-        self.fake_bpy.utils.scripts_directory = Path(self.scripts_directory.name)
+        self.fake_bpy = self.create_fake_bpy()
+        self.fake_bpy.utils.scripts_directory = self.scripts_directory.name
         sys.modules["bpy"] = self.fake_bpy
         self.remove_startup_modules()
 
         import startup
 
         self.addon = startup
+        self.addon.KEYCONFIG_FILE = (
+            Path(self.template_directory.name)
+            / "keyconfig.py"
+        )
+        self.addon.KEYCONFIG_FILE.write_text(
+            "keyconfig source",
+            encoding="utf-8",
+        )
 
     def tearDown(self):
-        if self.addon._menu_registered:
+        if self.addon._registered:
             self.addon.unregister()
         sys.modules.pop("bpy", None)
         self.remove_startup_modules()
         self.scripts_directory.cleanup()
+        self.template_directory.cleanup()
 
-    def test_registers_menu_and_installs_compatible_preset(self):
+    def test_registers_template_features(self):
         self.addon.register()
 
-        self.assertEqual(len(FakeMenu.callbacks), 1)
-        self.assertEqual(FakeMenu.registration_method, "prepend")
-        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 12)
+        self.assertEqual(FakeMenu.callbacks, [])
+        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 10)
         self.assertEqual(len(FakeObjectContextMenu.callbacks), 1)
         self.assertEqual(FakeObjectContextMenu.registration_method, "prepend")
         context_layout = FakeLayout()
@@ -174,22 +168,37 @@ class AddonRegistrationTest(unittest.TestCase):
         self.assertTrue(context_layout.separator_called)
         self.assertEqual(context_layout.actions, ["operator", "separator"])
         self.assertEqual(FakeViewPie.callbacks, [])
-        installed_file = (
+        installed_keyconfig = (
             Path(self.scripts_directory.name)
             / "presets"
             / "keyconfig"
-            / "Refined Industry Compatible.py"
+            / "Refined_Industry_Compatible.py"
         )
         self.assertEqual(
-            installed_file.read_bytes(),
-            self.addon._resource_bundle.keyconfig_file.read_bytes(),
+            installed_keyconfig.read_text(encoding="utf-8"),
+            "keyconfig source",
         )
-        self.assertEqual(self.fake_bpy.utils.keyconfig_files, [])
-
         self.addon.unregister()
-        self.assertTrue(installed_file.is_file())
+        self.assertEqual(self.fake_bpy.utils.registered_classes, [])
         self.assertEqual(FakeObjectContextMenu.callbacks, [])
         self.assertEqual(FakeViewPie.callbacks, [])
+
+    def test_updates_installed_keyconfig_without_activating_it(self):
+        installed_keyconfig = (
+            Path(self.scripts_directory.name)
+            / "presets"
+            / "keyconfig"
+            / "Refined_Industry_Compatible.py"
+        )
+        installed_keyconfig.parent.mkdir(parents=True)
+        installed_keyconfig.write_text("outdated", encoding="utf-8")
+
+        self.addon.register()
+
+        self.assertEqual(
+            installed_keyconfig.read_text(encoding="utf-8"),
+            "keyconfig source",
+        )
 
     def test_custom_camera_bookmarks_pie_draws_triggerable_actions(self):
         self.addon.register()
@@ -292,7 +301,6 @@ class AddonRegistrationTest(unittest.TestCase):
             ],
         )
 
-    @unittest.skipUnless(sys.platform == "win32", "Windows clipboard shortcut")
     def test_registers_and_removes_clipboard_image_shortcuts(self):
         self.addon.register()
         keymaps = self.fake_bpy.context.window_manager.keyconfigs.addon.keymaps
@@ -307,135 +315,15 @@ class AddonRegistrationTest(unittest.TestCase):
         for keymap_item in clipboard_items:
             self.assertEqual(keymap_item.idname, "o.paste_clipboard_image")
             self.assertEqual((keymap_item.type, keymap_item.value), ("V", "PRESS"))
-            self.assertTrue(keymap_item.ctrl)
+            modifier_name = "oskey" if sys.platform == "darwin" else "ctrl"
+            self.assertTrue(getattr(keymap_item, modifier_name))
 
         self.addon.unregister()
         for keymap in keymaps.items:
             self.assertEqual(keymap.keymap_items.items, [])
 
-    def test_restores_only_previously_selected_keyconfig(self):
-        self.fake_bpy.context.preferences.keymap.active_keyconfig = (
-            "Refined Industry Compatible"
-        )
-
-        self.addon.register()
-
-        self.assertEqual(len(self.fake_bpy.utils.keyconfig_files), 1)
-        self.assertTrue(
-            self.fake_bpy.utils.keyconfig_files[0].endswith(
-                "Refined Industry Compatible.py"
-            )
-        )
-
-    def test_updates_outdated_keyconfig_preset(self):
-        installed_file = (
-            Path(self.scripts_directory.name)
-            / "presets"
-            / "keyconfig"
-            / "Refined Industry Compatible.py"
-        )
-        installed_file.parent.mkdir(parents=True)
-        installed_file.write_text("outdated preset", encoding="utf-8")
-
-        self.addon.register()
-
-        self.assertEqual(
-            installed_file.read_bytes(),
-            self.addon._resource_bundle.keyconfig_file.read_bytes(),
-        )
-
-    def test_draws_startup_replacement_operator(self):
-        self.addon.register()
-        layout = FakeLayout()
-
-        self.addon.draw_file_defaults(SimpleNamespace(layout=layout), None)
-
-        self.assertTrue(layout.separator_called)
-        self.assertEqual(layout.operator_id, "o.use_startup")
-        self.assertEqual(layout.operator_text, "Use OmooLab Startup")
-        self.assertEqual(layout.actions, ["operator", "separator"])
-
-    def test_clipboard_image_preference_is_enabled_by_default(self):
-        preference_definition = (
-            self.addon.O_Preferences.__annotations__[
-                "enable_clipboard_image"
-            ]
-        )
-
-        self.assertTrue(preference_definition["default"])
-
-    def test_phantom_preference_is_enabled_by_default(self):
-        preference_definition = (
-            self.addon.O_Preferences.__annotations__["enable_phantom"]
-        )
-
-        self.assertTrue(preference_definition["default"])
-
-    def test_camera_bookmarks_preference_is_enabled_by_default(self):
-        preference_definition = (
-            self.addon.O_Preferences.__annotations__[
-                "enable_camera_bookmarks"
-            ]
-        )
-
-        self.assertTrue(preference_definition["default"])
-
-    def test_draws_feature_preferences(self):
-        preferences = self.addon.O_Preferences()
-        preferences.layout = FakeLayout()
-
-        preferences.draw(None)
-
-        self.assertEqual(
-            preferences.layout.properties,
-            [
-                (preferences, "enable_clipboard_image"),
-                (preferences, "enable_phantom"),
-                (preferences, "enable_camera_bookmarks"),
-            ],
-        )
-
-    def test_startup_replacement_confirmation_warns_about_overwrite(self):
-        confirmation = {}
-
-        def invoke_confirm(operator, event, **options):
-            confirmation.update(options)
-            return {"RUNNING_MODAL"}
-
-        context = SimpleNamespace(
-            window_manager=SimpleNamespace(invoke_confirm=invoke_confirm),
-        )
-        operator = self.addon.O_OT_use_startup()
-
-        result = operator.invoke(context, object())
-
-        self.assertEqual(result, {"RUNNING_MODAL"})
-        self.assertEqual(confirmation["title"], "Use OmooLab Startup")
-        self.assertIn("overwrite", confirmation["message"])
-        self.assertIn("config/startup.blend", confirmation["message"])
-        self.assertEqual(confirmation["confirm_text"], "Overwrite Startup")
-
-    def test_replaces_user_startup_file(self):
-        with tempfile.TemporaryDirectory() as temporary_directory:
-            config_directory = Path(temporary_directory)
-            target_file = config_directory / "startup.blend"
-            target_file.write_bytes(b"previous startup")
-            self.fake_bpy.utils.config_directory = config_directory
-            self.addon.register()
-            expected_content = self.addon._resource_bundle.startup_file.read_bytes()
-
-            operator = self.addon.O_OT_use_startup()
-            result = operator.execute(None)
-
-            self.assertEqual(result, {"FINISHED"})
-            self.assertEqual(target_file.read_bytes(), expected_content)
-            self.assertEqual(
-                [path.name for path in config_directory.iterdir()],
-                ["startup.blend"],
-            )
-
     @staticmethod
-    def create_fake_bpy(active_keyconfig):
+    def create_fake_bpy():
         fake_bpy = ModuleType("bpy")
         fake_bpy.app = SimpleNamespace(version=(5, 1, 0))
         fake_bpy.utils = FakeUtils()
@@ -449,7 +337,6 @@ class AddonRegistrationTest(unittest.TestCase):
             StringProperty=lambda **options: options,
         )
         fake_bpy.types = SimpleNamespace(
-            AddonPreferences=FakeAddonPreferences,
             GizmoGroup=object,
             Image=object,
             Menu=FakeBpyMenu,
@@ -462,9 +349,6 @@ class AddonRegistrationTest(unittest.TestCase):
             VIEW3D_MT_object_context_menu=FakeObjectContextMenu,
         )
         fake_bpy.context = SimpleNamespace(
-            preferences=SimpleNamespace(
-                keymap=SimpleNamespace(active_keyconfig=active_keyconfig),
-            ),
             window_manager=SimpleNamespace(
                 keyconfigs=SimpleNamespace(
                     active=SimpleNamespace(name="Blender"),

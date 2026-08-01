@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +29,6 @@ class ClipboardImageTest(unittest.TestCase):
             StringProperty=lambda **options: options,
         )
         fake_bpy.types = SimpleNamespace(
-            AddonPreferences=object,
             GizmoGroup=object,
             Image=object,
             Menu=object,
@@ -143,21 +142,6 @@ class ClipboardImageTest(unittest.TestCase):
             self.actions._node_type_for_space(world_space),
             "ShaderNodeTexEnvironment",
         )
-
-    def test_preference_can_disable_clipboard_image_paste(self):
-        context = SimpleNamespace(
-            preferences=SimpleNamespace(
-                addons={
-                    self.addon.clipboard_image.ADDON_ID: SimpleNamespace(
-                        preferences=SimpleNamespace(
-                            enable_clipboard_image=False,
-                        )
-                    )
-                }
-            )
-        )
-
-        self.assertFalse(self.addon.clipboard_image.is_enabled(context))
 
     def test_preserves_image_aspect_ratio_for_plane(self):
         self.assertEqual(
@@ -609,6 +593,103 @@ class ClipboardImageTest(unittest.TestCase):
     def test_rejects_truncated_dib(self):
         with self.assertRaises(self.clipboard.ClipboardImageError):
             self.clipboard.dib_to_bmp(b"\x28\x00\x00\x00")
+
+    def test_reads_macos_clipboard_image_as_png(self):
+        def export_image(_osascript, output_file):
+            output_file.write_bytes(b"png image")
+
+        with patch.object(
+            self.clipboard.shutil,
+            "which",
+            return_value="/usr/bin/osascript",
+        ), patch.object(
+            self.clipboard,
+            "_export_macos_clipboard_image",
+            side_effect=export_image,
+        ):
+            image_data, suffix = self.clipboard._read_macos_clipboard_image()
+
+        self.assertEqual(image_data, b"png image")
+        self.assertEqual(suffix, ".png")
+
+    def test_macos_clipboard_without_image_is_unavailable(self):
+        with patch.object(
+            self.clipboard.shutil,
+            "which",
+            return_value="/usr/bin/osascript",
+        ), patch.object(
+            self.clipboard,
+            "_export_macos_clipboard_image",
+        ):
+            with self.assertRaises(self.clipboard.ClipboardImageUnavailable):
+                self.clipboard._read_macos_clipboard_image()
+
+    def test_linux_clipboard_prefers_wayland_png(self):
+        def find_command(command_name):
+            if command_name == "wl-paste":
+                return "/usr/bin/wl-paste"
+            return None
+
+        with patch.object(
+            self.clipboard.shutil,
+            "which",
+            side_effect=find_command,
+        ), patch.object(
+            self.clipboard,
+            "_run_image_command",
+            return_value=b"png image",
+        ) as run_command:
+            image_data, suffix = self.clipboard._read_linux_clipboard_image()
+
+        self.assertEqual(image_data, b"png image")
+        self.assertEqual(suffix, ".png")
+        run_command.assert_called_once_with(
+            [
+                "/usr/bin/wl-paste",
+                "--no-newline",
+                "--type",
+                "image/png",
+            ]
+        )
+
+    def test_linux_clipboard_falls_back_to_xclip(self):
+        def find_command(command_name):
+            if command_name == "xclip":
+                return "/usr/bin/xclip"
+            return None
+
+        with patch.object(
+            self.clipboard.shutil,
+            "which",
+            side_effect=find_command,
+        ), patch.object(
+            self.clipboard,
+            "_run_image_command",
+            return_value=b"png image",
+        ) as run_command:
+            image_data, suffix = self.clipboard._read_linux_clipboard_image()
+
+        self.assertEqual(image_data, b"png image")
+        self.assertEqual(suffix, ".png")
+        run_command.assert_called_once_with(
+            [
+                "/usr/bin/xclip",
+                "-selection",
+                "clipboard",
+                "-t",
+                "image/png",
+                "-o",
+            ]
+        )
+
+    def test_linux_clipboard_requires_supported_command(self):
+        with patch.object(
+            self.clipboard.shutil,
+            "which",
+            return_value=None,
+        ):
+            with self.assertRaises(self.clipboard.ClipboardImageUnavailable):
+                self.clipboard._read_linux_clipboard_image()
 
     @staticmethod
     def make_context(area_type, mode="OBJECT", **space_options):

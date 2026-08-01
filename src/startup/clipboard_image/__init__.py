@@ -11,25 +11,13 @@ from .actions import (
 from .clipboard import (
     ClipboardImageError,
     ClipboardImageUnavailable,
+    clipboard_image_supported,
     read_clipboard_image,
 )
 
 
-ADDON_ID = __package__.rpartition(".")[0]
 _keymap_items = []
 _operator_registered = False
-
-
-def is_enabled(context):
-    preferences = getattr(context, "preferences", None)
-    addons = getattr(preferences, "addons", None)
-    if addons is None:
-        return True
-
-    addon = addons.get(ADDON_ID)
-    if addon is None:
-        return True
-    return getattr(addon.preferences, "enable_clipboard_image", True)
 
 
 class O_OT_paste_clipboard_image(bpy.types.Operator):
@@ -89,9 +77,9 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
 
     @classmethod
     def poll(cls, context):
-        if sys.platform != "win32":
+        if not clipboard_image_supported():
             return False
-        return is_enabled(context) and target_for_context(context) is not None
+        return target_for_context(context) is not None
 
     def execute(self, context):
         return self._paste(context)
@@ -162,7 +150,7 @@ def unregister():
 
 
 def _register_keymaps():
-    if sys.platform != "win32":
+    if not clipboard_image_supported():
         return
 
     keyconfigs = getattr(bpy.context.window_manager, "keyconfigs", None)
@@ -179,11 +167,16 @@ def _register_keymaps():
             name=keymap_name,
             space_type=space_type,
         )
+        modifiers = (
+            {"oskey": True}
+            if sys.platform == "darwin"
+            else {"ctrl": True}
+        )
         keymap_item = keymap.keymap_items.new(
             O_OT_paste_clipboard_image.bl_idname,
             "V",
             "PRESS",
-            ctrl=True,
+            **modifiers,
         )
         _keymap_items.append((keymap, keymap_item))
 

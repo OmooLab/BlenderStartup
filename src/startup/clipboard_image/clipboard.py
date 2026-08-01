@@ -1,12 +1,25 @@
 import ctypes
+import json
+import os
+import shutil
 import struct
+import subprocess
 import sys
+import tempfile
 from ctypes import wintypes
+from pathlib import Path
 
 
 CF_DIB = 8
 CF_DIBV5 = 17
 MAX_CLIPBOARD_IMAGE_SIZE = 512 * 1024 * 1024
+CLIPBOARD_COMMAND_TIMEOUT = 10
+LINUX_IMAGE_FORMATS = (
+    ("image/png", ".png"),
+    ("image/jpeg", ".jpg"),
+    ("image/tiff", ".tiff"),
+    ("image/bmp", ".bmp"),
+)
 
 
 class ClipboardImageError(RuntimeError):
@@ -89,11 +102,24 @@ def _validate_pixel_offset(dib_data, pixel_offset):
 
 
 def read_clipboard_image():
-    if sys.platform != "win32":
-        raise ClipboardImageUnavailable(
-            "Clipboard image paste is currently available on Windows"
-        )
+    if sys.platform == "win32":
+        return _read_windows_clipboard_image()
+    if sys.platform == "darwin":
+        return _read_macos_clipboard_image()
+    if sys.platform.startswith("linux"):
+        return _read_linux_clipboard_image()
+    raise ClipboardImageUnavailable("Clipboard image paste is unavailable")
 
+
+def clipboard_image_supported():
+    return (
+        sys.platform == "win32"
+        or sys.platform == "darwin"
+        or sys.platform.startswith("linux")
+    )
+
+
+def _read_windows_clipboard_image():
     user32 = ctypes.WinDLL("user32", use_last_error=True)
     kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
     _configure_windows_api(user32, kernel32)
@@ -130,6 +156,151 @@ def read_clipboard_image():
         user32.CloseClipboard()
 
     raise ClipboardImageUnavailable("The clipboard does not contain an image")
+
+
+def _read_macos_clipboard_image():
+    osascript = shutil.which("osascript")
+    if osascript is None:
+        raise ClipboardImageError("macOS clipboard access requires osascript")
+
+    file_descriptor, temporary_name = tempfile.mkstemp(
+        prefix="blender-clipboard-",
+        suffix=".png",
+    )
+    os.close(file_descriptor)
+    output_file = Path(temporary_name)
+    output_file.unlink()
+
+    try:
+        _export_macos_clipboard_image(osascript, output_file)
+        image_data = _read_image_file(output_file)
+    finally:
+        output_file.unlink(missing_ok=True)
+
+    if image_data is None:
+        raise ClipboardImageUnavailable("The clipboard does not contain an image")
+    return image_data, ".png"
+
+
+def _export_macos_clipboard_image(osascript, output_file):
+    output_path = json.dumps(str(output_file))
+    script = f"""
+ObjC.import('AppKit');
+
+const pasteboard = $.NSPasteboard.generalPasteboard;
+const image = $.NSImage.alloc.initWithPasteboard(pasteboard);
+if (image) {{
+    const bitmap = $.NSBitmapImageRep.imageRepWithData(image.TIFFRepresentation);
+    if (!bitmap) {{
+        throw new Error('Unable to create a bitmap from the clipboard image');
+    }}
+    const png = bitmap.representationUsingTypeProperties(
+        $.NSBitmapImageFileTypePNG,
+        $({{}})
+    );
+    if (!png || !png.writeToFileAtomically($({output_path}), true)) {{
+        throw new Error('Unable to export the clipboard image as PNG');
+    }}
+}}
+"""
+    try:
+        result = subprocess.run(
+            [osascript, "-l", "JavaScript", "-e", script],
+            capture_output=True,
+            check=False,
+            timeout=CLIPBOARD_COMMAND_TIMEOUT,
+        )
+    except (OSError, subprocess.TimeoutExpired) as error:
+        raise ClipboardImageError(
+            f"Unable to access the macOS clipboard: {error}"
+        ) from error
+
+    if result.returncode == 0:
+        return
+    error_text = result.stderr.decode(errors="replace").strip()
+    raise ClipboardImageError(
+        error_text or "Unable to access the macOS clipboard"
+    )
+
+
+def _read_linux_clipboard_image():
+    commands = []
+    wl_paste = shutil.which("wl-paste")
+    if wl_paste is not None:
+        commands.append(
+            lambda mime_type: [
+                wl_paste,
+                "--no-newline",
+                "--type",
+                mime_type,
+            ]
+        )
+
+    xclip = shutil.which("xclip")
+    if xclip is not None:
+        commands.append(
+            lambda mime_type: [
+                xclip,
+                "-selection",
+                "clipboard",
+                "-t",
+                mime_type,
+                "-o",
+            ]
+        )
+
+    for command_for_type in commands:
+        for mime_type, suffix in LINUX_IMAGE_FORMATS:
+            image_data = _run_image_command(
+                command_for_type(mime_type),
+            )
+            if image_data is not None:
+                return image_data, suffix
+
+    if not commands:
+        raise ClipboardImageUnavailable(
+            "Install wl-clipboard or xclip to paste clipboard images on Linux"
+        )
+    raise ClipboardImageUnavailable("The clipboard does not contain an image")
+
+
+def _run_image_command(command):
+    file_descriptor, temporary_name = tempfile.mkstemp(
+        prefix="blender-clipboard-",
+    )
+    output_file = Path(temporary_name)
+    try:
+        with os.fdopen(file_descriptor, "wb") as image_file:
+            try:
+                result = subprocess.run(
+                    command,
+                    stdout=image_file,
+                    stderr=subprocess.PIPE,
+                    check=False,
+                    timeout=CLIPBOARD_COMMAND_TIMEOUT,
+                )
+            except (OSError, subprocess.TimeoutExpired) as error:
+                raise ClipboardImageError(
+                    f"Unable to access the Linux clipboard: {error}"
+                ) from error
+
+        if result.returncode != 0:
+            return None
+        return _read_image_file(output_file)
+    finally:
+        output_file.unlink(missing_ok=True)
+
+
+def _read_image_file(image_file):
+    try:
+        image_size = image_file.stat().st_size
+    except FileNotFoundError:
+        return None
+    if image_size <= 0:
+        return None
+    if image_size > MAX_CLIPBOARD_IMAGE_SIZE:
+        raise ClipboardImageError("Clipboard image is larger than 512 MiB")
+    return image_file.read_bytes()
 
 
 def _configure_windows_api(user32, kernel32):

@@ -3,29 +3,80 @@ import unittest
 import zipfile
 from pathlib import Path
 
-from pack import build_extension
+from pack import APP_TEMPLATE_ID
+from pack import KEYCONFIG_ARCHIVE_NAME
+from pack import TEMPLATE_ROOT
+from pack import build_templates
 
 
 class PackTest(unittest.TestCase):
-    def test_builds_installable_extension_layout(self):
+    def test_builds_one_installable_template_per_target(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
-            archive_file = build_extension(temporary_directory)
+            archive_files = build_templates(temporary_directory)
 
-            self.assertEqual(archive_file.name, "startup-0.2.19.zip")
-            with zipfile.ZipFile(archive_file, mode="r") as extension_archive:
-                entries = set(extension_archive.namelist())
+            self.assertEqual(
+                [archive_file.name for archive_file in archive_files],
+                [
+                    "startup.v0.2.19.b45.zip",
+                    "startup.v0.2.19.b52.zip",
+                ],
+            )
+            for archive_file in archive_files:
+                self.assert_template_layout(archive_file)
 
-            self.assertIn("__init__.py", entries)
-            self.assertIn("blender_manifest.toml", entries)
-            self.assertIn("camera_bookmarks.py", entries)
-            self.assertIn("clipboard_image/__init__.py", entries)
-            self.assertIn("clipboard_image/actions.py", entries)
-            self.assertIn("clipboard_image/clipboard.py", entries)
-            self.assertIn("phantom.py", entries)
-            self.assertIn("resources/4.5/config/startup.blend", entries)
-            self.assertIn("resources/5.2/config/startup.blend", entries)
-            self.assertNotIn("addon.py", entries)
-            self.assertFalse(any("\\" in entry for entry in entries))
+    def test_packages_the_matching_target_files(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            archive_files = build_templates(temporary_directory)
+
+            for archive_file in archive_files:
+                target_id = archive_file.stem.rsplit(".", 1)[1]
+                with zipfile.ZipFile(archive_file, mode="r") as archive:
+                    startup_data = archive.read(
+                        f"{APP_TEMPLATE_ID}/startup.blend"
+                    )
+                    keyconfig_data = archive.read(
+                        f"{APP_TEMPLATE_ID}/{KEYCONFIG_ARCHIVE_NAME}"
+                    )
+                    splash_data = archive.read(
+                        f"{APP_TEMPLATE_ID}/splash.png"
+                    )
+
+                self.assertEqual(
+                    startup_data,
+                    (TEMPLATE_ROOT / f"startup.{target_id}.blend").read_bytes(),
+                )
+                self.assertEqual(
+                    keyconfig_data,
+                    (
+                        TEMPLATE_ROOT
+                        / f"keyconfig.{target_id}.py"
+                    ).read_bytes(),
+                )
+                self.assertEqual(
+                    splash_data,
+                    (TEMPLATE_ROOT / "splash.png").read_bytes(),
+                )
+
+    def assert_template_layout(self, archive_file):
+        with zipfile.ZipFile(archive_file, mode="r") as template_archive:
+            entries = set(template_archive.namelist())
+
+        root = f"{APP_TEMPLATE_ID}/"
+        self.assertIn(root, entries)
+        self.assertIn(f"{root}__init__.py", entries)
+        self.assertIn(f"{root}startup.blend", entries)
+        self.assertIn(f"{root}splash.png", entries)
+        self.assertNotIn(f"{root}userpref.blend", entries)
+        self.assertIn(f"{root}{KEYCONFIG_ARCHIVE_NAME}", entries)
+        self.assertIn(f"{root}camera_bookmark.py", entries)
+        self.assertIn(f"{root}clipboard_image/__init__.py", entries)
+        self.assertIn(f"{root}clipboard_image/actions.py", entries)
+        self.assertIn(f"{root}clipboard_image/clipboard.py", entries)
+        self.assertIn(f"{root}toggle_phantom.py", entries)
+        self.assertFalse(any("targets/" in entry for entry in entries))
+        self.assertFalse(any("blender_manifest.toml" in entry for entry in entries))
+        self.assertFalse(any("\\" in entry for entry in entries))
+        self.assertTrue(all(entry.startswith(root) for entry in entries))
 
 
 if __name__ == "__main__":

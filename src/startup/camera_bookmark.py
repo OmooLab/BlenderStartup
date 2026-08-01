@@ -7,7 +7,6 @@ from pathlib import Path
 import bpy
 
 
-ADDON_ID = __package__
 PREVIEW_MAX_WIDTH = 320
 PREVIEW_MAX_HEIGHT = 180
 PREVIEW_IMAGE_PREFIX = "O Bookmark"
@@ -51,18 +50,6 @@ _registered = False
 _bookmark_items_cache = []
 _keymap_items = []
 _selection_update_suspended = 0
-
-
-def is_enabled(context):
-    preferences = getattr(context, "preferences", None)
-    addons = getattr(preferences, "addons", None)
-    if addons is None:
-        return True
-
-    addon = addons.get(ADDON_ID)
-    if addon is None:
-        return True
-    return getattr(addon.preferences, "enable_camera_bookmarks", True)
 
 
 def is_camera_view(context):
@@ -424,8 +411,7 @@ class O_OT_add_camera_bookmark(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         return (
-            is_enabled(context)
-            and active_camera(context.scene) is not None
+            active_camera(context.scene) is not None
         )
 
     def execute(self, context):
@@ -459,8 +445,7 @@ class O_OT_update_camera_bookmark(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         return (
-            is_enabled(context)
-            and active_camera(context.scene) is not None
+            active_camera(context.scene) is not None
             and selected_bookmark(context.scene) is not None
         )
 
@@ -503,8 +488,7 @@ class O_OT_recall_camera_bookmark(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         return (
-            is_enabled(context)
-            and active_camera(context.scene) is not None
+            active_camera(context.scene) is not None
             and bool(context.scene.o_camera_bookmarks)
         )
 
@@ -544,8 +528,7 @@ class O_OT_show_camera_bookmarks(bpy.types.Operator):
     def poll(cls, context):
         area = getattr(context, "area", None)
         return (
-            is_enabled(context)
-            and area is not None
+            area is not None
             and area.type == "VIEW_3D"
             and active_camera(context.scene) is not None
             and bool(context.scene.o_camera_bookmarks)
@@ -774,8 +757,7 @@ class O_OT_remove_camera_bookmark(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         return (
-            is_enabled(context)
-            and selected_bookmark(context.scene) is not None
+            selected_bookmark(context.scene) is not None
         )
 
     def execute(self, context):
@@ -815,7 +797,7 @@ class O_PT_camera_bookmarks(bpy.types.Panel):
 
     @classmethod
     def poll(cls, context):
-        return is_enabled(context) and is_camera_view(context)
+        return is_camera_view(context)
 
     def draw(self, context):
         layout = self.layout
@@ -874,7 +856,7 @@ class O_MT_camera_bookmarks_pie(bpy.types.Menu):
 
     @classmethod
     def poll(cls, context):
-        return is_enabled(context) and is_camera_view(context)
+        return is_camera_view(context)
 
     def draw(self, context):
         pie = self.layout.menu_pie()

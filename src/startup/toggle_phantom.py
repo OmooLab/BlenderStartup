@@ -1,7 +1,6 @@
 import bpy
 
 
-ADDON_ID = __package__
 PHANTOM_ALPHA = 0.35
 PHANTOM_STATE_KEY = "o_phantom"
 PREVIOUS_ALPHA_KEY = "o_phantom_previous_alpha"
@@ -12,18 +11,6 @@ PREVIOUS_SHOW_TRANSPARENT_KEY = "o_phantom_previous_show_transparent"
 
 _menu_registered = False
 _operator_registered = False
-
-
-def is_enabled(context):
-    preferences = getattr(context, "preferences", None)
-    addons = getattr(preferences, "addons", None)
-    if addons is None:
-        return True
-
-    addon = addons.get(ADDON_ID)
-    if addon is None:
-        return True
-    return getattr(addon.preferences, "enable_phantom", True)
 
 
 def is_phantom(obj):
@@ -82,7 +69,7 @@ class O_OT_toggle_phantom(bpy.types.Operator):
 
     @classmethod
     def poll(cls, context):
-        return is_enabled(context) and context.object is not None
+        return context.object is not None
 
     def execute(self, context):
         obj = context.object
@@ -94,9 +81,6 @@ class O_OT_toggle_phantom(bpy.types.Operator):
 
 
 def draw_object_context_menu(self, context):
-    if not is_enabled(context):
-        return
-
     self.layout.operator(
         O_OT_toggle_phantom.bl_idname,
         text="Toggle Phantom",

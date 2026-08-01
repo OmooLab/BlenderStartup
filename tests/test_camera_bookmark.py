@@ -76,7 +76,6 @@ class CameraBookmarksTest(unittest.TestCase):
             StringProperty=lambda **options: options,
         )
         fake_bpy.types = SimpleNamespace(
-            AddonPreferences=object,
             GizmoGroup=object,
             Image=object,
             Menu=object,
@@ -92,7 +91,7 @@ class CameraBookmarksTest(unittest.TestCase):
         sys.modules["mathutils"] = SimpleNamespace(Matrix=FakeMatrix)
 
         cls.camera_bookmarks = importlib.import_module(
-            "startup.camera_bookmarks"
+            "startup.camera_bookmark"
         )
 
     @classmethod
@@ -216,21 +215,6 @@ class CameraBookmarksTest(unittest.TestCase):
         self.assertEqual(selector._hit_test(400, 400), 0)
         self.assertEqual(selector._hit_test(600, 400), 1)
         self.assertEqual(selector._hit_test(500, 400), -1)
-
-    def test_preference_can_disable_camera_bookmarks(self):
-        context = SimpleNamespace(
-            preferences=SimpleNamespace(
-                addons={
-                    self.camera_bookmarks.ADDON_ID: SimpleNamespace(
-                        preferences=SimpleNamespace(
-                            enable_camera_bookmarks=False,
-                        )
-                    )
-                }
-            )
-        )
-
-        self.assertFalse(self.camera_bookmarks.is_enabled(context))
 
     def test_camera_view_controls_pie_and_view_sidebar_panel(self):
         context = SimpleNamespace(
