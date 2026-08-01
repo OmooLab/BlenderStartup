@@ -10,7 +10,25 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 if "bpy" not in sys.modules:
     fake_bpy = ModuleType("bpy")
-    fake_bpy.types = SimpleNamespace(Operator=object)
+    fake_bpy.props = SimpleNamespace(
+        BoolProperty=lambda **options: options,
+        CollectionProperty=lambda **options: options,
+        EnumProperty=lambda **options: options,
+        FloatProperty=lambda **options: options,
+        IntProperty=lambda **options: options,
+        PointerProperty=lambda **options: options,
+        StringProperty=lambda **options: options,
+    )
+    fake_bpy.types = SimpleNamespace(
+        AddonPreferences=object,
+        GizmoGroup=object,
+        Image=object,
+        Menu=object,
+        Operator=object,
+        Panel=object,
+        PropertyGroup=object,
+        Scene=object,
+    )
     sys.modules["bpy"] = fake_bpy
 
 from startup.resource_loader import KEYCONFIG_RELATIVE_PATH  # noqa: E402

@@ -1,6 +1,6 @@
 [project]
 name = "startup"
-version = "0.1.0"
+version = "0.2.19"
 description = "OmooLab startup files and keymap presets for Blender"
 readme = "README.md"
 requires-python = ">=3.11"

@@ -1,14 +1,18 @@
 schema_version = "1.0.0"
 
 id = "startup"
-version = "0.1.0"
+version = "0.2.19"
 name = "OmooLab Startup"
-tagline = "Use OmooLab startup files and keymap presets"
-maintainer = "OmooLab"
+tagline = "Use OmooLab Startup"
+maintainer = "Nan"
 type = "add-on"
 
 blender_version_min = "4.5.0"
 license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+clipboard = "Paste clipboard images into Blender"
+files = "Temporarily load generated previews and clipboard images before packing"
 
 [build]
 paths_exclude_pattern = [

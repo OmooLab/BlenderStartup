@@ -6,6 +6,7 @@ from pathlib import Path
 
 import bpy
 
+from . import camera_bookmarks, clipboard_image, phantom
 from .resource_loader import KEYCONFIG_NAME, ResourceBundle, find_resource_bundle
 
 
@@ -15,16 +16,49 @@ RESOURCES_ROOT = Path(__file__).resolve().parent / "resources"
 _resource_bundle: ResourceBundle | None = None
 _menu_registered = False
 _operator_registered = False
+_preferences_registered = False
 
 
-class STARTUP_OT_use_omoolab_startup(bpy.types.Operator):
-    bl_idname = "startup.use_omoolab_startup"
+class O_Preferences(bpy.types.AddonPreferences):
+    bl_idname = __package__
+
+    enable_clipboard_image: bpy.props.BoolProperty(
+        name="Paste Clipboard Images",
+        description=(
+            "Paste packed clipboard images as planes, image nodes, "
+            "or active brush textures based on the current editor"
+        ),
+        default=True,
+    )
+    enable_phantom: bpy.props.BoolProperty(
+        name="Toggle Phantom",
+        description=(
+            "Add Toggle Phantom to the 3D View object context menu"
+        ),
+        default=True,
+    )
+    enable_camera_bookmarks: bpy.props.BoolProperty(
+        name="Bookmarks",
+        description=(
+            "Show bookmark controls in Camera View"
+        ),
+        default=True,
+    )
+
+    def draw(self, _context):
+        self.layout.prop(self, "enable_clipboard_image")
+        self.layout.prop(self, "enable_phantom")
+        self.layout.prop(self, "enable_camera_bookmarks")
+
+
+class O_OT_use_startup(bpy.types.Operator):
+    bl_idname = "o.use_startup"
     bl_label = "Use OmooLab Startup"
     bl_description = "Replace this Blender version's user startup.blend"
 
     def execute(self, _context):
         if _resource_bundle is None:
-            self.report({"ERROR"}, "No compatible OmooLab startup file is available")
+            self.report({"ERROR"}, "No compatible O startup file is available")
             return {"CANCELLED"}
 
         try:
@@ -103,7 +137,7 @@ def draw_file_defaults(self, _context):
         return
 
     self.layout.operator(
-        STARTUP_OT_use_omoolab_startup.bl_idname,
+        O_OT_use_startup.bl_idname,
         text=f"Use {DISPLAY_NAME}",
     )
     self.layout.separator()
@@ -128,6 +162,7 @@ def restore_selected_keyconfig(keyconfig_file):
 def register():
     global _menu_registered
     global _operator_registered
+    global _preferences_registered
     global _resource_bundle
 
     resource_bundle = find_resource_bundle(
@@ -136,8 +171,14 @@ def register():
     )
     keyconfig_file = install_keyconfig_preset(resource_bundle.keyconfig_file)
 
-    bpy.utils.register_class(STARTUP_OT_use_omoolab_startup)
+    bpy.utils.register_class(O_Preferences)
+    _preferences_registered = True
+
+    bpy.utils.register_class(O_OT_use_startup)
     _operator_registered = True
+    clipboard_image.register()
+    phantom.register()
+    camera_bookmarks.register()
 
     _resource_bundle = resource_bundle
 
@@ -149,14 +190,23 @@ def register():
 def unregister():
     global _menu_registered
     global _operator_registered
+    global _preferences_registered
     global _resource_bundle
 
     if _menu_registered:
         bpy.types.TOPBAR_MT_file_defaults.remove(draw_file_defaults)
         _menu_registered = False
 
+    camera_bookmarks.unregister()
+    phantom.unregister()
+    clipboard_image.unregister()
+
     if _operator_registered:
-        bpy.utils.unregister_class(STARTUP_OT_use_omoolab_startup)
+        bpy.utils.unregister_class(O_OT_use_startup)
         _operator_registered = False
+
+    if _preferences_registered:
+        bpy.utils.unregister_class(O_Preferences)
+        _preferences_registered = False
 
     _resource_bundle = None
