@@ -59,7 +59,7 @@ def disable_phantom(obj):
             del obj[property_name]
 
 
-class O_OT_toggle_phantom(bpy.types.Operator):
+class TogglePhantom(bpy.types.Operator):
     bl_idname = "o.toggle_phantom"
     bl_label = "Toggle Phantom"
     bl_description = (
@@ -81,20 +81,20 @@ class O_OT_toggle_phantom(bpy.types.Operator):
 
 
 def draw_object_context_menu(self, context):
+    self.layout.separator()
     self.layout.operator(
-        O_OT_toggle_phantom.bl_idname,
+        TogglePhantom.bl_idname,
         text="Toggle Phantom",
     )
-    self.layout.separator()
 
 
 def register():
     global _menu_registered
     global _operator_registered
 
-    bpy.utils.register_class(O_OT_toggle_phantom)
+    bpy.utils.register_class(TogglePhantom)
     _operator_registered = True
-    bpy.types.VIEW3D_MT_object_context_menu.prepend(draw_object_context_menu)
+    bpy.types.VIEW3D_MT_object_context_menu.append(draw_object_context_menu)
     _menu_registered = True
 
 
@@ -107,5 +107,5 @@ def unregister():
         _menu_registered = False
 
     if _operator_registered:
-        bpy.utils.unregister_class(O_OT_toggle_phantom)
+        bpy.utils.unregister_class(TogglePhantom)
         _operator_registered = False

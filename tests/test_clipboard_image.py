@@ -250,8 +250,8 @@ class ClipboardImageTest(unittest.TestCase):
 
     def test_plane_subdivide_property_defaults_to_no_cuts(self):
         options = (
-            self.addon.clipboard_image.O_OT_paste_clipboard_image
-            .__annotations__["subdivisions"]
+            self.addon.clipboard_image.PasteClipboardImage
+            .__annotations__["o_subdivisions"]
         )
 
         self.assertEqual(options["default"], 0)
@@ -259,8 +259,8 @@ class ClipboardImageTest(unittest.TestCase):
 
     def test_plane_import_defaults_to_mesh_plane(self):
         options = (
-            self.addon.clipboard_image.O_OT_paste_clipboard_image
-            .__annotations__["import_as"]
+            self.addon.clipboard_image.PasteClipboardImage
+            .__annotations__["o_import_as"]
         )
 
         self.assertEqual(options["default"], "PLANE")
@@ -271,16 +271,16 @@ class ClipboardImageTest(unittest.TestCase):
 
     def test_plane_unshaded_is_disabled_by_default(self):
         options = (
-            self.addon.clipboard_image.O_OT_paste_clipboard_image
-            .__annotations__["unshaded"]
+            self.addon.clipboard_image.PasteClipboardImage
+            .__annotations__["o_unshaded"]
         )
 
         self.assertFalse(options["default"])
 
     def test_plane_thickness_defaults_to_flat(self):
         options = (
-            self.addon.clipboard_image.O_OT_paste_clipboard_image
-            .__annotations__["thickness"]
+            self.addon.clipboard_image.PasteClipboardImage
+            .__annotations__["o_thickness"]
         )
 
         self.assertEqual(options["default"], 0.0)
@@ -347,7 +347,7 @@ class ClipboardImageTest(unittest.TestCase):
 
     def test_subdivide_is_drawn_only_for_plane_paste(self):
         operator_class = (
-            self.addon.clipboard_image.O_OT_paste_clipboard_image
+            self.addon.clipboard_image.PasteClipboardImage
         )
         operator = operator_class()
         drawn_properties = []
@@ -355,22 +355,22 @@ class ClipboardImageTest(unittest.TestCase):
             prop=lambda owner, name: drawn_properties.append((owner, name)),
         )
 
-        operator.paste_target = "PLANE"
-        operator.import_as = "PLANE"
+        operator.o_paste_target = "PLANE"
+        operator.o_import_as = "PLANE"
         operator.draw(None)
-        operator.import_as = "REFERENCE"
+        operator.o_import_as = "REFERENCE"
         operator.draw(None)
-        operator.paste_target = "NODE"
+        operator.o_paste_target = "NODE"
         operator.draw(None)
 
         self.assertEqual(
             drawn_properties,
             [
-                (operator, "import_as"),
-                (operator, "thickness"),
-                (operator, "subdivisions"),
-                (operator, "unshaded"),
-                (operator, "import_as"),
+                (operator, "o_import_as"),
+                (operator, "o_thickness"),
+                (operator, "o_subdivisions"),
+                (operator, "o_unshaded"),
+                (operator, "o_import_as"),
             ],
         )
 

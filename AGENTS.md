@@ -23,3 +23,9 @@
 
 - 优先使用、提供 Git Bash 执行所有 Shell 命令
 - Windows 路径在 Bash 命令中优先使用正斜杠形式
+
+## Blender 开发规范
+
+- Operator、Menu、Panel、AddonPreferences... Class 用大驼峰命名，不加任何前缀。Operator 动宾结构，比如`RenderImage`。Menu、Panel 以它们本身为后缀，比如`RenderPanel`
+- bl_idname 用下划线小写命名，Operator 的 bl_idname 以`o.*`为前缀，比如`o.render_panel`；Menu 的以`O_MT_*`为前缀；Panel 的以`O_PT_*`为前缀。比如`O_PT_render_panel`
+- 自定义 Property 用下划线小写命名，以`o_*`为前缀。比如`o_progress_factor`

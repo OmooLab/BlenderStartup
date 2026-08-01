@@ -20,13 +20,13 @@ _keymap_items = []
 _operator_registered = False
 
 
-class O_OT_paste_clipboard_image(bpy.types.Operator):
+class PasteClipboardImage(bpy.types.Operator):
     bl_idname = "o.paste_clipboard_image"
     bl_label = "Paste Clipboard Image"
     bl_description = "Paste and pack the clipboard image for the current editor"
     bl_options = {"REGISTER", "UNDO"}
 
-    subdivisions: bpy.props.IntProperty(
+    o_subdivisions: bpy.props.IntProperty(
         name="Subdivide",
         description=(
             "Minimum cuts across the image; longer dimensions and block depth "
@@ -36,7 +36,7 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
         min=0,
         soft_max=64,
     )
-    thickness: bpy.props.FloatProperty(
+    o_thickness: bpy.props.FloatProperty(
         name="Thickness",
         description=(
             "Create a centered block around the image plane; zero keeps it flat"
@@ -47,7 +47,7 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
         subtype="DISTANCE",
         unit="LENGTH",
     )
-    import_as: bpy.props.EnumProperty(
+    o_import_as: bpy.props.EnumProperty(
         name="Import As",
         description="Choose the 3D View representation for the image",
         items=(
@@ -64,14 +64,14 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
         ),
         default="PLANE",
     )
-    unshaded: bpy.props.BoolProperty(
+    o_unshaded: bpy.props.BoolProperty(
         name="Unshaded",
         description=(
             "Use an Emission shader so the image is unaffected by scene lighting"
         ),
         default=False,
     )
-    paste_target: bpy.props.StringProperty(
+    o_paste_target: bpy.props.StringProperty(
         options={"HIDDEN", "SKIP_SAVE"},
     )
 
@@ -85,21 +85,21 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
         return self._paste(context)
 
     def invoke(self, context, event):
-        self.paste_target = target_for_context(context) or ""
+        self.o_paste_target = target_for_context(context) or ""
         return self._paste(context, event)
 
     def draw(self, _context):
-        if self.paste_target != "PLANE":
+        if self.o_paste_target != "PLANE":
             return
-        self.layout.prop(self, "import_as")
-        if self.import_as == "PLANE":
-            self.layout.prop(self, "thickness")
-            self.layout.prop(self, "subdivisions")
-            self.layout.prop(self, "unshaded")
+        self.layout.prop(self, "o_import_as")
+        if self.o_import_as == "PLANE":
+            self.layout.prop(self, "o_thickness")
+            self.layout.prop(self, "o_subdivisions")
+            self.layout.prop(self, "o_unshaded")
 
     def _paste(self, context, event=None):
-        if not self.paste_target:
-            self.paste_target = target_for_context(context) or ""
+        if not self.o_paste_target:
+            self.o_paste_target = target_for_context(context) or ""
 
         try:
             image_data, suffix = read_clipboard_image()
@@ -117,10 +117,10 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
                 context,
                 image,
                 event,
-                subdivisions=self.subdivisions,
-                import_as=self.import_as,
-                unshaded=self.unshaded,
-                thickness=self.thickness,
+                subdivisions=self.o_subdivisions,
+                import_as=self.o_import_as,
+                unshaded=self.o_unshaded,
+                thickness=self.o_thickness,
             )
         except (OSError, RuntimeError, PasteTargetError) as error:
             if image is not None and not image_reused and image.users == 0:
@@ -135,7 +135,7 @@ class O_OT_paste_clipboard_image(bpy.types.Operator):
 def register():
     global _operator_registered
 
-    bpy.utils.register_class(O_OT_paste_clipboard_image)
+    bpy.utils.register_class(PasteClipboardImage)
     _operator_registered = True
     _register_keymaps()
 
@@ -145,7 +145,7 @@ def unregister():
 
     _unregister_keymaps()
     if _operator_registered:
-        bpy.utils.unregister_class(O_OT_paste_clipboard_image)
+        bpy.utils.unregister_class(PasteClipboardImage)
         _operator_registered = False
 
 
@@ -173,7 +173,7 @@ def _register_keymaps():
             else {"ctrl": True}
         )
         keymap_item = keymap.keymap_items.new(
-            O_OT_paste_clipboard_image.bl_idname,
+            PasteClipboardImage.bl_idname,
             "V",
             "PRESS",
             **modifiers,

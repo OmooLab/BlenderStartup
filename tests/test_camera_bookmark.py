@@ -145,9 +145,9 @@ class CameraBookmarksTest(unittest.TestCase):
         target_camera = FakeCamera()
         target_camera.data.lens = 18.0
         bookmark = SimpleNamespace(
-            identifier="camera-a",
-            name="Camera A",
-            state_json=state_json,
+            o_identifier="camera-a",
+            o_name="Camera A",
+            o_state_json=state_json,
         )
         scene = SimpleNamespace(
             camera=target_camera,
@@ -155,9 +155,9 @@ class CameraBookmarksTest(unittest.TestCase):
             o_camera_bookmark_selection="",
         )
         operator = (
-            self.camera_bookmarks.O_OT_recall_camera_bookmark()
+            self.camera_bookmarks.RecallCameraBookmark()
         )
-        operator.bookmark_identifier = "camera-a"
+        operator.o_bookmark_identifier = "camera-a"
         operator.report = lambda _levels, _message: None
 
         result = operator.execute(SimpleNamespace(scene=scene))
@@ -210,7 +210,7 @@ class CameraBookmarksTest(unittest.TestCase):
                 (504.0, 355.0, 664.0, 445.0),
             ],
         )
-        selector = self.camera_bookmarks.O_OT_show_camera_bookmarks()
+        selector = self.camera_bookmarks.ShowCameraBookmarks()
         selector._rects = rects
         self.assertEqual(selector._hit_test(400, 400), 0)
         self.assertEqual(selector._hit_test(600, 400), 1)
@@ -224,43 +224,43 @@ class CameraBookmarksTest(unittest.TestCase):
 
         self.assertTrue(self.camera_bookmarks.is_camera_view(context))
         self.assertTrue(
-            self.camera_bookmarks.O_MT_camera_bookmarks_pie.poll(
+            self.camera_bookmarks.CameraBookmarksPieMenu.poll(
                 context
             )
         )
         self.assertTrue(
-            self.camera_bookmarks.O_PT_camera_bookmarks.poll(context)
+            self.camera_bookmarks.CameraBookmarksPanel.poll(context)
         )
         self.assertEqual(
-            self.camera_bookmarks.O_PT_camera_bookmarks.bl_category,
+            self.camera_bookmarks.CameraBookmarksPanel.bl_category,
             "View",
         )
         self.assertEqual(
-            self.camera_bookmarks.O_PT_camera_bookmarks.bl_order,
+            self.camera_bookmarks.CameraBookmarksPanel.bl_order,
             0,
         )
         self.assertEqual(
-            self.camera_bookmarks.O_PT_camera_bookmarks.bl_label,
+            self.camera_bookmarks.CameraBookmarksPanel.bl_label,
             "Bookmarks",
         )
         self.assertEqual(
-            self.camera_bookmarks.O_MT_camera_bookmarks_pie.bl_label,
+            self.camera_bookmarks.CameraBookmarksPieMenu.bl_label,
             "Bookmarks",
         )
         self.assertEqual(
-            self.camera_bookmarks.O_OT_add_camera_bookmark.bl_label,
+            self.camera_bookmarks.AddCameraBookmark.bl_label,
             "Add Bookmark",
         )
 
         context.region_data.view_perspective = "PERSP"
         self.assertFalse(self.camera_bookmarks.is_camera_view(context))
         self.assertFalse(
-            self.camera_bookmarks.O_MT_camera_bookmarks_pie.poll(
+            self.camera_bookmarks.CameraBookmarksPieMenu.poll(
                 context
             )
         )
         self.assertFalse(
-            self.camera_bookmarks.O_PT_camera_bookmarks.poll(context)
+            self.camera_bookmarks.CameraBookmarksPanel.poll(context)
         )
 
     def test_sidebar_add_bookmark_uses_bookmark_icon(self):
@@ -276,7 +276,7 @@ class CameraBookmarksTest(unittest.TestCase):
             def operator(self, operator_id, *, text, icon):
                 operator_calls.append((operator_id, text, icon))
 
-        panel = self.camera_bookmarks.O_PT_camera_bookmarks()
+        panel = self.camera_bookmarks.CameraBookmarksPanel()
         panel.layout = Layout()
         panel.draw(
             SimpleNamespace(

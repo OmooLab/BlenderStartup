@@ -62,9 +62,13 @@ macOS 使用 `Cmd+V`，Windows 与 Linux 使用 `Ctrl+V`。
 ├── src/
 │   └── startup/
 │       ├── __init__.py
-│       ├── camera_bookmark.py
+│       ├── camera_bookmark/
+│       │   ├── __init__.py
+│       │   ├── layout.py
+│       │   ├── preview.py
+│       │   └── state.py
 │       ├── clipboard_image/
-│       └── toggle_phantom.py
+│       └── toggle_phantom/
 ├── template/
 │   ├── splash.png
 │   ├── startup.b45.blend
@@ -76,7 +80,11 @@ macOS 使用 `Cmd+V`，Windows 与 Linux 使用 `Ctrl+V`。
 └── tests/
 ```
 
-`src/startup` 只包含所有构建目标共用的运行时代码。`template` 保存 App Template 的构建
+`src/startup` 只包含所有构建目标共用的运行时代码。每项功能对应一个包含
+`__init__.py` 的独立目录；删除整个功能目录后，根模块会跳过该功能，其他功能仍可注册。
+Feature Package 内部可以继续按职责拆分多个 Python 文件。
+
+`template` 保存 App Template 的构建
 素材：`splash.png` 为所有版本共用；`startup.b<major><minor>.blend` 和
 `userpref.b<major><minor>.blend`、`keyconfig.b<major><minor>.py` 通过文件名后缀区分
 Blender 版本。
@@ -101,9 +109,13 @@ O_General/
 ├── userpref.blend
 ├── splash.png
 ├── keyconfig.py
-├── camera_bookmark.py
+├── camera_bookmark/
+│   ├── __init__.py
+│   ├── layout.py
+│   ├── preview.py
+│   └── state.py
 ├── clipboard_image/
-└── toggle_phantom.py
+└── toggle_phantom/
 ```
 
 构建时，公共脚本和 `splash.png` 会写入所有 ZIP；带版本后缀的 Startup File、Preferences

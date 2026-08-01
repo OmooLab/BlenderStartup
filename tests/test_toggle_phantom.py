@@ -105,7 +105,7 @@ class PhantomTest(unittest.TestCase):
     def test_operator_toggles_context_object(self):
         obj = FakeObject()
         context = SimpleNamespace(object=obj)
-        operator = self.phantom.O_OT_toggle_phantom()
+        operator = self.phantom.TogglePhantom()
 
         self.assertEqual(operator.execute(context), {"FINISHED"})
         self.assertTrue(self.phantom.is_phantom(obj))
@@ -122,7 +122,7 @@ class PhantomTest(unittest.TestCase):
         self.assertFalse(self.phantom.is_phantom(obj))
 
     def test_operator_requires_context_object(self):
-        operator = self.phantom.O_OT_toggle_phantom
+        operator = self.phantom.TogglePhantom
 
         self.assertFalse(operator.poll(SimpleNamespace(object=None)))
         self.assertTrue(operator.poll(SimpleNamespace(object=FakeObject())))

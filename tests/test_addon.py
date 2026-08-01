@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
+from unittest.mock import patch
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -157,7 +158,7 @@ class TemplateRegistrationTest(unittest.TestCase):
         self.assertEqual(FakeMenu.callbacks, [])
         self.assertEqual(len(self.fake_bpy.utils.registered_classes), 10)
         self.assertEqual(len(FakeObjectContextMenu.callbacks), 1)
-        self.assertEqual(FakeObjectContextMenu.registration_method, "prepend")
+        self.assertEqual(FakeObjectContextMenu.registration_method, "append")
         context_layout = FakeLayout()
         FakeObjectContextMenu.callbacks[0](
             SimpleNamespace(layout=context_layout),
@@ -166,7 +167,7 @@ class TemplateRegistrationTest(unittest.TestCase):
         self.assertEqual(context_layout.operator_id, "o.toggle_phantom")
         self.assertEqual(context_layout.operator_text, "Toggle Phantom")
         self.assertTrue(context_layout.separator_called)
-        self.assertEqual(context_layout.actions, ["operator", "separator"])
+        self.assertEqual(context_layout.actions, ["separator", "operator"])
         self.assertEqual(FakeViewPie.callbacks, [])
         installed_keyconfig = (
             Path(self.scripts_directory.name)
@@ -182,6 +183,67 @@ class TemplateRegistrationTest(unittest.TestCase):
         self.assertEqual(self.fake_bpy.utils.registered_classes, [])
         self.assertEqual(FakeObjectContextMenu.callbacks, [])
         self.assertEqual(FakeViewPie.callbacks, [])
+
+    def test_loads_only_feature_packages_present_on_disk(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            feature_root = Path(temporary_directory)
+            feature_directory = feature_root / "available_feature"
+            feature_directory.mkdir()
+            (feature_directory / "__init__.py").touch()
+
+            original_directory = self.addon.TEMPLATE_DIRECTORY
+            self.addon.TEMPLATE_DIRECTORY = feature_root
+            loaded_module = object()
+            try:
+                with patch.object(
+                    self.addon.importlib,
+                    "import_module",
+                    return_value=loaded_module,
+                ) as import_module:
+                    modules = self.addon.load_feature_modules(
+                        ("missing_feature", "available_feature"),
+                    )
+            finally:
+                self.addon.TEMPLATE_DIRECTORY = original_directory
+
+        self.assertEqual(modules, (loaded_module,))
+        import_module.assert_called_once_with(
+            ".available_feature",
+            self.addon.__package__,
+        )
+
+    def test_registered_classes_follow_project_naming_convention(self):
+        self.addon.register()
+
+        registered_classes = self.fake_bpy.utils.registered_classes
+        self.assertTrue(registered_classes)
+        for class_type in registered_classes:
+            with self.subTest(class_name=class_type.__name__):
+                self.assertRegex(class_type.__name__, r"^[A-Z][A-Za-z0-9]*$")
+                annotations = getattr(class_type, "__annotations__", {})
+                for property_name in annotations:
+                    self.assertRegex(property_name, r"^o_[a-z][a-z0-9_]*$")
+
+        operator_classes = [
+            item for item in registered_classes
+            if issubclass(item, self.fake_bpy.types.Operator)
+        ]
+        menu_classes = [
+            item for item in registered_classes
+            if issubclass(item, self.fake_bpy.types.Menu)
+        ]
+        panel_classes = [
+            item for item in registered_classes
+            if issubclass(item, self.fake_bpy.types.Panel)
+        ]
+        for class_type in operator_classes:
+            self.assertRegex(class_type.bl_idname, r"^o\.[a-z][a-z0-9_]*$")
+        for class_type in menu_classes:
+            self.assertTrue(class_type.__name__.endswith("Menu"))
+            self.assertRegex(class_type.bl_idname, r"^O_MT_[a-z][a-z0-9_]*$")
+        for class_type in panel_classes:
+            self.assertTrue(class_type.__name__.endswith("Panel"))
+            self.assertRegex(class_type.bl_idname, r"^O_PT_[a-z][a-z0-9_]*$")
 
     def test_updates_installed_keyconfig_without_activating_it(self):
         installed_keyconfig = (
@@ -212,7 +274,7 @@ class TemplateRegistrationTest(unittest.TestCase):
         menu = menu_class()
         menu.layout = layout
         bookmark = SimpleNamespace(
-            identifier="bookmark-1",
+            o_identifier="bookmark-1",
         )
         scene = SimpleNamespace(
             o_camera_bookmarks=[bookmark],
