@@ -6449,6 +6449,7 @@ keyconfig_data = \
      {"properties":
       [("exit", True),
        ],
+    "active":False,
       },
      ),
     ("node.read_viewlayers", {"type": 'R', "value": 'PRESS', "ctrl": True}, None),
@@ -9567,15 +9568,6 @@ keyconfig_data = \
       [("name", 'builtin.box_mask'),
        ("cycle", True),
        ],
-      },
-     ),
-    ("brush.asset_activate",
-     {"type": 'C', "value": 'PRESS'},
-     {"properties":
-      [("asset_library_type", 'ESSENTIALS'),
-       ("relative_asset_identifier", 'brushes/essentials_brushes-mesh_sculpt.blend/Brush/Mask'),
-       ],
-    "active":False,
       },
      ),
     ("sculpt.sample_color", {"type": 'LEFTMOUSE', "value": 'DOUBLE_CLICK', "shift": True}, None),
