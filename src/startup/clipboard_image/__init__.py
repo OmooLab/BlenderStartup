@@ -11,6 +11,7 @@ from .actions import (
 from .clipboard import (
     ClipboardImageError,
     ClipboardImageUnavailable,
+    clipboard_change_token,
     clipboard_image_supported,
     read_clipboard_image,
 )
@@ -18,6 +19,20 @@ from .clipboard import (
 
 _keymap_items = []
 _operator_registered = False
+_native_copy_token = None
+
+
+class TrackNativeCopy(bpy.types.Operator):
+    bl_idname = "o.track_native_copy"
+    bl_label = "Track Native Copy"
+    bl_description = "Preserve Blender's native copy and paste priority"
+    bl_options = {"INTERNAL"}
+
+    def execute(self, _context):
+        global _native_copy_token
+
+        _native_copy_token = clipboard_change_token()
+        return {"PASS_THROUGH"}
 
 
 class PasteClipboardImage(bpy.types.Operator):
@@ -98,6 +113,9 @@ class PasteClipboardImage(bpy.types.Operator):
             self.layout.prop(self, "o_unshaded")
 
     def _paste(self, context, event=None):
+        if _should_defer_to_native_paste():
+            return {"PASS_THROUGH"}
+
         if not self.o_paste_target:
             self.o_paste_target = target_for_context(context) or ""
 
@@ -135,18 +153,27 @@ class PasteClipboardImage(bpy.types.Operator):
 def register():
     global _operator_registered
 
+    bpy.utils.register_class(TrackNativeCopy)
     bpy.utils.register_class(PasteClipboardImage)
     _operator_registered = True
     _register_keymaps()
 
 
 def unregister():
-    global _operator_registered
+    global _native_copy_token, _operator_registered
 
     _unregister_keymaps()
     if _operator_registered:
         bpy.utils.unregister_class(PasteClipboardImage)
+        bpy.utils.unregister_class(TrackNativeCopy)
         _operator_registered = False
+    _native_copy_token = None
+
+
+def _should_defer_to_native_paste():
+    if _native_copy_token is None:
+        return False
+    return clipboard_change_token() == _native_copy_token
 
 
 def _register_keymaps():
@@ -179,6 +206,13 @@ def _register_keymaps():
             **modifiers,
         )
         _keymap_items.append((keymap, keymap_item))
+        copy_keymap_item = keymap.keymap_items.new(
+            TrackNativeCopy.bl_idname,
+            "C",
+            "PRESS",
+            **modifiers,
+        )
+        _keymap_items.append((keymap, copy_keymap_item))
 
 
 def _unregister_keymaps():

@@ -156,7 +156,7 @@ class TemplateRegistrationTest(unittest.TestCase):
         self.addon.register()
 
         self.assertEqual(FakeMenu.callbacks, [])
-        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 10)
+        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 11)
         self.assertEqual(len(FakeObjectContextMenu.callbacks), 1)
         self.assertEqual(FakeObjectContextMenu.registration_method, "append")
         context_layout = FakeLayout()
@@ -377,6 +377,18 @@ class TemplateRegistrationTest(unittest.TestCase):
         for keymap_item in clipboard_items:
             self.assertEqual(keymap_item.idname, "o.paste_clipboard_image")
             self.assertEqual((keymap_item.type, keymap_item.value), ("V", "PRESS"))
+            modifier_name = "oskey" if sys.platform == "darwin" else "ctrl"
+            self.assertTrue(getattr(keymap_item, modifier_name))
+
+        copy_items = [
+            keymap_item
+            for keymap in keymaps.items
+            for keymap_item in keymap.keymap_items.items
+            if keymap_item.idname == "o.track_native_copy"
+        ]
+        self.assertEqual(len(copy_items), 2)
+        for keymap_item in copy_items:
+            self.assertEqual((keymap_item.type, keymap_item.value), ("C", "PRESS"))
             modifier_name = "oskey" if sys.platform == "darwin" else "ctrl"
             self.assertTrue(getattr(keymap_item, modifier_name))
 

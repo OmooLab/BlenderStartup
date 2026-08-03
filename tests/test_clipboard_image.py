@@ -286,6 +286,49 @@ class ClipboardImageTest(unittest.TestCase):
         self.assertEqual(options["default"], 0.0)
         self.assertEqual(options["min"], 0.0)
 
+    def test_native_copy_takes_priority_while_clipboard_is_unchanged(self):
+        clipboard_image = self.addon.clipboard_image
+        original_token = clipboard_image._native_copy_token
+        try:
+            clipboard_image._native_copy_token = 41
+            with patch.object(
+                clipboard_image,
+                "clipboard_change_token",
+                return_value=41,
+            ):
+                self.assertTrue(clipboard_image._should_defer_to_native_paste())
+        finally:
+            clipboard_image._native_copy_token = original_token
+
+    def test_new_system_clipboard_content_restores_image_paste(self):
+        clipboard_image = self.addon.clipboard_image
+        original_token = clipboard_image._native_copy_token
+        try:
+            clipboard_image._native_copy_token = 41
+            with patch.object(
+                clipboard_image,
+                "clipboard_change_token",
+                return_value=42,
+            ):
+                self.assertFalse(clipboard_image._should_defer_to_native_paste())
+        finally:
+            clipboard_image._native_copy_token = original_token
+
+    def test_native_copy_tracker_passes_through(self):
+        clipboard_image = self.addon.clipboard_image
+        original_token = clipboard_image._native_copy_token
+        try:
+            with patch.object(
+                clipboard_image,
+                "clipboard_change_token",
+                return_value=73,
+            ):
+                result = clipboard_image.TrackNativeCopy().execute(None)
+            self.assertEqual(result, {"PASS_THROUGH"})
+            self.assertEqual(clipboard_image._native_copy_token, 73)
+        finally:
+            clipboard_image._native_copy_token = original_token
+
     def test_unshaded_nodes_mix_emission_with_transparency(self):
         created_nodes = {}
 

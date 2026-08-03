@@ -9249,7 +9249,11 @@ keyconfig_data = \
     ("object.voxel_remesh", {"type": 'D', "value": 'PRESS', "ctrl": True}, None),
     ("object.voxel_size_edit", {"type": 'D', "value": 'PRESS'}, None),
     ("sculpt.sample_color", {"type": 'X', "value": 'PRESS', "shift": True}, None),
-    ("paint.brush_colors_flip", {"type": 'X', "value": 'PRESS'}, None),
+    ("paint.brush_colors_flip",
+     {"type": 'X', "value": 'PRESS'},
+     {    "active":False,
+      },
+     ),
     ("brush.scale_size",
      {"type": 'LEFT_BRACKET', "value": 'PRESS', "repeat": True},
      {"properties":

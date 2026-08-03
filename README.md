@@ -11,8 +11,8 @@ Extension。
 
 根据 Blender 版本选择构建产物：
 
-- Blender 4.5 至 5.1：`startup.v0.2.19.b45.zip`
-- Blender 5.2 及其后续兼容版本：`startup.v0.2.19.b52.zip`
+- Blender 4.5 至 5.1：`startup.v0.2.20.b45.zip`
+- Blender 5.2 及其后续兼容版本：`startup.v0.2.20.b52.zip`
 
 在 Blender 左上角的 Blender 菜单中选择 `Install Application Template...`，安装对应
 ZIP。安装同一模板的新版本时，Blender 会替换已有的 `O_General` 模板目录。
@@ -47,7 +47,8 @@ Camera Bookmark 数据与 packed 预览图保存在当前 `.blend`。在 Camera 
 半透明，并关闭 Camera、Shadow 和可用时的 Raycast Visibility；再次执行会恢复原值。
 
 剪贴板图片会先创建临时文件，载入后立即 pack 到当前 `.blend`，再删除临时文件。没有
-可用图片时，原有 `Ctrl+V` 行为会继续执行。
+可用图片时，原有 `Ctrl+V` 行为会继续执行。复制 Blender 节点、物体等内部数据后，
+原生粘贴会优先于剪贴板中残留的旧图片。
 
 macOS 使用系统自带的 AppKit 读取图片，并将其转换为 PNG。Linux 优先使用
 `wl-paste`（Wayland），其次使用 `xclip`（X11）；需要安装 `wl-clipboard` 或 `xclip`。

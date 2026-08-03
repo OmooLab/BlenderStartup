@@ -17,8 +17,8 @@ class PackTest(unittest.TestCase):
             self.assertEqual(
                 [archive_file.name for archive_file in archive_files],
                 [
-                    "startup.v0.2.19.b45.zip",
-                    "startup.v0.2.19.b52.zip",
+                    "startup.v0.2.20.b45.zip",
+                    "startup.v0.2.20.b52.zip",
                 ],
             )
             for archive_file in archive_files:
