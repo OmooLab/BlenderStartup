@@ -77,7 +77,7 @@ class PasteClipboardImage(bpy.types.Operator):
                 "Create an image Empty like dragging an image into Blender",
             ),
         ),
-        default="PLANE",
+        default="REFERENCE",
     )
     o_unshaded: bpy.props.BoolProperty(
         name="Unshaded",

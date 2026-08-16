@@ -109,7 +109,7 @@ def paste_image(
     image,
     event=None,
     subdivisions=0,
-    import_as="PLANE",
+    import_as="REFERENCE",
     unshaded=False,
     thickness=0.0,
 ):

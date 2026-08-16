@@ -257,13 +257,13 @@ class ClipboardImageTest(unittest.TestCase):
         self.assertEqual(options["default"], 0)
         self.assertEqual(options["min"], 0)
 
-    def test_plane_import_defaults_to_mesh_plane(self):
+    def test_plane_import_defaults_to_reference_image(self):
         options = (
             self.addon.clipboard_image.PasteClipboardImage
             .__annotations__["o_import_as"]
         )
 
-        self.assertEqual(options["default"], "PLANE")
+        self.assertEqual(options["default"], "REFERENCE")
         self.assertEqual(
             [item[0] for item in options["items"]],
             ["PLANE", "REFERENCE"],
