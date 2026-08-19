@@ -40,13 +40,6 @@
   border-radius: 0.75rem;
 }
 
-.md-typeset kbd {
-  min-width: 1.6em;
-  border-bottom-width: 0.15rem;
-  border-radius: 0.35rem;
-  text-align: center;
-}
-
 .md-typeset .keymap-summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
