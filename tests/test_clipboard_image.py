@@ -24,6 +24,7 @@ class ClipboardImageTest(unittest.TestCase):
             CollectionProperty=lambda **options: options,
             EnumProperty=lambda **options: options,
             FloatProperty=lambda **options: options,
+            FloatVectorProperty=lambda **options: options,
             IntProperty=lambda **options: options,
             PointerProperty=lambda **options: options,
             StringProperty=lambda **options: options,
@@ -142,6 +143,84 @@ class ClipboardImageTest(unittest.TestCase):
             self.actions._node_type_for_space(world_space),
             "ShaderNodeTexEnvironment",
         )
+
+    def test_node_location_matches_native_ui_scale_and_anchor_offset(self):
+        view2d = SimpleNamespace(
+            region_to_view=Mock(return_value=(200.0, 100.0)),
+        )
+        context = SimpleNamespace(
+            region=SimpleNamespace(view2d=view2d),
+            preferences=SimpleNamespace(
+                system=SimpleNamespace(ui_scale=2.0),
+            ),
+            space_data=SimpleNamespace(cursor_location=(1.0, 2.0)),
+        )
+        event = SimpleNamespace(mouse_region_x=80, mouse_region_y=60)
+
+        location = self.actions._node_location(context, event)
+
+        self.assertEqual(location, (85.0, 55.0))
+        view2d.region_to_view.assert_called_once_with(80, 60)
+
+    def test_node_location_without_event_uses_node_cursor(self):
+        context = SimpleNamespace(
+            space_data=SimpleNamespace(cursor_location=(12.0, -8.0)),
+        )
+
+        self.assertEqual(
+            self.actions._node_location(context, None),
+            (12.0, -8.0),
+        )
+
+    def test_view3d_location_projects_mouse_at_cursor_depth(self):
+        projected_location = (4.0, 5.0, 6.0)
+        project = Mock(return_value=projected_location)
+        bpy_extras = ModuleType("bpy_extras")
+        view3d_utils = ModuleType("bpy_extras.view3d_utils")
+        view3d_utils.region_2d_to_location_3d = project
+        bpy_extras.view3d_utils = view3d_utils
+        cursor_location = Mock()
+        context = SimpleNamespace(
+            scene=SimpleNamespace(
+                cursor=SimpleNamespace(location=cursor_location),
+            ),
+            region=object(),
+            region_data=object(),
+        )
+        event = SimpleNamespace(mouse_region_x=120, mouse_region_y=75)
+
+        with patch.dict(
+            sys.modules,
+            {
+                "bpy_extras": bpy_extras,
+                "bpy_extras.view3d_utils": view3d_utils,
+            },
+        ):
+            result = self.actions._view3d_location(context, event)
+
+        self.assertIs(result, projected_location)
+        project.assert_called_once_with(
+            context.region,
+            context.region_data,
+            (120, 75),
+            cursor_location,
+        )
+
+    def test_view3d_location_without_event_copies_cursor_location(self):
+        copied_location = object()
+        cursor_location = SimpleNamespace(
+            copy=Mock(return_value=copied_location),
+        )
+        context = SimpleNamespace(
+            scene=SimpleNamespace(
+                cursor=SimpleNamespace(location=cursor_location),
+            ),
+        )
+
+        result = self.actions._view3d_location(context)
+
+        self.assertIs(result, copied_location)
+        cursor_location.copy.assert_called_once_with()
 
     def test_preserves_image_aspect_ratio_for_plane(self):
         self.assertEqual(
@@ -371,16 +450,22 @@ class ClipboardImageTest(unittest.TestCase):
         context = self.make_context("VIEW_3D")
         image = object()
         expected_reference = object()
+        expected_location = (1.0, 2.0, 3.0)
         original_add_reference_image = self.actions.add_reference_image
         self.actions.add_reference_image = (
-            lambda received_context, received_image: expected_reference
-            if received_context is context and received_image is image
+            lambda received_context, received_image, location=None: expected_reference
+            if (
+                received_context is context
+                and received_image is image
+                and location == expected_location
+            )
             else None
         )
         try:
             result = self.actions.paste_image(
                 context,
                 image,
+                location=expected_location,
                 import_as="REFERENCE",
             )
         finally:
@@ -415,6 +500,55 @@ class ClipboardImageTest(unittest.TestCase):
                 (operator, "o_unshaded"),
                 (operator, "o_import_as"),
             ],
+        )
+
+    def test_redo_reuses_captured_node_location(self):
+        operator = self.addon.clipboard_image.PasteClipboardImage()
+        operator.o_paste_target = "NODE"
+        operator.o_location = (10.0, 20.0, 0.0)
+        operator.o_location_set = True
+        operator.o_subdivisions = 0
+        operator.o_import_as = "REFERENCE"
+        operator.o_unshaded = False
+        operator.o_thickness = 0.0
+        operator.report = Mock()
+        context = self.make_context(
+            "NODE_EDITOR",
+            tree_type="ShaderNodeTree",
+        )
+        image = SimpleNamespace(name="Clipboard Image")
+
+        clipboard_image = self.addon.clipboard_image
+        with (
+            patch.object(
+                clipboard_image,
+                "_should_defer_to_native_paste",
+                return_value=False,
+            ),
+            patch.object(
+                clipboard_image,
+                "read_clipboard_image",
+                return_value=(b"image", ".png"),
+            ),
+            patch.object(
+                clipboard_image,
+                "acquire_packed_image",
+                return_value=(image, True),
+            ),
+            patch.object(clipboard_image, "paste_image") as paste_image,
+        ):
+            result = operator.execute(context)
+
+        self.assertEqual(result, {"FINISHED"})
+        paste_image.assert_called_once_with(
+            context,
+            image,
+            None,
+            location=(10.0, 20.0),
+            subdivisions=0,
+            import_as="REFERENCE",
+            unshaded=False,
+            thickness=0.0,
         )
 
     def test_image_plane_requires_object_mode(self):

@@ -8,6 +8,7 @@ import bpy
 CLIPBOARD_HASH_PROPERTY = "o_clipboard_sha256"
 CLIPBOARD_TEXTURE_PROPERTY = "o_clipboard_texture"
 DEFAULT_STENCIL_SIZE = 256.0
+NODE_HEADER_HEIGHT = 20.0
 NODE_TYPES = {
     "CompositorNodeTree": "CompositorNodeImage",
     "ShaderNodeTree": "ShaderNodeTexImage",
@@ -112,20 +113,24 @@ def paste_image(
     import_as="REFERENCE",
     unshaded=False,
     thickness=0.0,
+    location=None,
 ):
     target = target_for_context(context)
     if target == "PLANE":
+        if location is None:
+            location = paste_location(context, event)
         if import_as == "REFERENCE":
-            return add_reference_image(context, image)
+            return add_reference_image(context, image, location=location)
         return add_image_plane(
             context,
             image,
+            location=location,
             subdivisions=subdivisions,
             unshaded=unshaded,
             thickness=thickness,
         )
     if target == "NODE":
-        return add_image_node(context, image, event)
+        return add_image_node(context, image, event, location=location)
     if target == "TOOL_TEXTURE":
         return set_tool_texture(context, image)
     raise PasteTargetError("Paste images from a 3D View or Node Editor")
@@ -137,6 +142,7 @@ def add_image_plane(
     subdivisions=0,
     unshaded=False,
     thickness=0.0,
+    location=None,
 ):
     if getattr(context, "mode", "OBJECT") != "OBJECT":
         raise PasteTargetError("Switch to Object Mode before pasting an image plane")
@@ -192,12 +198,12 @@ def add_image_plane(
 
     plane = bpy.data.objects.new(image.name, mesh)
     context.collection.objects.link(plane)
-    _place_in_view(context, plane)
+    _place_in_view(context, plane, location)
     _select_only(context, plane)
     return plane
 
 
-def add_reference_image(context, image):
+def add_reference_image(context, image, location=None):
     if getattr(context, "mode", "OBJECT") != "OBJECT":
         raise PasteTargetError(
             "Switch to Object Mode before pasting a reference image"
@@ -212,13 +218,15 @@ def add_reference_image(context, image):
     reference.data = image
     reference.empty_display_size = 2.0
     context.collection.objects.link(reference)
-    _place_in_view(context, reference)
+    _place_in_view(context, reference, location)
     _select_only(context, reference)
     return reference
 
 
-def _place_in_view(context, target_object):
-    target_object.location = context.scene.cursor.location
+def _place_in_view(context, target_object, location=None):
+    if location is None:
+        location = context.scene.cursor.location
+    target_object.location = location
     region_data = getattr(context, "region_data", None)
     if region_data is not None:
         target_object.rotation_euler = region_data.view_rotation.to_euler()
@@ -480,7 +488,7 @@ def _select_only(context, plane):
     context.view_layer.objects.active = plane
 
 
-def add_image_node(context, image, event=None):
+def add_image_node(context, image, event=None, location=None):
     space = context.space_data
     node_tree = getattr(space, "edit_tree", None)
     if node_tree is None:
@@ -494,7 +502,9 @@ def add_image_node(context, image, event=None):
 
     node = node_tree.nodes.new(node_type)
     _assign_node_image(node, image)
-    node.location = _node_location(context, event)
+    if location is None:
+        location = _node_location(context, event)
+    node.location = location
     _select_only_node(node_tree, node)
     return node
 
@@ -533,15 +543,50 @@ def _node_location(context, event):
         region = getattr(context, "region", None)
         view2d = getattr(region, "view2d", None)
         if view2d is not None:
-            return view2d.region_to_view(
+            view_x, view_y = view2d.region_to_view(
                 event.mouse_region_x,
                 event.mouse_region_y,
+            )
+            system = getattr(getattr(context, "preferences", None), "system", None)
+            ui_scale = float(getattr(system, "ui_scale", 1.0) or 1.0)
+            return (
+                (view_x - NODE_HEADER_HEIGHT * 1.5) / ui_scale,
+                (view_y + NODE_HEADER_HEIGHT * 0.5) / ui_scale,
             )
 
     cursor_location = getattr(context.space_data, "cursor_location", None)
     if cursor_location is not None:
         return cursor_location
     return (0.0, 0.0)
+
+
+def paste_location(context, event=None):
+    target = target_for_context(context)
+    if target == "PLANE":
+        return _view3d_location(context, event)
+    if target == "NODE":
+        return _node_location(context, event)
+    return None
+
+
+def _view3d_location(context, event=None):
+    cursor_location = context.scene.cursor.location
+    if event is None:
+        return cursor_location.copy()
+
+    region = getattr(context, "region", None)
+    region_data = getattr(context, "region_data", None)
+    if region is None or region_data is None:
+        return cursor_location.copy()
+
+    from bpy_extras.view3d_utils import region_2d_to_location_3d
+
+    return region_2d_to_location_3d(
+        region,
+        region_data,
+        (event.mouse_region_x, event.mouse_region_y),
+        cursor_location,
+    )
 
 
 def _select_only_node(node_tree, node):

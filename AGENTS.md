@@ -1,54 +1,93 @@
-# OmooLab Startup
+# Blender Startup 开发约定
 
-`O Startup` 是 OmooLab 的 Blender Application Template：提供版本化的 `startup.blend`、
-`Refined Industry Compatible` Keymap，以及仅在模板激活期间加载的公共 Python 功能。
-模板不替换 Blender 默认配置目录中的 `config/startup.blend`，也不以 Extension 形式安装。
+## 总则
 
-## 总规范
+- 说明性内容（提交说明、文档、注释、Mermaid 等）以中文为主，专有名词和约定俗成的表达可使用英文
+- `README.md` 面向最终用户，只说明产品定位、安装方法和功能用法；构建机制与实现细节保留在本文件或代码中
+- 修改代码、构建方式或用户可见行为后，同步更新相关文档和测试，确保描述与实现一致
+- 优先选择依赖少、直接、易验证的实现；保留工作区中与当前任务无关的已有改动
 
-- 说明性内容（例如提交说明、文档、注释、mermaid），以中文为主，专有名词、约定俗称可用英文
+## 项目与模板命名
 
-## 构建与测试
-
-- 使用 Git Bash 执行命令；环境由 `uv` 管理，`pyproject.toml` 无运行依赖
-
-```bash
-uv sync
-uv run python -m unittest discover -s tests -v
-uv run python pack.py
-```
-
-- 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，例如 `Startup.v0.2.20.b45.zip`
-- 目前构建目标为 `b45`（Blender 4.5+）与 `b52`（Blender 5.2+）
+- 项目和发行包统一称为 `Blender Startup`，它可以包含多个 Blender Application Template
+- 当前提供的 Application Template 称为 `O General`，内部目录与命令行 ID 固定为 `O_General`
+- 不要把项目名 `Blender Startup`、模板显示名 `O General` 和模板 ID `O_General` 混用
+- 构建目标使用 `b<major><minor>` 表示最低适用 Blender 版本，如 `b45` 表示 Blender 4.5+
+- 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v0.2.20.b45.zip`
+- 当前构建目标为 `b45`（Blender 4.5+）和 `b52`（Blender 5.2+）
 
 ## 项目结构
 
-- `src/startup/` 只包含所有构建目标共用的运行时代码，`__init__.py` 是入口
-- 每个功能对应一个含 `__init__.py` 的独立目录，暴露 `register()` / `unregister()`；入口按 `FEATURE_MODULE_NAMES` 顺序注册，删除整个功能目录后入口会跳过该功能，其余功能仍可注册
-- 功能目录内部可继续按职责拆分多个 Python 文件，例如 `camera_bookmark/` 拆出 `layout.py`、`preview.py`、`state.py`
-- `template/` 保存构建素材：`splash.png` 为所有版本共用；`startup`、`userpref`、`keyconfig` 通过 `b<major><minor>` 后缀区分 Blender 版本
-- 新增构建目标：在 `template/` 下提供同 `b<major><minor>` 后缀的三个文件（`startup`、`userpref`、`keyconfig`），重新运行 `pack.py` 即自动产出对应 ZIP；缺少任一文件时构建失败
+```text
+.
+├── README.md                    # 用户入口、安装方法与功能用法
+├── pack.py                      # 发现构建目标并生成 Application Template ZIP
+├── pyproject.toml               # 项目版本与 uv 环境配置
+├── src/startup/
+│   ├── __init__.py              # 模板运行时入口与功能注册
+│   ├── camera_bookmark/         # Camera Bookmark
+│   ├── clipboard_image/         # 剪贴板图片粘贴
+│   └── toggle_phantom/          # Toggle Phantom
+├── template/
+│   ├── splash.png               # 所有构建目标共用的启动图
+│   ├── startup.b45.blend        # 按 Blender 版本区分的 Startup File
+│   ├── userpref.b45.blend       # 按 Blender 版本区分的 Preferences
+│   └── keyconfig.b45.py         # 按 Blender 版本区分的 Keymap
+└── tests/                       # Python 自动化测试
+```
 
-## Markdown 规范
+- `src/startup/` 只放所有构建目标共用的运行时代码，根 `__init__.py` 是唯一入口
+- 每项功能使用独立目录并暴露 `register()` / `unregister()`；入口按 `FEATURE_MODULE_NAMES` 顺序注册，按相反顺序注销
+- 功能目录不存在时入口应跳过该功能，不影响其余功能注册；新增、删除或重命名功能时同步更新入口和测试
+- 功能内部按职责拆分文件，例如 `camera_bookmark/layout.py`、`preview.py`、`state.py`，不要把无关职责堆进 `__init__.py`
+- `template/` 保存构建素材；同一目标必须同时提供 `startup.b<major><minor>.blend`、`userpref.b<major><minor>.blend` 和 `keyconfig.b<major><minor>.py`
+- 新增构建目标只需补齐同后缀的三项素材并运行 `pack.py`；缺少任一文件时必须构建失败，不生成不完整产物
 
-- 不使用`---`分割器
-- `# Heading` 一级标题仅用于开头
-- mermaid 节点名用英文字符
+## 常见命令
+
+优先在项目根目录使用 Git Bash；环境由 `uv` 管理，`pyproject.toml` 没有运行时依赖。
+
+```bash
+# 同步开发环境
+uv sync
+
+# 运行全部测试
+uv run python -m unittest discover -s tests -v
+
+# 构建所有版本到 dist/
+uv run python pack.py
+```
+
+修改运行时代码、模板发现逻辑或打包规则后，至少运行全部测试；修改构建相关内容后还要实际执行一次打包。
+
+## 命名规范
+
+- 变量、函数和 Docstring 使用英文；同一概念在代码、测试和文档中使用统一表达
+- Python 类使用大驼峰，不添加项目名前缀
+- Operator 使用动宾结构，如 `AddCameraBookmark`；Menu、Panel、AddonPreferences、PropertyGroup 使用实际类型后缀，如 `CameraBookmarksPieMenu`、`CameraBookmarksPanel`
+- 项目在 Blender API 中使用缩写 `O`（取自 OmooLab），`tests/test_addon.py` 负责校验该约定
+- Operator `bl_idname` 使用 `o.` 前缀和下划线小写，如 `o.add_camera_bookmark`
+- Menu `bl_idname` 使用 `O_MT_` 前缀，如 `O_MT_camera_bookmarks_pie`
+- Panel `bl_idname` 使用 `O_PT_` 前缀，如 `O_PT_camera_bookmarks`
+- 挂载到公共 Blender RNA 类型的自定义 Property 使用 `o_` 前缀，如 `o_camera_bookmarks`、`o_identifier`、`o_import_as`
+- Operator 自身 Property 不加项目名前缀，直接使用业务名称
 
 ## 代码规范
 
-- 避免嵌套结构
-- 特殊的、非常规的需要写注释
-- 变量、函数名、Docstring 用全英文
-- 同一事物用统一表达
-- 使用的依赖越少越好
-- 选用简单直接的方式实现
-- 代码、执行方式改变，调整已有的文档、计划，而非新建
+- 避免不必要的嵌套，优先使用提前返回和小而明确的函数
+- 只为特殊、非常规或存在兼容性原因的实现写注释，不复述代码本身
+- 使用最少依赖和最直接的实现，不为尚未出现的需求提前增加抽象层
+- 删除功能时同时删除失效的参数、分支、测试和文档，不保留没有实际消费者的兼容代码
+- 新增或修改 Blender 类型时，同步检查注册顺序、逆序注销和重复注册行为，并补充对应测试
+- Application Template 功能只在模板激活期间注册；切换到其他模板后必须完整注销
+- 不替换 Blender 默认配置目录中的 `config/startup.blend`，也不把本项目改造成 Extension 安装流程
+- Keymap Preset 可以同步到用户脚本目录，但不得未经用户选择就切换其当前 Keymap
+- 版本素材必须严格匹配目标后缀，不允许在不同 Blender 目标间隐式复用 `startup.blend`、`userpref.blend` 或 Keymap
 
-## Blender 开发规范
+## 文档与 Markdown 规范
 
-- 用`b45`来表示适用blender版本。比如`Startup.v0.1.0.b45.zip`
-- Operator、Menu、Panel、AddonPreferences... Class 用大驼峰命名，不加任何前缀。Operator 动宾结构，比如`AddCameraBookmark`；Menu、Panel 以它们本身为后缀，比如`CameraBookmarksPieMenu`、`CameraBookmarksPanel`
-- 根据项目名提炼项目缩写，作为 bl_idname 和自定义 Property 的前缀以区分其他功能和属性。本项目缩写为`O`（取自`O_General`），`tests/test_addon.py` 会校验该约定
-  - bl_idname 用下划线小写命名：Operator 以`o.`为前缀，比如`o.add_camera_bookmark`；Menu 以`O_MT_`为前缀，比如`O_MT_camera_bookmarks_pie`；Panel 以`O_PT_`为前缀，比如`O_PT_camera_bookmarks`
-  - 自定义 Property 用下划线小写命名，以`o_`为前缀，比如`o_camera_bookmarks`、`o_identifier`、`o_import_as`
+- `README.md` 描述当前可用的 `O General` 模板，但以 `Blender Startup` 作为项目名称
+- README 不包含目录结构、注册机制、原子写入、ZIP 内部布局等开发细节
+- 不使用 `---` 分隔线；一级标题只在文档开头使用一次
+- Mermaid 节点 ID 使用英文字符，节点显示文本可以使用中文
+- 文档只描述当前已实现的行为；版本范围、快捷键、菜单名称、默认值和文件名必须能从代码、素材或测试中验证

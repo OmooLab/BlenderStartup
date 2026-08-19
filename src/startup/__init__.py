@@ -13,6 +13,8 @@ KEYCONFIG_FILE = Path(__file__).with_name("keyconfig.py")
 KEYCONFIG_PRESET_FILE = "Refined_Industry_Compatible.py"
 TEMPLATE_DIRECTORY = Path(__file__).parent
 FEATURE_MODULE_NAMES = (
+    "extension_repo",
+    "remote_asset_library",
     "clipboard_image",
     "toggle_phantom",
     "camera_bookmark",

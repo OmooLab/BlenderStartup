@@ -71,6 +71,7 @@ class CameraBookmarksTest(unittest.TestCase):
             CollectionProperty=lambda **options: options,
             EnumProperty=lambda **options: options,
             FloatProperty=lambda **options: options,
+            FloatVectorProperty=lambda **options: options,
             IntProperty=lambda **options: options,
             PointerProperty=lambda **options: options,
             StringProperty=lambda **options: options,

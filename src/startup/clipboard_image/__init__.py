@@ -6,6 +6,7 @@ from .actions import (
     PasteTargetError,
     acquire_packed_image,
     paste_image,
+    paste_location,
     target_for_context,
 )
 from .clipboard import (
@@ -89,6 +90,14 @@ class PasteClipboardImage(bpy.types.Operator):
     o_paste_target: bpy.props.StringProperty(
         options={"HIDDEN", "SKIP_SAVE"},
     )
+    o_location: bpy.props.FloatVectorProperty(
+        size=3,
+        options={"HIDDEN", "SKIP_SAVE"},
+    )
+    o_location_set: bpy.props.BoolProperty(
+        default=False,
+        options={"HIDDEN", "SKIP_SAVE"},
+    )
 
     @classmethod
     def poll(cls, context):
@@ -101,6 +110,11 @@ class PasteClipboardImage(bpy.types.Operator):
 
     def invoke(self, context, event):
         self.o_paste_target = target_for_context(context) or ""
+        location = paste_location(context, event)
+        if location is not None:
+            values = tuple(location)
+            self.o_location = (*values, 0.0)[:3]
+            self.o_location_set = True
         return self._paste(context, event)
 
     def draw(self, _context):
@@ -131,10 +145,16 @@ class PasteClipboardImage(bpy.types.Operator):
         image_reused = False
         try:
             image, image_reused = acquire_packed_image(image_data, suffix)
+            location = None
+            if self.o_location_set:
+                location = self.o_location
+                if self.o_paste_target == "NODE":
+                    location = location[:2]
             paste_image(
                 context,
                 image,
                 event,
+                location=location,
                 subdivisions=self.o_subdivisions,
                 import_as=self.o_import_as,
                 unshaded=self.o_unshaded,

@@ -1,147 +1,78 @@
-# O General
+# Blender Startup
 
-`O General` 是一个 Blender Application Template。它提供版本化的
-`startup.blend`、`Refined Industry Compatible` Keymap，以及只在模板激活期间加载的
-公共 Python 功能。
+Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 `O General` Application Template。它在 Blender 的基础体验上加入了一套全新的快捷方式，以及多项开箱即用的小功能，让常用操作更顺手，也减少重复配置。
 
-模板不会替换 Blender 默认配置目录中的 `config/startup.blend`，也不需要安装或启用
-Extension。
+它以 Application Template 的形式安装，不会覆盖 Blender 原本的启动文件。需要原生 Blender 环境时，仍然可以照常使用默认的 General 模板。
 
-## 安装与使用
+完整的使用方法、快捷键设计与 Blender Default 差异参考见 [Blender Startup 文档](https://docs.omoolab.xyz/blender-startup/)。
 
-根据 Blender 版本选择构建产物：
+## 下载
 
-- Blender 4.5 至 5.1：`startup.v0.2.20.b45.zip`
-- Blender 5.2 及其后续兼容版本：`startup.v0.2.20.b52.zip`
+请根据 Blender 版本选择安装包：
 
-在 Blender 左上角的 Blender 菜单中选择 `Install Application Template...`，安装对应
-ZIP。安装同一模板的新版本时，Blender 会替换已有的 `O_General` 模板目录。
+- Blender 4.5 LTS：`Startup.v0.2.22.b45.zip`
+- Blender 5.2 LTS：`Startup.v0.2.22.b52.zip`
 
-安装后可通过 Splash Screen 或 `File > New > O General` 使用。也可以从命令行
-直接启动：
+## 安装
 
-```bash
-blender --app-template O_General
-```
+1. 下载对应 Blender 版本的 ZIP 安装包，不要解压。
+2. 打开 Blender，点击左上角的 Blender 图标。
+3. 选择 `Install Application Template...`。
+4. 选择刚刚下载的 ZIP 文件并确认安装。
 
-模板首次激活时会把对应版本的 `Refined Industry Compatible` 同步到 Blender 用户的
-`scripts/presets/keyconfig`，使其出现在 Preferences 的 Keymap Preset 选项中，但不会
-自动切换当前 Keymap。模板同时会注册 Python 功能；切换到其他 Application Template
-时会注销这些功能。
+更新 Blender Startup 时，直接安装新版 ZIP 即可替换旧版本。
 
-## 功能
+## 开始使用
 
-- 使用模板自己的 `startup.blend`，与 Blender 默认 Startup File 分离
-- 添加可选的 `Refined Industry Compatible` Keymap Preset
-- Camera View 书签与预览图管理
-- Object Mode 的 `Toggle Phantom`
-- Windows、macOS、Linux 剪贴板图片粘贴：
-  - 3D View Object Mode 中创建 Plane 或 Reference Image
-  - Sculpt、Vertex Paint、Texture Paint 中设置笔刷 Texture
-  - Shader Editor、Compositor、Geometry Nodes 中创建对应图片节点
+安装后，可以通过以下任一方式进入模板：
 
-Camera Bookmark 数据与 packed 预览图保存在当前 `.blend`。在 Camera View 中按
-`Shift + \`` 可打开书签 Pie Menu。
+- 在 Blender 启动画面中选择 `O General`
+- 进入 `File > New > O General`
 
-`Toggle Phantom` 位于 3D View 的 Object Context Menu。启用后，对象在 Solid 模式下
-半透明，并关闭 Camera、Shadow 和可用时的 Raycast Visibility；再次执行会恢复原值。
+进入后即可使用 Blender Startup 提供的工作区、偏好设置、快捷方式和附加功能。
 
-剪贴板图片会先创建临时文件，载入后立即 pack 到当前 `.blend`，再删除临时文件。没有
-可用图片时，原有 `Ctrl+V` 行为会继续执行。复制 Blender 节点、物体等内部数据后，
-原生粘贴会优先于剪贴板中残留的旧图片。
+首次进入模板时，如尚未配置，Blender Startup 会加入 `OmooLab Extensions` 扩展仓库，地址为 `https://extensions.omoolab.xyz/`，并启用启动时检查更新。已有的同地址仓库不会重复添加，只会补充启用启动检查，其他设置保持不变。
 
-macOS 使用系统自带的 AppKit 读取图片，并将其转换为 PNG。Linux 优先使用
-`wl-paste`（Wayland），其次使用 `xclip`（X11）；需要安装 `wl-clipboard` 或 `xclip`。
-macOS 使用 `Cmd+V`，Windows 与 Linux 使用 `Ctrl+V`。
+Blender 5.2 还会加入两个 Remote Asset Library：
 
-## 项目结构
+- `O Essentials`：`https://assets.omoolab.xyz/b52/O_Essentials/`
+- `O Extra`：`https://assets.omoolab.xyz/b52/O_Extra/`
 
-```text
-.
-├── pack.py
-├── pyproject.toml
-├── src/
-│   └── startup/
-│       ├── __init__.py
-│       ├── camera_bookmark/
-│       │   ├── __init__.py
-│       │   ├── layout.py
-│       │   ├── preview.py
-│       │   └── state.py
-│       ├── clipboard_image/
-│       └── toggle_phantom/
-├── template/
-│   ├── splash.png
-│   ├── startup.b45.blend
-│   ├── startup.b52.blend
-│   ├── userpref.b45.blend
-│   ├── userpref.b52.blend
-│   ├── keyconfig.b45.py
-│   └── keyconfig.b52.py
-└── tests/
-```
+这些配置在切换到其他 Application Template 后仍会保留。
 
-`src/startup` 只包含所有构建目标共用的运行时代码。每项功能对应一个包含
-`__init__.py` 的独立目录；删除整个功能目录后，根模块会跳过该功能，其他功能仍可注册。
-Feature Package 内部可以继续按职责拆分多个 Python 文件。
+如需回到 Blender 默认环境，选择 `File > New > General` 即可。
 
-`template` 保存 App Template 的构建
-素材：`splash.png` 为所有版本共用；`startup.b<major><minor>.blend` 和
-`userpref.b<major><minor>.blend`、`keyconfig.b<major><minor>.py` 通过文件名后缀区分
-Blender 版本。
+## 快捷方式
 
-## 构建
+Blender Startup 提供 `Refined Industry Compatible` Keymap。首次进入模板后，它会出现在：
 
-使用 Git Bash：
+`Edit > Preferences > Keymap > Preset`
 
-```bash
-uv sync
-uv run python -m unittest discover -s tests -v
-uv run python pack.py
-```
+选择 `Refined Industry Compatible` 即可启用。该 Keymap 不会自动替换你当前使用的快捷键方案。
 
-`pack.py` 会为每组完整的版本素材生成一个 ZIP。每个 ZIP 都符合 Blender
-`Install Application Template...` 所需的目录结构：
+## 实用功能
 
-```text
-O_General/
-├── __init__.py
-├── startup.blend
-├── userpref.blend
-├── splash.png
-├── keyconfig.py
-├── camera_bookmark/
-│   ├── __init__.py
-│   ├── layout.py
-│   ├── preview.py
-│   └── state.py
-├── clipboard_image/
-└── toggle_phantom/
-```
+### Camera Bookmark
 
-构建时，公共脚本和 `splash.png` 会写入所有 ZIP；带版本后缀的 Startup File、Preferences
-和 Keymap 会分别映射为 `startup.blend`、`userpref.blend`、`keyconfig.py`。模板注册时再把 `keyconfig.py` 同步为用户
-脚本目录中的 `presets/keyconfig/Refined_Industry_Compatible.py`，但不执行
-`bpy.utils.keyconfig_set()`，因此不会改变当前 Keymap。ZIP 内显式保留
-`O_General/` 根目录条目，以便 Blender 安装器正确识别并替换同 ID 的已有模板。
+在 Camera View 中按 `Shift + \`` 打开书签菜单。你可以保存、更新和恢复相机视角，书签及其预览图会跟随当前 `.blend` 文件保存。
 
-## 添加构建目标
+### Toggle Phantom
 
-在 `template` 下提供带相同 `b<major><minor>` 后缀的三个文件。例如 Blender 5.3 使用
-`b53`：
+在 Object Mode 中打开右键菜单，选择 `Toggle Phantom`，可快速将对象切换为便于观察和穿透选择的半透明状态。再次执行即可恢复。
 
-```text
-template/startup.b53.blend
-template/userpref.b53.blend
-template/keyconfig.b53.py
-```
+### 粘贴剪贴板图片
 
-再次运行 `uv run python pack.py` 即会自动增加对应版本的模板 ZIP。缺少任一文件时构建
-会失败，避免生成不完整模板。共用的 `template/splash.png` 会进入所有版本的 ZIP。
+复制一张图片后，在支持的编辑器中直接粘贴：
 
-## Keymap 同步
+- 3D View 的 Object Mode：创建 Plane 或 Reference Image
+- Sculpt、Vertex Paint、Texture Paint：设为笔刷 Texture
+- Shader Editor、Compositor、Geometry Nodes：创建对应的图片节点
 
-模板激活时逐字节比较模板携带的 Keymap 与用户脚本目录中的同名 Preset。文件缺失或
-内容不同时进行原子替换，确保模板更新后 Keymap 选项同步更新；内容相同时不写入。
-模板注销时保留已同步的 Preset，使用户选择它之后，下次启动 Blender 仍能在加载模板
-脚本之前恢复该 Keymap。
+Windows 与 Linux 使用 `Ctrl + V`，macOS 使用 `Cmd + V`。粘贴的图片会打包进当前 `.blend`，保存或分享工程时不容易丢失素材。
+在 3D View 中，图片会按鼠标所在的屏幕位置放置，并使用当前 3D Cursor 作为视图深度基准；在 Node Editor 中，图片节点会创建在鼠标位置。
+
+Linux 用户需安装 `wl-clipboard`（Wayland）或 `xclip`（X11）才能读取剪贴板图片。
+
+## 卸载
+
+打开 Blender 的 Application Template 安装目录，删除 `O_General` 文件夹即可。Blender Startup 不会修改或删除 Blender 默认的 General 模板。

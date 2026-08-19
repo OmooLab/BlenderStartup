@@ -117,6 +117,51 @@ class FakeKeyMaps:
         return keymap
 
 
+class FakeExtensionRepos:
+    def __init__(self):
+        self.items = []
+
+    def __iter__(self):
+        return iter(self.items)
+
+    def __contains__(self, repo):
+        return repo in self.items
+
+    def new(self, *, name, module, custom_directory, remote_url, source):
+        repo = SimpleNamespace(
+            name=name,
+            module=module,
+            custom_directory=custom_directory,
+            remote_url=remote_url,
+            source=source,
+            enabled=True,
+            use_sync_on_startup=False,
+        )
+        self.items.append(repo)
+        return repo
+
+    def remove(self, repo):
+        self.items.remove(repo)
+
+
+class FakeAssetLibraries:
+    def __init__(self):
+        self.items = []
+
+    def __iter__(self):
+        return iter(self.items)
+
+    def add_remote(self, *, name, remote_url):
+        library = SimpleNamespace(
+            name=name,
+            remote_url=remote_url,
+            enabled=True,
+            use_remote_url=True,
+        )
+        self.items.append(library)
+        return library
+
+
 class TemplateRegistrationTest(unittest.TestCase):
     def setUp(self):
         FakeMenu.callbacks = []
@@ -155,6 +200,25 @@ class TemplateRegistrationTest(unittest.TestCase):
     def test_registers_template_features(self):
         self.addon.register()
 
+        extension_repos = (
+            self.fake_bpy.context.preferences.extensions.repos.items
+        )
+        self.assertEqual(len(extension_repos), 1)
+        self.assertEqual(
+            extension_repos[0].remote_url,
+            "https://extensions.omoolab.xyz/",
+        )
+        self.assertTrue(extension_repos[0].use_sync_on_startup)
+        asset_libraries = (
+            self.fake_bpy.context.preferences.filepaths.asset_libraries.items
+        )
+        self.assertEqual(
+            [library.remote_url for library in asset_libraries],
+            [
+                "https://assets.omoolab.xyz/b52/O_Essentials/",
+                "https://assets.omoolab.xyz/b52/O_Extra/",
+            ],
+        )
         self.assertEqual(FakeMenu.callbacks, [])
         self.assertEqual(len(self.fake_bpy.utils.registered_classes), 11)
         self.assertEqual(len(FakeObjectContextMenu.callbacks), 1)
@@ -180,9 +244,57 @@ class TemplateRegistrationTest(unittest.TestCase):
             "keyconfig source",
         )
         self.addon.unregister()
+        self.assertEqual(len(extension_repos), 1)
+        self.assertEqual(len(asset_libraries), 2)
         self.assertEqual(self.fake_bpy.utils.registered_classes, [])
         self.assertEqual(FakeObjectContextMenu.callbacks, [])
         self.assertEqual(FakeViewPie.callbacks, [])
+
+    def test_enables_startup_checks_without_duplicating_existing_repo(self):
+        repos = self.fake_bpy.context.preferences.extensions.repos
+        existing_repo = repos.new(
+            name="Existing OmooLab Repo",
+            module="custom_omoolab",
+            custom_directory="",
+            remote_url="https://extensions.omoolab.xyz",
+            source="USER",
+        )
+        existing_repo.enabled = False
+        existing_repo.use_sync_on_startup = False
+
+        self.addon.register()
+
+        self.assertEqual(len(repos.items), 1)
+        self.assertFalse(existing_repo.enabled)
+        self.assertTrue(existing_repo.use_sync_on_startup)
+
+        self.addon.unregister()
+
+        self.assertEqual(repos.items, [existing_repo])
+        self.assertFalse(existing_repo.enabled)
+        self.assertTrue(existing_repo.use_sync_on_startup)
+
+    def test_does_not_duplicate_existing_remote_asset_library(self):
+        libraries = (
+            self.fake_bpy.context.preferences.filepaths.asset_libraries
+        )
+        existing_library = libraries.add_remote(
+            name="Existing Essentials",
+            remote_url="https://assets.omoolab.xyz/b52/O_Essentials",
+        )
+        existing_library.enabled = False
+
+        self.addon.register()
+
+        self.assertEqual(len(libraries.items), 2)
+        self.assertEqual(libraries.items[0], existing_library)
+        self.assertFalse(existing_library.enabled)
+
+        self.addon.unregister()
+        self.addon.register()
+
+        self.assertEqual(len(libraries.items), 2)
+        self.assertFalse(existing_library.enabled)
 
     def test_loads_only_feature_packages_present_on_disk(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -399,13 +511,26 @@ class TemplateRegistrationTest(unittest.TestCase):
     @staticmethod
     def create_fake_bpy():
         fake_bpy = ModuleType("bpy")
-        fake_bpy.app = SimpleNamespace(version=(5, 1, 0))
+        fake_bpy.app = SimpleNamespace(version=(5, 2, 0))
         fake_bpy.utils = FakeUtils()
+        asset_libraries = FakeAssetLibraries()
+        fake_bpy.ops = SimpleNamespace(
+            preferences=SimpleNamespace(
+                asset_library_add=lambda *, type, name, remote_url: (
+                    asset_libraries.add_remote(
+                        name=name,
+                        remote_url=remote_url,
+                    )
+                    and {"FINISHED"}
+                ),
+            ),
+        )
         fake_bpy.props = SimpleNamespace(
             BoolProperty=lambda **options: options,
             CollectionProperty=lambda **options: options,
             EnumProperty=lambda **options: options,
             FloatProperty=lambda **options: options,
+            FloatVectorProperty=lambda **options: options,
             IntProperty=lambda **options: options,
             PointerProperty=lambda **options: options,
             StringProperty=lambda **options: options,
@@ -423,6 +548,10 @@ class TemplateRegistrationTest(unittest.TestCase):
             VIEW3D_MT_object_context_menu=FakeObjectContextMenu,
         )
         fake_bpy.context = SimpleNamespace(
+            preferences=SimpleNamespace(
+                extensions=SimpleNamespace(repos=FakeExtensionRepos()),
+                filepaths=SimpleNamespace(asset_libraries=asset_libraries),
+            ),
             window_manager=SimpleNamespace(
                 keyconfigs=SimpleNamespace(
                     active=SimpleNamespace(name="Blender"),

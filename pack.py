@@ -148,7 +148,7 @@ def read_project_version():
 def archive_name(bundle):
     project_version = read_project_version()
     target_id = f"b{bundle.version[0]}{bundle.version[1]}"
-    return f"startup.v{project_version}.{target_id}.zip"
+    return f"Startup.v{project_version}.{target_id}.zip"
 
 
 def build_template(bundle, output_directory=DEFAULT_OUTPUT_DIRECTORY):
