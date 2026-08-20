@@ -21,6 +21,8 @@
 ```text
 .
 ├── README.md                    # 用户入口、安装方法与功能用法
+├── mkdocs.yml                   # MkDocs Material 与 Mike 配置
+├── docs/                        # 产品文档、使用说明与快捷键参考
 ├── pack.py                      # 发现构建目标并生成 Application Template ZIP
 ├── pyproject.toml               # 项目版本与 uv 环境配置
 ├── src/startup/
@@ -56,9 +58,20 @@ uv run python -m unittest discover -s tests -v
 
 # 构建所有版本到 dist/
 uv run python pack.py
+
+# 构建文档并把警告视为错误
+uv run --group docs mkdocs build --strict
+
+# 生成相对 Blender Default 的快捷键差异参考
+uv run python tools/generate_keymap_reference.py
+
+# 发布当前项目版本，并让 latest 指向它
+uv run --group docs mike deploy --update-aliases <版本号> latest
 ```
 
 修改运行时代码、模板发现逻辑或打包规则后，至少运行全部测试；修改构建相关内容后还要实际执行一次打包。
+
+修改文档、Keymap 或文档配置后，运行严格文档构建；修改 Keymap 后还要重新生成对应版本的差异参考。快捷键差异只与同版本 `Blender Default` 比较，不以 `Industry Compatible` 为比较基线。
 
 ## 命名规范
 
@@ -91,3 +104,4 @@ uv run python pack.py
 - 不使用 `---` 分隔线；一级标题只在文档开头使用一次
 - Mermaid 节点 ID 使用英文字符，节点显示文本可以使用中文
 - 文档只描述当前已实现的行为；版本范围、快捷键、菜单名称、默认值和文件名必须能从代码、素材或测试中验证
+- `docs/reference/keymap-b45.md` 和 `docs/reference/keymap-b52.md` 由 `tools/generate_keymap_reference.py` 生成，不手工修改

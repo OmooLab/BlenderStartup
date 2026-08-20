@@ -1,0 +1,105 @@
+site_name: Blender Startup
+site_url: https://docs.omoolab.xyz/blender-startup/
+site_author: OmooLab
+site_description: OmooLab 为 Blender 打造的启动方案与 Refined Industry Compatible 快捷键文档。
+
+repo_name: OmooLab/BlenderStartup
+repo_url: https://github.com/OmooLab/BlenderStartup
+
+nav:
+  - 首页: index.md
+  - 快速开始:
+      - 安装与启用: getting-started/install.md
+      - 五分钟上手: getting-started/first-five-minutes.md
+      - 更新与卸载: getting-started/update-and-uninstall.md
+  - 快捷键:
+      - 方案概览: keymap/index.md
+      - 主要改动: keymap/changes.md
+      - 完整参考: reference/index.md
+  - 实用功能:
+      - 功能概览: features/index.md
+      - Camera Bookmark: features/camera-bookmark.md
+      - 粘贴剪贴板图片: features/clipboard-image.md
+      - Toggle Phantom: features/toggle-phantom.md
+      - OmooLab 在线内容: features/online-content.md
+  - 配置与版本:
+      - O General 与版本差异: configuration/o-general.md
+
+theme:
+  name: material
+  language: zh
+  font:
+    text: Open Sans
+    code: Cascadia Code
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/brightness-auto
+        name: 跟随系统主题
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色主题
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色主题
+  features:
+    - announce.dismiss
+    - content.code.copy
+    - content.tabs.link
+    - header.autohide
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+
+extra:
+  version:
+    provider: mike
+    alias: true
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2026 OmooLab
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true

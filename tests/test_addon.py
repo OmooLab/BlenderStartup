@@ -157,6 +157,7 @@ class FakeAssetLibraries:
             remote_url=remote_url,
             enabled=True,
             use_remote_url=True,
+            import_method="PACK",
         )
         self.items.append(library)
         return library
@@ -217,7 +218,12 @@ class TemplateRegistrationTest(unittest.TestCase):
             [
                 "https://assets.omoolab.xyz/b52/O_Essentials/",
                 "https://assets.omoolab.xyz/b52/O_Extra/",
+                "https://assets.omoolab.xyz/stanford-3d-scanning/",
             ],
+        )
+        self.assertEqual(
+            [library.import_method for library in asset_libraries],
+            ["PACK", "PACK", "APPEND"],
         )
         self.assertEqual(FakeMenu.callbacks, [])
         self.assertEqual(len(self.fake_bpy.utils.registered_classes), 11)
@@ -245,7 +251,7 @@ class TemplateRegistrationTest(unittest.TestCase):
         )
         self.addon.unregister()
         self.assertEqual(len(extension_repos), 1)
-        self.assertEqual(len(asset_libraries), 2)
+        self.assertEqual(len(asset_libraries), 3)
         self.assertEqual(self.fake_bpy.utils.registered_classes, [])
         self.assertEqual(FakeObjectContextMenu.callbacks, [])
         self.assertEqual(FakeViewPie.callbacks, [])
@@ -286,15 +292,30 @@ class TemplateRegistrationTest(unittest.TestCase):
 
         self.addon.register()
 
-        self.assertEqual(len(libraries.items), 2)
+        self.assertEqual(len(libraries.items), 3)
         self.assertEqual(libraries.items[0], existing_library)
         self.assertFalse(existing_library.enabled)
 
         self.addon.unregister()
         self.addon.register()
 
-        self.assertEqual(len(libraries.items), 2)
+        self.assertEqual(len(libraries.items), 3)
         self.assertFalse(existing_library.enabled)
+
+    def test_corrects_existing_stanford_library_to_append(self):
+        libraries = (
+            self.fake_bpy.context.preferences.filepaths.asset_libraries
+        )
+        existing_library = libraries.add_remote(
+            name="Existing Stanford Library",
+            remote_url="https://assets.omoolab.xyz/stanford-3d-scanning",
+        )
+        self.assertEqual(existing_library.import_method, "PACK")
+
+        self.addon.register()
+
+        self.assertEqual(len(libraries.items), 3)
+        self.assertEqual(existing_library.import_method, "APPEND")
 
     def test_loads_only_feature_packages_present_on_disk(self):
         with tempfile.TemporaryDirectory() as temporary_directory:

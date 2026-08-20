@@ -33,10 +33,11 @@ Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 
 
 首次进入模板时，如尚未配置，Blender Startup 会加入 `OmooLab Extensions` 扩展仓库，地址为 `https://extensions.omoolab.xyz/`，并启用启动时检查更新。已有的同地址仓库不会重复添加，只会补充启用启动检查，其他设置保持不变。
 
-Blender 5.2 还会加入两个 Remote Asset Library：
+Blender 5.2 还会加入三个 Remote Asset Library：
 
 - `O Essentials`：`https://assets.omoolab.xyz/b52/O_Essentials/`
 - `O Extra`：`https://assets.omoolab.xyz/b52/O_Extra/`
+- `Stanford 3D Scanning`：`https://assets.omoolab.xyz/stanford-3d-scanning/`，导入方式为 Append
 
 这些配置在切换到其他 Application Template 后仍会保留。
 
