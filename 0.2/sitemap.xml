@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/configuration/omoo-lab/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/configuration/omoo-lab/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/configuration/omoo-lab/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/features/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/features/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/features/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/features/camera-bookmark/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/features/camera-bookmark/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/features/camera-bookmark/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/features/online-content/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/features/online-content/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/features/online-content/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/features/toggle-phantom/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/features/toggle-phantom/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/features/toggle-phantom/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/getting-started/first-five-minutes/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/getting-started/first-five-minutes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/getting-started/first-five-minutes/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/getting-started/install/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/getting-started/install/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/getting-started/install/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/getting-started/update-and-uninstall/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/getting-started/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/getting-started/update-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/keymap/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/keymap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/keymap/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/keymap/changes/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/keymap/changes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/keymap/changes/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/reference/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/reference/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/reference/keymap-b45/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/reference/keymap-b45/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/reference/keymap-b45/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/reference/keymap-b52/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2/reference/keymap-b52/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2en/reference/keymap-b52/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/configuration/omoo-lab/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/configuration/omoo-lab/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2configuration/omoo-lab/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/features/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/features/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2features/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/features/camera-bookmark/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/features/camera-bookmark/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2features/camera-bookmark/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/features/online-content/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/features/online-content/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2features/online-content/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/features/toggle-phantom/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/features/toggle-phantom/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2features/toggle-phantom/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/first-five-minutes/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/first-five-minutes/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2getting-started/first-five-minutes/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/install/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/install/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2getting-started/install/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/update-and-uninstall/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/getting-started/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2getting-started/update-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/keymap/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/keymap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2keymap/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/keymap/changes/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/keymap/changes/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2keymap/changes/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/reference/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/reference/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2reference/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/reference/keymap-b45/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/reference/keymap-b45/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2reference/keymap-b45/"/>
+    </url>
+    <url>
+        <loc>https://docs.omoolab.xyz/blender-startup/0.2/en/reference/keymap-b52/</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.omoolab.xyz/blender-startup/0.2/en/reference/keymap-b52/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.omoolab.xyz/blender-startup/0.2reference/keymap-b52/"/>
+    </url>
+</urlset>
