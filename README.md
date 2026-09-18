@@ -8,7 +8,7 @@ Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 
 
 ## 下载
 
-请根据 Blender 版本选择安装包，文件名格式为 `Startup.v<版本号>.b<目标>.zip`：
+在 [Releases](https://github.com/OmooLab/BlenderStartup/releases) 页面下载最新安装包，根据 Blender 版本选择，文件名格式为 `Startup.v<版本号>.b<目标>.zip`：
 
 - Blender 4.5 LTS：`Startup.v<版本号>.b45.zip`
 - Blender 5.2 LTS：`Startup.v<版本号>.b52.zip`

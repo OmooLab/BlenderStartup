@@ -52,16 +52,19 @@ class DocsTest(unittest.TestCase):
 
 
 class DocumentationCommandTest(unittest.TestCase):
-    def test_build_treats_warnings_as_errors(self):
+    def test_build_writes_the_multi_version_site_locally(self):
+        version = project_config()["project"]["version"]
+
         self.assertEqual(
             documentation_command("build"),
-            ("mkdocs", "build", "--strict"),
+            ("mike", "deploy", "--update-aliases", version, "latest"),
         )
+        self.assertNotIn("--push", documentation_command("build"))
 
-    def test_dev_previews_the_site(self):
+    def test_dev_serves_the_multi_version_site(self):
         self.assertEqual(
             documentation_command("dev"),
-            ("mkdocs", "serve"),
+            ("mike", "serve"),
         )
 
     def test_deploy_publishes_the_project_version_as_latest(self):
@@ -69,7 +72,7 @@ class DocumentationCommandTest(unittest.TestCase):
 
         self.assertEqual(
             documentation_command("deploy"),
-            ("mike", "deploy", "--update-aliases", version, "latest"),
+            ("mike", "deploy", "--update-aliases", "--push", version, "latest"),
         )
 
     def test_project_exposes_the_pack_and_docs_commands(self):
