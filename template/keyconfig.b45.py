@@ -714,6 +714,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("anim.channels_select_all",
@@ -881,6 +882,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("armature.select_all",
@@ -1298,6 +1300,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("clip.select_all",
@@ -1500,6 +1503,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("clip.graph_select_all_markers",
@@ -1619,6 +1623,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("curve.select_all",
@@ -1836,6 +1841,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("curves.select_all",
@@ -2062,6 +2068,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("action.select_all",
@@ -2570,6 +2577,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("file.select_all",
@@ -2852,6 +2860,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("graph.select_all",
@@ -3808,6 +3817,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("grease_pencil.select_all",
@@ -4787,6 +4797,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("info.select_all",
@@ -4897,6 +4908,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("lattice.select_all",
@@ -5037,6 +5049,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("marker.select_all",
@@ -5138,6 +5151,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("mask.select_all",
@@ -5450,6 +5464,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("mesh.select_all",
@@ -5825,6 +5840,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("mball.select_all",
@@ -5946,6 +5962,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("nla.select_all",
@@ -6029,8 +6046,8 @@ keyconfig_data = \
     ("nla.swap", {"type": 'F', "value": 'PRESS', "alt": True}, None),
     ("nla.move_up", {"type": 'PAGE_UP', "value": 'PRESS', "repeat": True}, None),
     ("nla.move_down", {"type": 'PAGE_DOWN', "value": 'PRESS', "repeat": True}, None),
-    ("nla.apply_scale", {"type": 'A', "value": 'PRESS', "shift": True, "ctrl": True}, None),
-    ("nla.clear_scale", {"type": 'R', "value": 'PRESS', "alt": True}, None),
+    ("nla.apply_scale", {"type": 'A', "value": 'PRESS', "alt": True}, None),
+    ("nla.clear_scale", {"type": 'E', "value": 'PRESS', "alt": True}, None),
     ("wm.call_menu_pie",
      {"type": 'S', "value": 'PRESS', "shift": True},
      {"properties":
@@ -6065,7 +6082,6 @@ keyconfig_data = \
      {"properties":
       [("mode", 'TIME_SCALE'),
        ],
-    "active":False,
       },
      ),
     ("marker.add", {"type": 'M', "value": 'PRESS'}, None),
@@ -6106,7 +6122,9 @@ keyconfig_data = \
  ("Node Editor",
   {"space_type": 'NODE_EDITOR', "region_type": 'WINDOW'},
   {"items":
-   [("node.select",
+   [("anyimage.track_native_copy", {"type": 'C', "value": 'PRESS', "ctrl": True}, None),
+    ("anyimage.paste_clipboard_image", {"type": 'V', "value": 'PRESS', "ctrl": True}, None),
+    ("node.select",
      {"type": 'LEFTMOUSE', "value": 'CLICK'},
      {"properties":
       [("select_passthrough", True),
@@ -6338,6 +6356,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("node.select_all",
@@ -6703,6 +6722,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("object.select_all",
@@ -6771,14 +6791,14 @@ keyconfig_data = \
       },
      ),
     ("object.rotation_clear",
-     {"type": 'E', "value": 'PRESS', "alt": True},
+     {"type": 'R', "value": 'PRESS', "alt": True},
      {"properties":
       [("clear_delta", False),
        ],
       },
      ),
     ("object.scale_clear",
-     {"type": 'R', "value": 'PRESS', "alt": True},
+     {"type": 'E', "value": 'PRESS', "alt": True},
      {"properties":
       [("clear_delta", False),
        ],
@@ -6822,7 +6842,7 @@ keyconfig_data = \
       },
      ),
     ("wm.call_menu",
-     {"type": 'A', "value": 'PRESS', "shift": True, "ctrl": True},
+     {"type": 'A', "value": 'PRESS', "alt": True},
      {"properties":
       [("name", 'VIEW3D_MT_object_apply'),
        ],
@@ -7792,6 +7812,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("paint.face_select_all",
@@ -7879,6 +7900,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("paint.vert_select_all",
@@ -7972,6 +7994,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("particle.select_all",
@@ -8132,6 +8155,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("pointcloud.select_all",
@@ -8190,15 +8214,15 @@ keyconfig_data = \
       },
      ),
     ("wm.call_menu",
-     {"type": 'A', "value": 'PRESS', "shift": True, "ctrl": True},
+     {"type": 'A', "value": 'PRESS', "alt": True},
      {"properties":
       [("name", 'VIEW3D_MT_pose_apply'),
        ],
       },
      ),
-    ("pose.rot_clear", {"type": 'E', "value": 'PRESS', "alt": True}, None),
+    ("pose.rot_clear", {"type": 'R', "value": 'PRESS', "alt": True}, None),
     ("pose.loc_clear", {"type": 'W', "value": 'PRESS', "alt": True}, None),
-    ("pose.scale_clear", {"type": 'R', "value": 'PRESS', "alt": True}, None),
+    ("pose.scale_clear", {"type": 'E', "value": 'PRESS', "alt": True}, None),
     ("pose.quaternions_flip", {"type": 'F', "value": 'PRESS', "alt": True}, None),
     ("pose.rotation_mode_set", {"type": 'R', "value": 'PRESS', "ctrl": True}, None),
     ("pose.copy", {"type": 'C', "value": 'PRESS', "ctrl": True}, None),
@@ -8228,6 +8252,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("pose.select_all",
@@ -8594,6 +8619,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("sequencer.select_all",
@@ -8848,7 +8874,7 @@ keyconfig_data = \
     ("object.modifier_copy", {"type": 'D', "value": 'PRESS', "shift": True}, None),
     ("object.add_modifier_menu", {"type": 'A', "value": 'PRESS', "shift": True}, None),
     ("object.modifier_apply",
-     {"type": 'A', "value": 'PRESS', "shift": True, "ctrl": True},
+     {"type": 'A', "value": 'PRESS', "alt": True},
      {"properties":
       [("report", True),
        ],
@@ -8885,7 +8911,7 @@ keyconfig_data = \
      ),
     ("constraint.copy", {"type": 'D', "value": 'PRESS', "shift": True}, None),
     ("constraint.apply",
-     {"type": 'A', "value": 'PRESS', "shift": True, "ctrl": True},
+     {"type": 'A', "value": 'PRESS', "alt": True},
      {"properties":
       [("report", True),
        ],
@@ -9628,6 +9654,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("curves.select_all",
@@ -9823,6 +9850,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("sequencer.select_all",
@@ -10516,6 +10544,7 @@ keyconfig_data = \
      {"properties":
       [("action", 'DESELECT'),
        ],
+    "active":False,
       },
      ),
     ("uv.select_all",
