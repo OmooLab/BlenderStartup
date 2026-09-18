@@ -13,7 +13,7 @@
 - 当前提供的 Application Template 称为 `Omoo Lab`，内部目录与命令行 ID 固定为 `Omoo_Lab`
 - 不要把项目名 `Blender Startup`、模板显示名 `Omoo Lab` 和模板 ID `Omoo_Lab` 混用
 - 构建目标使用 `b<major><minor>` 表示最低适用 Blender 版本，如 `b45` 表示 Blender 4.5+
-- 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v<版本号>.b45.zip`
+- 产物命名为 `BlenderStartup.v<版本号>.b<major><minor>.zip`，如 `BlenderStartup.v<版本号>.b45.zip`
 - 当前构建目标为 `b45`（Blender 4.5+）和 `b52`（Blender 5.2+）
 
 
@@ -51,7 +51,7 @@ uv run docs dev
 # 生成相对 Blender Default 的快捷键差异参考
 uv run docs keymap
 
-# 用 pyproject.toml 中的版本发布文档并让 latest 指向它（内部执行 mike deploy --update-aliases --push --allow-empty）
+# 用 pyproject.toml 中的 major.minor.x 发布文档并让 latest 指向它（内部执行 mike deploy --update-aliases --push --allow-empty）
 uv run docs deploy
 ```
 
@@ -77,8 +77,8 @@ git push origin v<版本号>
 
 - `test.yml` 在 `main` 推送和 PR 上只运行 `uv run pytest`
 - `release-drafter.yml` 在 `main` 推送和 PR 事件上维护 Release 草稿，Release Notes 来自 PR 标签
-- `release.yml` 只由 `v*` 标签触发，按 `b45`、`b52` 矩阵分别构建并上传 `Startup.v<版本号>.b<目标>.zip`；标签与项目版本不一致时终止发布
-- `docs.yml` 在 `main` 上文档、素材或版本变化时直接调用 `mike deploy --update-aliases --push <版本号> latest`，`latest` 指向当前版本
+- `release.yml` 只由 `v*` 标签触发，按 `b45`、`b52` 矩阵分别构建并上传 `BlenderStartup.v<版本号>.b<目标>.zip`；标签与项目版本不一致时终止发布
+- 文档版本只使用 `pyproject.toml` 中的 major.minor，写成 `x.y.x` 系列标识，不写具体 patch；`docs build` 和 `docs deploy` 都部署到该版本并更新 `latest`
 - mike 默认只提交不推送，`--push` 不能省；内容没有变化时 mike 会跳过提交并连带跳过推送，所以 `uv run docs deploy` 额外带 `--allow-empty`
 - 安装包命名、目标发现和校验规则仍由 `tools/pack.py` 负责，工作流不重复实现
 
@@ -113,5 +113,5 @@ git push origin v<版本号>
 - 不使用 `---` 分隔线；一级标题只在文档开头使用一次
 - Mermaid 节点 ID 使用英文字符，节点显示文本可以使用中文
 - 文档只描述当前已实现的行为；版本范围、快捷键、菜单名称、默认值和文件名必须能从代码、素材或测试中验证
-- 文档中不写死项目版本号，安装包统一使用 `Startup.v<版本号>.b<目标>.zip` 这类占位写法
+- 文档中不写死项目版本号，安装包统一使用 `BlenderStartup.v<版本号>.b<目标>.zip` 这类占位写法
 - `docs/reference/keymap-b45.md` 和 `docs/reference/keymap-b52.md` 由 `tools/keymap.py` 生成，不手工修改

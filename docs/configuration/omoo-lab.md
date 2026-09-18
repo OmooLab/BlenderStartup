@@ -25,9 +25,9 @@ Omoo Lab 提供自己的 Startup File、Preferences、Keymap 素材和运行时�
 
 ## 安装包命名
 
-安装包命名为 `Startup.v<版本号>.b<目标>.zip`，`<版本号>` 与 `pyproject.toml` 中的项目版本一致，`<目标>` 取构建目标 ID：
+安装包命名为 `BlenderStartup.v<版本号>.b<目标>.zip`，`<版本号>` 与 `pyproject.toml` 中的项目版本一致，`<目标>` 取构建目标 ID：
 
-- `Startup.v<版本号>.b45.zip`
-- `Startup.v<版本号>.b52.zip`
+- `BlenderStartup.v<版本号>.b45.zip`
+- `BlenderStartup.v<版本号>.b52.zip`
 
 Mike 文档使用同一个项目版本号作为版本名，`latest` 作为稳定版别名。

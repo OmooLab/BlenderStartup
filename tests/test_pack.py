@@ -20,12 +20,13 @@ class PackTest(unittest.TestCase):
     def test_builds_one_installable_template_per_target(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             archive_files = build_templates(temporary_directory)
+            version = read_project_version()
 
             self.assertEqual(
                 [archive_file.name for archive_file in archive_files],
                 [
-                    "Startup.v0.2.23.b45.zip",
-                    "Startup.v0.2.23.b52.zip",
+                    f"BlenderStartup.v{version}.b45.zip",
+                    f"BlenderStartup.v{version}.b52.zip",
                 ],
             )
             for archive_file in archive_files:
@@ -80,7 +81,7 @@ class PackTest(unittest.TestCase):
 
         self.assertEqual(
             [archive_file.name for archive_file in archive_files],
-            [f"Startup.v{read_project_version()}.b45.zip"],
+            [f"BlenderStartup.v{read_project_version()}.b45.zip"],
         )
 
     def test_cli_rejects_an_unknown_target(self):

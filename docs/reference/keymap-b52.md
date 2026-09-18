@@ -2,12 +2,10 @@
 
 本页由当前 `Refined Industry Compatible` Keymap 与同版本的 **Blender Default** 自动比较生成。Industry Compatible 不是比较基线。
 
-<div class="keymap-summary">
-<div><strong>397</strong>修改绑定</div>
-<div><strong>175</strong>新增绑定</div>
-<div><strong>29</strong>移除绑定</div>
-<div><strong>67</strong>受影响 Keymap</div>
-</div>
+- **修改绑定**：423
+- **新增绑定**：174
+- **移除绑定**：29
+- **受影响 Keymap**：64
 
 !!! note "怎样理解差异"
 
@@ -23,37 +21,37 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>SHIFT + RMB</code> | `view3d.cursor3d` | 默认：<code>LMB + 点击</code> |
-| 修改 | <code>CTRL + SHIFT + GRAVE</code> | `view3d.navigate` | 默认：<code>SHIFT + GRAVE</code> |
-| 修改 | <code>LMB + 点击</code> | `view3d.select`<br><small>deselect_all=True</small> | 默认：<code>RMB + 点击</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB + 点击</code> | `view3d.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `view3d.select`<br><small>center=True, object=True</small> | 默认：<code>CTRL + RMB</code>；center=True, object=True |
-| 修改 | <code>ALT + LMB + 点击</code> | `view3d.select`<br><small>enumerate=True</small> | 默认：<code>ALT + RMB</code>；enumerate=True |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `view3d.select`<br><small>toggle=True, center=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；toggle=True, center=True |
-| 修改 | <code>CTRL + ALT + LMB + 点击</code> | `view3d.select`<br><small>center=True, enumerate=True</small> | 默认：<code>CTRL + ALT + RMB</code>；center=True, enumerate=True |
-| 修改 | <code>SHIFT + ALT + LMB + 点击</code> | `view3d.select`<br><small>toggle=True, enumerate=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；toggle=True, enumerate=True |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB + 点击</code> | `view3d.select`<br><small>toggle=True, center=True, enumerate=True</small> | 默认：<code>CTRL + SHIFT + ALT + RMB</code>；toggle=True, center=True, enumerate=True |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>C</code> | `view3d.select_circle`<br><small>active=False</small> | 默认：<code>C</code> |
-| 修改 | <code>CTRL + GRAVE</code> | `wm.context_toggle`<br><small>data_path='space_data.show_gizmo', active=False</small> | 默认：<code>CTRL + GRAVE</code>；data_path='space_data.show_gizmo' |
-| 新增 | <code>SHIFT + RMB + 拖动</code> | `transform.translate`<br><small>cursor_transform=True, release_confirm=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>ALT + MMB</code> | `view3d.move` | Blender Default 中没有此绑定 |
-| 新增 | <code>ALT + LMB</code> | `view3d.rotate` | Blender Default 中没有此绑定 |
-| 新增 | <code>ALT + RMB</code> | `view3d.zoom` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `view3d.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>F + 双击</code> | `view3d.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ALT + LMB</code> | `view3d.move` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + ALT + LMB</code> | `view3d.zoom` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + LMB</code> | `view3d.cursor3d` | Blender Default 中没有此绑定 |
-| 新增 | <code>T</code> | `wm.call_menu_pie`<br><small>name='VIEW3D_MT_orientations_pie'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + T</code> | `wm.call_menu_pie`<br><small>name='VIEW3D_MT_pivot_pie'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + ALT + Q + 可重复</code> | `view3d.view_roll`<br><small>angle=5.0, type='LEFT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + ALT + E + 可重复</code> | `view3d.view_roll`<br><small>angle=5.0, type='RIGHT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>ALT + GRAVE</code> | `view3d.camera_to_view` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + GRAVE</code> | `object.select_camera` | Blender Default 中没有此绑定 |
-| 移除 | <code>RMB</code> | `view3d.select`<br><small>deselect_all=True, select_passthrough=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `SHIFT + RMB` | `view3d.cursor3d` | 默认：`LMB + 点击` |
+| 修改 | `CTRL + SHIFT + GRAVE` | `view3d.navigate` | 默认：`SHIFT + GRAVE` |
+| 修改 | `LMB + 点击` | `view3d.select`（deselect_all=True） | 默认：`RMB + 点击`；deselect_all=True |
+| 修改 | `SHIFT + LMB + 点击` | `view3d.select`（toggle=True） | 默认：`SHIFT + RMB`；toggle=True |
+| 修改 | `CTRL + LMB + 点击` | `view3d.select`（center=True, object=True） | 默认：`CTRL + RMB`；center=True, object=True |
+| 修改 | `ALT + LMB + 点击` | `view3d.select`（enumerate=True） | 默认：`ALT + RMB`；enumerate=True |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `view3d.select`（toggle=True, center=True） | 默认：`CTRL + SHIFT + RMB`；toggle=True, center=True |
+| 修改 | `CTRL + ALT + LMB + 点击` | `view3d.select`（center=True, enumerate=True） | 默认：`CTRL + ALT + RMB`；center=True, enumerate=True |
+| 修改 | `SHIFT + ALT + LMB + 点击` | `view3d.select`（toggle=True, enumerate=True） | 默认：`SHIFT + ALT + RMB`；toggle=True, enumerate=True |
+| 修改 | `CTRL + SHIFT + ALT + LMB + 点击` | `view3d.select`（toggle=True, center=True, enumerate=True） | 默认：`CTRL + SHIFT + ALT + RMB`；toggle=True, center=True, enumerate=True |
+| 修改 | `CTRL + RMB + 拖动` | `view3d.select_lasso`（mode='ADD'） | 默认：`CTRL + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `view3d.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `C` | `view3d.select_circle`（active=False） | 默认：`C` |
+| 修改 | `CTRL + GRAVE` | `wm.context_toggle`（data_path='space_data.show_gizmo', active=False） | 默认：`CTRL + GRAVE`；data_path='space_data.show_gizmo' |
+| 新增 | `SHIFT + RMB + 拖动` | `transform.translate`（cursor_transform=True, release_confirm=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `ALT + MMB` | `view3d.move` | Blender Default 中没有此绑定 |
+| 新增 | `ALT + LMB` | `view3d.rotate` | Blender Default 中没有此绑定 |
+| 新增 | `ALT + RMB` | `view3d.zoom` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `view3d.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `F + 双击` | `view3d.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ALT + LMB` | `view3d.move` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + ALT + LMB` | `view3d.zoom` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + LMB` | `view3d.cursor3d` | Blender Default 中没有此绑定 |
+| 新增 | `T` | `wm.call_menu_pie`（name='VIEW3D_MT_orientations_pie'） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + T` | `wm.call_menu_pie`（name='VIEW3D_MT_pivot_pie'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + ALT + Q + 可重复` | `view3d.view_roll`（angle=5.0, type='LEFT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + ALT + E + 可重复` | `view3d.view_roll`（angle=5.0, type='RIGHT'） | Blender Default 中没有此绑定 |
+| 新增 | `ALT + GRAVE` | `view3d.camera_to_view` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + GRAVE` | `object.select_camera` | Blender Default 中没有此绑定 |
+| 移除 | `RMB` | `view3d.select`（deselect_all=True, select_passthrough=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### 3D View Generic
 
@@ -61,31 +59,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
-
-### 3D View Tool: Move
-
-上下文：`VIEW_3D / WINDOW`
-
-| 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
-| --- | --- | --- | --- |
-| 新增 | <code>RMB</code> | `transform.translate`<br><small>release_confirm=True</small> | Blender Default 中没有此绑定 |
-
-### 3D View Tool: Rotate
-
-上下文：`VIEW_3D / WINDOW`
-
-| 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
-| --- | --- | --- | --- |
-| 新增 | <code>RMB</code> | `transform.rotate` | Blender Default 中没有此绑定 |
-
-### 3D View Tool: Scale
-
-上下文：`VIEW_3D / WINDOW`
-
-| 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
-| --- | --- | --- | --- |
-| 新增 | <code>RMB</code> | `transform.resize` | Blender Default 中没有此绑定 |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
 
 ### Frames
 
@@ -93,10 +67,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>SPACE</code> | `screen.animation_play` | 默认：<code>SHIFT + SPACE</code> |
-| 新增 | <code>CTRL + ALT + WHEEL DOWN</code> | `screen.keyframe_jump`<br><small>next=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + ALT + WHEEL UP</code> | `screen.keyframe_jump`<br><small>next=False</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>ESC</code> | `screen.frame_jump`<br><small>active=False</small> | Blender Default 中没有此绑定 |
+| 修改 | `SPACE` | `screen.animation_play` | 默认：`SHIFT + SPACE` |
+| 新增 | `CTRL + ALT + WHEEL DOWN` | `screen.keyframe_jump`（next=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + ALT + WHEEL UP` | `screen.keyframe_jump`（next=False） | Blender Default 中没有此绑定 |
+| 新增 | `ESC` | `screen.frame_jump`（active=False） | Blender Default 中没有此绑定 |
 
 ### Screen
 
@@ -104,9 +78,9 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + ALT + Q</code> | `screen.region_quadview`<br><small>active=False</small> | 默认：<code>CTRL + ALT + Q</code> |
-| 修改 | <code>ALT + F12</code> | `render.render`<br><small>use_viewport=True, use_sequencer_scene=True</small> | 默认：<code>ALT + F12</code>；use_sequencer_scene=True, use_viewport=True |
-| 修改 | <code>CTRL + ALT + F12</code> | `render.render`<br><small>animation=True, use_viewport=True, use_sequencer_scene=True</small> | 默认：<code>CTRL + ALT + F12</code>；animation=True, use_sequencer_scene=True, use_viewport=True |
+| 修改 | `CTRL + ALT + Q` | `screen.region_quadview`（active=False） | 默认：`CTRL + ALT + Q` |
+| 修改 | `ALT + F12` | `render.render`（use_viewport=True, use_sequencer_scene=True） | 默认：`ALT + F12`；use_sequencer_scene=True, use_viewport=True |
+| 修改 | `CTRL + ALT + F12` | `render.render`（animation=True, use_viewport=True, use_sequencer_scene=True） | 默认：`CTRL + ALT + F12`；animation=True, use_sequencer_scene=True, use_viewport=True |
 
 ### User Interface
 
@@ -114,8 +88,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + SHIFT + F</code> | `ui.list_start_filter` | 默认：<code>CTRL + F</code> |
-| 修改 | <code>CTRL + SHIFT + F</code> | `ui.view_start_filter` | 默认：<code>CTRL + F</code> |
+| 修改 | `CTRL + SHIFT + F` | `ui.list_start_filter` | 默认：`CTRL + F` |
+| 修改 | `CTRL + SHIFT + F` | `ui.view_start_filter` | 默认：`CTRL + F` |
 
 ### View2D
 
@@ -123,11 +97,11 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>MMB</code> | `view2d.pan`<br><small>active=False</small> | 默认：<code>MMB</code> |
-| 新增 | <code>ALT + MMB</code> | `view2d.pan` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ALT + LMB</code> | `view2d.pan` | Blender Default 中没有此绑定 |
-| 新增 | <code>ALT + RMB</code> | `view2d.zoom` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + ALT + LMB</code> | `view2d.zoom` | Blender Default 中没有此绑定 |
+| 修改 | `MMB` | `view2d.pan`（active=False） | 默认：`MMB` |
+| 新增 | `ALT + MMB` | `view2d.pan` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ALT + LMB` | `view2d.pan` | Blender Default 中没有此绑定 |
+| 新增 | `ALT + RMB` | `view2d.zoom` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + ALT + LMB` | `view2d.zoom` | Blender Default 中没有此绑定 |
 
 ### Window
 
@@ -135,8 +109,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>SHIFT + SPACE</code> | `wm.toolbar` | 默认：<code>SPACE</code> |
-| 新增 | <code>ALT + GRAVE + 可重复</code> | `wm.context_toggle`<br><small>data_path='space_data.lock_camera'</small> | Blender Default 中没有此绑定 |
+| 修改 | `SHIFT + SPACE` | `wm.toolbar` | 默认：`SPACE` |
+| 新增 | `ALT + GRAVE + 可重复` | `wm.context_toggle`（data_path='space_data.lock_camera'） | Blender Default 中没有此绑定 |
 
 ## 对象、模式与 Transform
 
@@ -146,34 +120,35 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>ALT + W</code> | `object.location_clear`<br><small>clear_delta=False</small> | 默认：<code>ALT + G</code>；clear_delta=False |
-| 修改 | <code>ALT + E</code> | `object.rotation_clear`<br><small>clear_delta=False</small> | 默认：<code>ALT + R</code>；clear_delta=False |
-| 修改 | <code>ALT + R</code> | `object.scale_clear`<br><small>clear_delta=False</small> | 默认：<code>ALT + S</code>；clear_delta=False |
-| 修改 | <code>CTRL + SHIFT + A</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_object_apply'</small> | 默认：<code>CTRL + A</code>；name='VIEW3D_MT_object_apply' |
-| 修改 | <code>CTRL + ONE</code> | `object.subdivision_set`<br><small>level=1, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + ONE</code>；level=1, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + TWO</code> | `object.subdivision_set`<br><small>level=2, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + TWO</code>；level=2, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + THREE</code> | `object.subdivision_set`<br><small>level=3, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + THREE</code>；level=3, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + FOUR</code> | `object.subdivision_set`<br><small>level=4, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + FOUR</code>；level=4, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + FIVE</code> | `object.subdivision_set`<br><small>level=5, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + FIVE</code>；level=5, relative=False, ensure_modifier=True |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_object_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_object_context_menu' |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `object.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>A</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_add', active=False</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + A</code> | `object.select_all`<br><small>action='SELECT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `object.duplicate_move` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + ONE</code> | `object.select_grouped` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + TWO</code> | `object.select_linked` | Blender Default 中没有此绑定 |
-| 新增 | <code>TAB + 松开</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_add'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>ONE</code> | `object.mode_set_with_submode`<br><small>mode='EDIT', mesh_select_mode={'VERT'}</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>TWO</code> | `object.mode_set_with_submode`<br><small>mode='EDIT', mesh_select_mode={'EDGE'}</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>THREE</code> | `object.mode_set_with_submode`<br><small>mode='EDIT', mesh_select_mode={'FACE'}</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ONE</code> | `object.mode_set`<br><small>mode='SCULPT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ONE</code> | `object.mode_set`<br><small>mode='PAINT_GREASE_PENCIL'</small> | Blender Default 中没有此绑定 |
+| 修改 | `A` | `object.select_all`（action='SELECT', active=False） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `object.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `ALT + W` | `object.location_clear`（clear_delta=False） | 默认：`ALT + G`；clear_delta=False |
+| 修改 | `ALT + E` | `object.scale_clear`（clear_delta=False） | 默认：`ALT + S`；clear_delta=False |
+| 修改 | `ALT + A` | `wm.call_menu`（name='VIEW3D_MT_object_apply'） | 默认：`CTRL + A`；name='VIEW3D_MT_object_apply' |
+| 修改 | `CTRL + ONE` | `object.subdivision_set`（level=1, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + ONE`；level=1, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + TWO` | `object.subdivision_set`（level=2, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + TWO`；level=2, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + THREE` | `object.subdivision_set`（level=3, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + THREE`；level=3, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + FOUR` | `object.subdivision_set`（level=4, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + FOUR`；level=4, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + FIVE` | `object.subdivision_set`（level=5, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + FIVE`；level=5, relative=False, ensure_modifier=True |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_object_context_menu'） | 默认：`W`；name='VIEW3D_MT_object_context_menu' |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `object.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `A` | `wm.call_menu`（name='VIEW3D_MT_add', active=False） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + A` | `object.select_all`（action='SELECT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `object.duplicate_move` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + ONE` | `object.select_grouped` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + TWO` | `object.select_linked` | Blender Default 中没有此绑定 |
+| 新增 | `TAB + 松开` | `wm.call_menu`（name='VIEW3D_MT_add'） | Blender Default 中没有此绑定 |
+| 新增 | `ONE` | `object.mode_set_with_submode`（mode='EDIT', mesh_select_mode={'VERT'}） | Blender Default 中没有此绑定 |
+| 新增 | `TWO` | `object.mode_set_with_submode`（mode='EDIT', mesh_select_mode={'EDGE'}） | Blender Default 中没有此绑定 |
+| 新增 | `THREE` | `object.mode_set_with_submode`（mode='EDIT', mesh_select_mode={'FACE'}） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ONE` | `object.mode_set`（mode='SCULPT'） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ONE` | `object.mode_set`（mode='PAINT_GREASE_PENCIL'） | Blender Default 中没有此绑定 |
 
 ### Object Non-modal
 
@@ -181,11 +156,11 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + TAB</code> | `object.mode_set`<br><small>mode='EDIT', toggle=True, active=False</small> | 默认：<code>TAB</code>；mode='EDIT', toggle=True |
-| 修改 | <code>TAB + 拖动</code> | `view3d.object_mode_pie_or_toggle` | 默认：<code>CTRL + TAB</code> |
-| 新增 | <code>LMB + 双击</code> | `object.transfer_mode` | Blender Default 中没有此绑定 |
-| 新增 | <code>ESC</code> | `object.mode_set`<br><small>mode='OBJECT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>FOUR</code> | `object.mode_set` | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + TAB` | `object.mode_set`（mode='EDIT', toggle=True, active=False） | 默认：`TAB`；mode='EDIT', toggle=True |
+| 修改 | `TAB + 拖动` | `view3d.object_mode_pie_or_toggle` | 默认：`CTRL + TAB` |
+| 新增 | `LMB + 双击` | `object.transfer_mode` | Blender Default 中没有此绑定 |
+| 新增 | `ESC` | `object.mode_set`（mode='OBJECT'） | Blender Default 中没有此绑定 |
+| 新增 | `FOUR` | `object.mode_set` | Blender Default 中没有此绑定 |
 
 ### Pose
 
@@ -193,15 +168,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + SHIFT + A</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_pose_apply'</small> | 默认：<code>CTRL + A</code>；name='VIEW3D_MT_pose_apply' |
-| 修改 | <code>ALT + E</code> | `pose.rot_clear` | 默认：<code>ALT + R</code> |
-| 修改 | <code>ALT + W</code> | `pose.loc_clear` | 默认：<code>ALT + G</code> |
-| 修改 | <code>ALT + R</code> | `pose.scale_clear` | 默认：<code>ALT + S</code> |
-| 修改 | <code>CTRL + A</code> | `pose.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_pose_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_pose_context_menu' |
-| 新增 | <code>CTRL + F</code> | `pose.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `ALT + A` | `wm.call_menu`（name='VIEW3D_MT_pose_apply'） | 默认：`CTRL + A`；name='VIEW3D_MT_pose_apply' |
+| 修改 | `ALT + W` | `pose.loc_clear` | 默认：`ALT + G` |
+| 修改 | `ALT + E` | `pose.scale_clear` | 默认：`ALT + S` |
+| 修改 | `CTRL + A` | `pose.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `pose.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_pose_context_menu'） | 默认：`W`；name='VIEW3D_MT_pose_context_menu' |
+| 新增 | `CTRL + F` | `pose.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Transform Modal Map
 
@@ -209,12 +184,12 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 新增 | <code>Q</code> | `AXIS_X` | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `AXIS_Y` | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `AXIS_Z` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + Q</code> | `PLANE_X` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + W</code> | `PLANE_Y` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + E</code> | `PLANE_Z` | Blender Default 中没有此绑定 |
+| 新增 | `Q` | `AXIS_X` | Blender Default 中没有此绑定 |
+| 新增 | `W` | `AXIS_Y` | Blender Default 中没有此绑定 |
+| 新增 | `E` | `AXIS_Z` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + Q` | `PLANE_X` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + W` | `PLANE_Y` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + E` | `PLANE_Z` | Blender Default 中没有此绑定 |
 
 ## 建模、雕刻与绘制
 
@@ -224,16 +199,17 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + A</code> | `armature.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + LMB + 点击</code> | `armature.shortest_path_pick` | 默认：<code>CTRL + RMB</code> |
-| 修改 | <code>E</code> | `armature.extrude_move`<br><small>active=False</small> | 默认：<code>E</code> |
-| 修改 | <code>CTRL + RMB + 点击</code> | `armature.click_extrude` | 默认：<code>CTRL + LMB + 点击</code> |
-| 修改 | <code>F</code> | `armature.fill`<br><small>active=False</small> | 默认：<code>F</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_armature_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_armature_context_menu' |
-| 新增 | <code>CTRL + F</code> | `armature.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `armature.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + A` | `armature.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `armature.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + LMB + 点击` | `armature.shortest_path_pick` | 默认：`CTRL + RMB` |
+| 修改 | `E` | `armature.extrude_move`（active=False） | 默认：`E` |
+| 修改 | `CTRL + RMB + 点击` | `armature.click_extrude` | 默认：`CTRL + LMB + 点击` |
+| 修改 | `F` | `armature.fill`（active=False） | 默认：`F` |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_armature_context_menu'） | 默认：`W`；name='VIEW3D_MT_armature_context_menu' |
+| 新增 | `CTRL + F` | `armature.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `armature.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Curve
 
@@ -241,20 +217,21 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + RMB + 点击</code> | `curve.vertex_add` | 默认：<code>CTRL + LMB + 点击</code> |
-| 修改 | <code>CTRL + A</code> | `curve.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + LMB + 点击</code> | `curve.shortest_path_pick` | 默认：<code>CTRL + RMB</code> |
-| 修改 | <code>E</code> | `curve.extrude_move`<br><small>active=False</small> | 默认：<code>E</code> |
-| 修改 | <code>F</code> | `curve.make_segment`<br><small>active=False</small> | 默认：<code>F</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_curve_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_edit_curve_context_menu' |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `curve.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `curve.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + RMB + 点击` | `curve.vertex_add` | 默认：`CTRL + LMB + 点击` |
+| 修改 | `CTRL + A` | `curve.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `curve.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + LMB + 点击` | `curve.shortest_path_pick` | 默认：`CTRL + RMB` |
+| 修改 | `E` | `curve.extrude_move`（active=False） | 默认：`E` |
+| 修改 | `F` | `curve.make_segment`（active=False） | 默认：`F` |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_edit_curve_context_menu'） | 默认：`W`；name='VIEW3D_MT_edit_curve_context_menu' |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `curve.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `curve.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Curves
 
@@ -262,17 +239,18 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + A</code> | `curves.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>E</code> | `curves.extrude_move`<br><small>active=False</small> | 默认：<code>E</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_curves_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_edit_curves_context_menu' |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `curves.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `curves.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + A` | `curves.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `curves.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `E` | `curves.extrude_move`（active=False） | 默认：`E` |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_edit_curves_context_menu'） | 默认：`W`；name='VIEW3D_MT_edit_curves_context_menu' |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `curves.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `curves.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Grease Pencil
 
@@ -280,7 +258,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 新增 | <code>CTRL + F</code> | `grease_pencil.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `grease_pencil.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Grease Pencil Draw Mode
 
@@ -288,9 +266,9 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_paint.brush.size'</small> | 默认：<code>F</code>；data_path_primary='tool_settings.gpencil_paint.brush.size' |
-| 修改 | <code>SHIFT + SPACE</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_gpencil_paint'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_paint' |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_greasepencil_draw_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_greasepencil_draw_context_menu' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_paint.brush.size'） | 默认：`F`；data_path_primary='tool_settings.gpencil_paint.brush.size' |
+| 修改 | `SHIFT + SPACE` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_gpencil_paint'） | 默认：`SPACE`；name='VIEW3D_AST_brush_gpencil_paint' |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_greasepencil_draw_context_menu'） | 默认：`W`；name='VIEW3D_PT_greasepencil_draw_context_menu' |
 
 ### Grease Pencil Edit Mode
 
@@ -298,16 +276,16 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>F</code> | `grease_pencil.cyclical_set`<br><small>type='CLOSE', subdivide_cyclic_segment=True, active=False</small> | 默认：<code>F</code>；type='CLOSE', subdivide_cyclic_segment=True |
-| 修改 | <code>E</code> | `grease_pencil.extrude_move`<br><small>active=False</small> | 默认：<code>E</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_greasepencil_edit_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_greasepencil_edit_context_menu' |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `grease_pencil.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `F` | `grease_pencil.cyclical_set`（type='CLOSE', subdivide_cyclic_segment=True, active=False） | 默认：`F`；type='CLOSE', subdivide_cyclic_segment=True |
+| 修改 | `E` | `grease_pencil.extrude_move`（active=False） | 默认：`E` |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_greasepencil_edit_context_menu'） | 默认：`W`；name='VIEW3D_MT_greasepencil_edit_context_menu' |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `grease_pencil.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Grease Pencil Sculpt Mode
 
@@ -315,13 +293,13 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False |
-| 修改 | <code>V</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_gpencil_sculpt'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_sculpt' |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_greasepencil_sculpt_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_greasepencil_sculpt_context_menu' |
-| 新增 | <code>G</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', asset_library_identifier='', relative_asset_identifier='brushes/essentials_brushes-gp_sculpt.blend/Brush/Grab'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_gpencil_sculpt'</small> | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False |
+| 修改 | `V` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_gpencil_sculpt'） | 默认：`SPACE`；name='VIEW3D_AST_brush_gpencil_sculpt' |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_greasepencil_sculpt_context_menu'） | 默认：`W`；name='VIEW3D_PT_greasepencil_sculpt_context_menu' |
+| 新增 | `G` | `brush.asset_activate`（asset_library_type='ESSENTIALS', asset_library_identifier='', relative_asset_identifier='brushes/essentials_brushes-gp_sculpt.blend/Brush/Grab'） | Blender Default 中没有此绑定 |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_gpencil_sculpt'） | Blender Default 中没有此绑定 |
 
 ### Grease Pencil Selection
 
@@ -329,7 +307,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `grease_pencil.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
+| 修改 | `CTRL + A` | `grease_pencil.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `grease_pencil.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
 
 ### Grease Pencil Vertex Paint
 
@@ -337,10 +316,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_greasepencil_vertex_paint_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_greasepencil_vertex_paint_context_menu' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_gpencil_vertex'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_vertex' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_greasepencil_vertex_paint_context_menu'） | 默认：`W`；name='VIEW3D_PT_greasepencil_vertex_paint_context_menu' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_gpencil_vertex'） | 默认：`SPACE`；name='VIEW3D_AST_brush_gpencil_vertex' |
 
 ### Grease Pencil Weight Paint
 
@@ -348,15 +327,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
-| 修改 | <code>SHIFT + ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small> | 默认：<code>CTRL + F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_greasepencil_weight_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_greasepencil_weight_context_menu' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_gpencil_weight'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_weight' |
-| 新增 | <code>ALT + LMB</code> | `view3d.select` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ALT + LMB</code> | `view3d.select`<br><small>toggle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + LMB</code> | `view3d.select` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `grease_pencil.weight_sample` | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
+| 修改 | `SHIFT + ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False） | 默认：`CTRL + F`；data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_greasepencil_weight_context_menu'） | 默认：`W`；name='VIEW3D_PT_greasepencil_weight_context_menu' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_gpencil_weight'） | 默认：`SPACE`；name='VIEW3D_AST_brush_gpencil_weight' |
+| 新增 | `ALT + LMB` | `view3d.select` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ALT + LMB` | `view3d.select`（toggle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + LMB` | `view3d.select` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + LMB + 双击` | `grease_pencil.weight_sample` | Blender Default 中没有此绑定 |
 
 ### Lattice
 
@@ -364,11 +343,12 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + A</code> | `lattice.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_lattice_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_edit_lattice_context_menu' |
-| 新增 | <code>CTRL + F</code> | `lattice.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + A` | `lattice.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `lattice.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_edit_lattice_context_menu'） | 默认：`W`；name='VIEW3D_MT_edit_lattice_context_menu' |
+| 新增 | `CTRL + F` | `lattice.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Mesh
 
@@ -376,29 +356,30 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + A</code> | `transform.skin_resize`<br><small>active=False</small> | 默认：<code>CTRL + A</code> |
-| 修改 | <code>CTRL + ONE</code> | `mesh.select_mode`<br><small>use_expand=True, type='VERT', active=False</small> | 默认：<code>CTRL + ONE</code>；use_expand=True, type='VERT' |
-| 修改 | <code>ALT + LMB + 点击</code> | `mesh.loop_select` | 默认：<code>ALT + RMB</code> |
-| 修改 | <code>SHIFT + ALT + LMB + 点击</code> | `mesh.loop_select`<br><small>toggle=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + ALT + LMB + 点击</code> | `mesh.edgering_select` | 默认：<code>CTRL + ALT + RMB</code> |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB + 点击</code> | `mesh.edgering_select`<br><small>toggle=True</small> | 默认：<code>CTRL + SHIFT + ALT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `mesh.shortest_path_pick`<br><small>use_fill=False</small> | 默认：<code>CTRL + RMB</code>；use_fill=False |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `mesh.shortest_path_pick`<br><small>use_fill=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；use_fill=True |
-| 修改 | <code>CTRL + A</code> | `mesh.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>E</code> | `view3d.edit_mesh_extrude_move_normal`<br><small>active=False</small> | 默认：<code>E</code> |
-| 修改 | <code>F + 可重复</code> | `mesh.edge_face_add`<br><small>active=False</small> | 默认：<code>F + 可重复</code> |
-| 修改 | <code>CTRL + RMB + 点击</code> | `mesh.dupli_extrude_cursor`<br><small>rotate_source=True</small> | 默认：<code>CTRL + LMB + 点击</code>；rotate_source=True |
-| 修改 | <code>CTRL + SHIFT + RMB + 点击</code> | `mesh.dupli_extrude_cursor`<br><small>rotate_source=False</small> | 默认：<code>CTRL + SHIFT + LMB + 点击</code>；rotate_source=False |
-| 修改 | <code>CTRL + F</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_mesh_faces', active=False</small> | 默认：<code>CTRL + F</code>；name='VIEW3D_MT_edit_mesh_faces' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_mesh_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_edit_mesh_context_menu' |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `mesh.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `mesh.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + A` | `transform.skin_resize`（active=False） | 默认：`CTRL + A` |
+| 修改 | `CTRL + ONE` | `mesh.select_mode`（use_expand=True, type='VERT', active=False） | 默认：`CTRL + ONE`；use_expand=True, type='VERT' |
+| 修改 | `ALT + LMB + 点击` | `mesh.loop_select` | 默认：`ALT + RMB` |
+| 修改 | `SHIFT + ALT + LMB + 点击` | `mesh.loop_select`（toggle=True） | 默认：`SHIFT + ALT + RMB`；toggle=True |
+| 修改 | `CTRL + ALT + LMB + 点击` | `mesh.edgering_select` | 默认：`CTRL + ALT + RMB` |
+| 修改 | `CTRL + SHIFT + ALT + LMB + 点击` | `mesh.edgering_select`（toggle=True） | 默认：`CTRL + SHIFT + ALT + RMB`；toggle=True |
+| 修改 | `CTRL + LMB + 点击` | `mesh.shortest_path_pick`（use_fill=False） | 默认：`CTRL + RMB`；use_fill=False |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `mesh.shortest_path_pick`（use_fill=True） | 默认：`CTRL + SHIFT + RMB`；use_fill=True |
+| 修改 | `CTRL + A` | `mesh.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `mesh.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `E` | `view3d.edit_mesh_extrude_move_normal`（active=False） | 默认：`E` |
+| 修改 | `F + 可重复` | `mesh.edge_face_add`（active=False） | 默认：`F + 可重复` |
+| 修改 | `CTRL + RMB + 点击` | `mesh.dupli_extrude_cursor`（rotate_source=True） | 默认：`CTRL + LMB + 点击`；rotate_source=True |
+| 修改 | `CTRL + SHIFT + RMB + 点击` | `mesh.dupli_extrude_cursor`（rotate_source=False） | 默认：`CTRL + SHIFT + LMB + 点击`；rotate_source=False |
+| 修改 | `CTRL + F` | `wm.call_menu`（name='VIEW3D_MT_edit_mesh_faces', active=False） | 默认：`CTRL + F`；name='VIEW3D_MT_edit_mesh_faces' |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_edit_mesh_context_menu'） | 默认：`W`；name='VIEW3D_MT_edit_mesh_context_menu' |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `mesh.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `mesh.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Metaball
 
@@ -406,12 +387,13 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>CTRL + A</code> | `mball.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_edit_metaball_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_edit_metaball_context_menu' |
-| 新增 | <code>CTRL + F</code> | `mball.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `mball.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `CTRL + A` | `mball.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `mball.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_edit_metaball_context_menu'） | 默认：`W`；name='VIEW3D_MT_edit_metaball_context_menu' |
+| 新增 | `CTRL + F` | `mball.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `mball.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Paint Curve
 
@@ -419,15 +401,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + RMB</code> | `paintcurve.add_point_slide` | 默认：<code>CTRL + LMB</code> |
-| 修改 | <code>LMB</code> | `paintcurve.select` | 默认：<code>RMB</code> |
-| 修改 | <code>SHIFT + LMB</code> | `paintcurve.select`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>RMB</code> | `paintcurve.slide`<br><small>align=False</small> | 默认：<code>LMB</code>；align=False |
-| 修改 | <code>SHIFT + RMB</code> | `paintcurve.slide`<br><small>align=True</small> | 默认：<code>SHIFT + LMB</code>；align=True |
-| 修改 | <code>CTRL + A</code> | `paintcurve.select`<br><small>toggle=True</small> | 默认：<code>A</code>；toggle=True |
-| 修改 | <code>CTRL + SHIFT + RMB</code> | `paintcurve.cursor` | 默认：<code>CTRL + SHIFT + LMB</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
+| 修改 | `CTRL + RMB` | `paintcurve.add_point_slide` | 默认：`CTRL + LMB` |
+| 修改 | `LMB` | `paintcurve.select` | 默认：`RMB` |
+| 修改 | `SHIFT + LMB` | `paintcurve.select`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `RMB` | `paintcurve.slide`（align=False） | 默认：`LMB`；align=False |
+| 修改 | `SHIFT + RMB` | `paintcurve.slide`（align=True） | 默认：`SHIFT + LMB`；align=True |
+| 修改 | `CTRL + A` | `paintcurve.select`（toggle=True） | 默认：`A`；toggle=True |
+| 修改 | `CTRL + SHIFT + RMB` | `paintcurve.cursor` | 默认：`CTRL + SHIFT + LMB` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
 
 ### Paint Vertex Selection (Weight, Vertex)
 
@@ -435,16 +417,17 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `paint.vert_select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='ADD' |
-| 新增 | <code>CTRL + F</code> | `paint.vert_select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 移除 | <code>ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=False, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=True, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=True, select=False</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=False, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=True, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=True, select=False</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `CTRL + A` | `paint.vert_select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `paint.vert_select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `view3d.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `CTRL + RMB + 拖动` | `view3d.select_lasso`（mode='ADD'） | 默认：`CTRL + SHIFT + ALT + LMB + 拖动`；mode='ADD' |
+| 新增 | `CTRL + F` | `paint.vert_select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 移除 | `ALT + RMB` | `paint.face_select_loop`（extend=False, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + ALT + RMB` | `paint.face_select_loop`（extend=True, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + ALT + RMB` | `paint.face_select_loop`（extend=True, select=False） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `ALT + RMB` | `paint.vert_select_loop`（extend=False, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + ALT + RMB` | `paint.vert_select_loop`（extend=True, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + ALT + RMB` | `paint.vert_select_loop`（extend=True, select=False） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### Particle
 
@@ -452,13 +435,14 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `particle.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.particle_edit.brush.size'</small> | 默认：<code>F</code>；data_path_primary='tool_settings.particle_edit.brush.size' |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.particle_edit.brush.strength'</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.particle_edit.brush.strength' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='VIEW3D_MT_particle_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_MT_particle_context_menu' |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 新增 | <code>CTRL + F</code> | `particle.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + A` | `particle.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `particle.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.particle_edit.brush.size'） | 默认：`F`；data_path_primary='tool_settings.particle_edit.brush.size' |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.particle_edit.brush.strength'） | 默认：`SHIFT + F`；data_path_primary='tool_settings.particle_edit.brush.strength' |
+| 修改 | `RMB` | `wm.call_menu`（name='VIEW3D_MT_particle_context_menu'） | 默认：`W`；name='VIEW3D_MT_particle_context_menu' |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 新增 | `CTRL + F` | `particle.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Point Cloud
 
@@ -466,8 +450,9 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `ALT + A` | `pointcloud.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
 
 ### Sculpt
 
@@ -475,45 +460,45 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>ALT + LMB</code> | `sculpt.brush_stroke`<br><small>brush_toggle='MASK', active=False</small> | 默认：<code>ALT + LMB</code>；brush_toggle='MASK' |
-| 修改 | <code>CTRL + ALT + LMB</code> | `sculpt.brush_stroke`<br><small>mode='INVERT', brush_toggle='MASK', active=False</small> | 默认：<code>CTRL + ALT + LMB</code>；mode='INVERT', brush_toggle='MASK' |
-| 修改 | <code>SHIFT + A</code> | `sculpt.expand`<br><small>target='MASK', falloff_type='GEODESIC', invert=False, use_mask_preserve=True, use_auto_mask=False</small> | 默认：<code>SHIFT + A</code>；target='MASK', falloff_type='GEODESIC', invert=False, use_auto_mask=False, use_mask_preserve=True |
-| 修改 | <code>CTRL + ONE</code> | `object.subdivision_set`<br><small>level=1, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + ONE</code>；level=1, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + TWO</code> | `object.subdivision_set`<br><small>level=2, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + TWO</code>；level=2, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + THREE</code> | `object.subdivision_set`<br><small>level=3, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + THREE</code>；level=3, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + FOUR</code> | `object.subdivision_set`<br><small>level=4, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + FOUR</code>；level=4, relative=False, ensure_modifier=True |
-| 修改 | <code>CTRL + FIVE</code> | `object.subdivision_set`<br><small>level=5, relative=False, ensure_modifier=True, active=False</small> | 默认：<code>CTRL + FIVE</code>；level=5, relative=False, ensure_modifier=True |
-| 修改 | <code>B</code> | `paint.mask_box_gesture`<br><small>mode='VALUE', value=0.0, active=False</small> | 默认：<code>B</code>；mode='VALUE', value=0.0 |
-| 修改 | <code>D</code> | `sculpt.dyntopo_detail_size_edit` | 默认：<code>R</code> |
-| 修改 | <code>CTRL + D</code> | `sculpt.detail_flood_fill` | 默认：<code>CTRL + R</code> |
-| 修改 | <code>CTRL + D</code> | `object.voxel_remesh` | 默认：<code>CTRL + R</code> |
-| 修改 | <code>D</code> | `object.voxel_size_edit` | 默认：<code>R</code> |
-| 修改 | <code>X</code> | `paint.brush_colors_flip`<br><small>active=False</small> | 默认：<code>X</code> |
-| 修改 | <code>CTRL + X</code> | `sculpt.color_filter`<br><small>strength=1.0, type='FILL', use_immediate=True</small> | 默认：<code>CTRL + X</code>；type='FILL', strength=1.0, use_immediate=True |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
-| 修改 | <code>SHIFT + ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small> | 默认：<code>CTRL + F</code>；data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
-| 修改 | <code>SHIFT + S</code> | `wm.context_toggle`<br><small>data_path='tool_settings.sculpt.brush.use_smooth_stroke', active=False</small> | 默认：<code>SHIFT + S</code>；data_path='tool_settings.sculpt.brush.use_smooth_stroke' |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_sculpt_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_sculpt_context_menu' |
-| 修改 | <code>V</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw', active=False</small> | 默认：<code>V</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw' |
-| 修改 | <code>S</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth', active=False</small> | 默认：<code>S</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth' |
-| 修改 | <code>SHIFT + T</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill', active=False</small> | 默认：<code>SHIFT + T</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill' |
-| 修改 | <code>C</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips', active=False</small> | 默认：<code>C</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips' |
-| 修改 | <code>SHIFT + C</code> | `brush.asset_activate`<br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish', active=False</small> | 默认：<code>SHIFT + C</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_sculpt'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_sculpt' |
-| 修改 | <code>CTRL + SHIFT + RMB</code> | `paint.mask_lasso_gesture`<br><small>value=1.0</small> | 默认：<code>CTRL + SHIFT + LMB</code>；value=1.0 |
-| 修改 | <code>CTRL + RMB</code> | `paint.mask_lasso_gesture`<br><small>value=0.0</small> | 默认：<code>CTRL + SHIFT + ALT + LMB</code>；value=0.0 |
-| 新增 | <code>CTRL + F</code> | `paint.mask_flood_fill`<br><small>mode='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + A</code> | `paint.mask_flood_fill`<br><small>mode='VALUE'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + D</code> | `sculpt.dynamic_topology_toggle` | Blender Default 中没有此绑定 |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.box_mask', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `sculpt.sample_color` | Blender Default 中没有此绑定 |
-| 新增 | <code>C</code> | `wm.tool_set_by_id`<br><small>name='builtin.box_face_set', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>X</code> | `wm.tool_set_by_id`<br><small>name='builtin.lasso_trim', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>V</code> | `wm.tool_set_by_id`<br><small>name='builtin.lasso_hide', cycle=True</small> | Blender Default 中没有此绑定 |
+| 修改 | `ALT + LMB` | `sculpt.brush_stroke`（brush_toggle='MASK', active=False） | 默认：`ALT + LMB`；brush_toggle='MASK' |
+| 修改 | `CTRL + ALT + LMB` | `sculpt.brush_stroke`（mode='INVERT', brush_toggle='MASK', active=False） | 默认：`CTRL + ALT + LMB`；mode='INVERT', brush_toggle='MASK' |
+| 修改 | `SHIFT + A` | `sculpt.expand`（target='MASK', falloff_type='GEODESIC', invert=False, use_mask_preserve=True, use_auto_mask=False） | 默认：`SHIFT + A`；target='MASK', falloff_type='GEODESIC', invert=False, use_auto_mask=False, use_mask_preserve=True |
+| 修改 | `CTRL + ONE` | `object.subdivision_set`（level=1, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + ONE`；level=1, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + TWO` | `object.subdivision_set`（level=2, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + TWO`；level=2, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + THREE` | `object.subdivision_set`（level=3, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + THREE`；level=3, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + FOUR` | `object.subdivision_set`（level=4, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + FOUR`；level=4, relative=False, ensure_modifier=True |
+| 修改 | `CTRL + FIVE` | `object.subdivision_set`（level=5, relative=False, ensure_modifier=True, active=False） | 默认：`CTRL + FIVE`；level=5, relative=False, ensure_modifier=True |
+| 修改 | `B` | `paint.mask_box_gesture`（mode='VALUE', value=0.0, active=False） | 默认：`B`；mode='VALUE', value=0.0 |
+| 修改 | `D` | `sculpt.dyntopo_detail_size_edit` | 默认：`R` |
+| 修改 | `CTRL + D` | `sculpt.detail_flood_fill` | 默认：`CTRL + R` |
+| 修改 | `CTRL + D` | `object.voxel_remesh` | 默认：`CTRL + R` |
+| 修改 | `D` | `object.voxel_size_edit` | 默认：`R` |
+| 修改 | `X` | `paint.brush_colors_flip`（active=False） | 默认：`X` |
+| 修改 | `CTRL + X` | `sculpt.color_filter`（strength=1.0, type='FILL', use_immediate=True） | 默认：`CTRL + X`；type='FILL', strength=1.0, use_immediate=True |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
+| 修改 | `SHIFT + ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False） | 默认：`CTRL + F`；data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False |
+| 修改 | `SHIFT + S` | `wm.context_toggle`（data_path='tool_settings.sculpt.brush.use_smooth_stroke', active=False） | 默认：`SHIFT + S`；data_path='tool_settings.sculpt.brush.use_smooth_stroke' |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_sculpt_context_menu'） | 默认：`W`；name='VIEW3D_PT_sculpt_context_menu' |
+| 修改 | `V` | `brush.asset_activate`（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw', active=False） | 默认：`V`；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw' |
+| 修改 | `S` | `brush.asset_activate`（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth', active=False） | 默认：`S`；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth' |
+| 修改 | `SHIFT + T` | `brush.asset_activate`（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill', active=False） | 默认：`SHIFT + T`；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill' |
+| 修改 | `C` | `brush.asset_activate`（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips', active=False） | 默认：`C`；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips' |
+| 修改 | `SHIFT + C` | `brush.asset_activate`（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish', active=False） | 默认：`SHIFT + C`；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_sculpt'） | 默认：`SPACE`；name='VIEW3D_AST_brush_sculpt' |
+| 修改 | `CTRL + SHIFT + RMB` | `paint.mask_lasso_gesture`（value=1.0） | 默认：`CTRL + SHIFT + LMB`；value=1.0 |
+| 修改 | `CTRL + RMB` | `paint.mask_lasso_gesture`（value=0.0） | 默认：`CTRL + SHIFT + ALT + LMB`；value=0.0 |
+| 新增 | `CTRL + F` | `paint.mask_flood_fill`（mode='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + A` | `paint.mask_flood_fill`（mode='VALUE'） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + D` | `sculpt.dynamic_topology_toggle` | Blender Default 中没有此绑定 |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.box_mask', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + LMB + 双击` | `sculpt.sample_color` | Blender Default 中没有此绑定 |
+| 新增 | `C` | `wm.tool_set_by_id`（name='builtin.box_face_set', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `X` | `wm.tool_set_by_id`（name='builtin.lasso_trim', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `V` | `wm.tool_set_by_id`（name='builtin.lasso_hide', cycle=True） | Blender Default 中没有此绑定 |
 
 ### Sculpt Curves
 
@@ -521,13 +506,14 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False |
-| 修改 | <code>CTRL + A</code> | `curves.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>R</code> | `sculpt_curves.min_distance_edit` | 默认：<code>R</code> |
-| 修改 | <code>SHIFT + A</code> | `sculpt_curves.select_grow` | 默认：<code>SHIFT + A</code> |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_sculpt_curves'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_sculpt_curves' |
-| 新增 | <code>CTRL + F</code> | `curves.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False |
+| 修改 | `CTRL + A` | `curves.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `curves.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `R` | `sculpt_curves.min_distance_edit` | 默认：`R` |
+| 修改 | `SHIFT + A` | `sculpt_curves.select_grow` | 默认：`SHIFT + A` |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_sculpt_curves'） | 默认：`SPACE`；name='VIEW3D_AST_brush_sculpt_curves' |
+| 新增 | `CTRL + F` | `curves.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Vertex Paint
 
@@ -535,12 +521,12 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
-| 修改 | <code>SHIFT + ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small> | 默认：<code>CTRL + F</code>；data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_paint_vertex_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_paint_vertex_context_menu' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_vertex_paint'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_vertex_paint' |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `paint.sample_color` | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
+| 修改 | `SHIFT + ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False） | 默认：`CTRL + F`；data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_paint_vertex_context_menu'） | 默认：`W`；name='VIEW3D_PT_paint_vertex_context_menu' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_vertex_paint'） | 默认：`SPACE`；name='VIEW3D_AST_brush_vertex_paint' |
+| 新增 | `SHIFT + LMB + 双击` | `paint.sample_color` | Blender Default 中没有此绑定 |
 
 ### Weight Paint
 
@@ -548,15 +534,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small> | 默认：<code>F</code>；data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
-| 修改 | <code>SHIFT + ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small> | 默认：<code>CTRL + F</code>；data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_paint_weight_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_paint_weight_context_menu' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_weight_paint'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_weight_paint' |
-| 新增 | <code>ALT + LMB</code> | `view3d.select` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + ALT + LMB</code> | `view3d.select`<br><small>toggle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + LMB</code> | `view3d.select` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `paint.weight_sample` | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False） | 默认：`F`；data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False） | 默认：`SHIFT + F`；data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
+| 修改 | `SHIFT + ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False） | 默认：`CTRL + F`；data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_paint_weight_context_menu'） | 默认：`W`；name='VIEW3D_PT_paint_weight_context_menu' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_weight_paint'） | 默认：`SPACE`；name='VIEW3D_AST_brush_weight_paint' |
+| 新增 | `ALT + LMB` | `view3d.select` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + ALT + LMB` | `view3d.select`（toggle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + LMB` | `view3d.select` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + LMB + 双击` | `paint.weight_sample` | Blender Default 中没有此绑定 |
 
 ## 节点
 
@@ -566,48 +552,51 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 点击</code> | `node.select`<br><small>select_passthrough=True</small> | 默认：<code>LMB</code>；select_passthrough=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `node.select` | 默认：<code>CTRL + LMB</code> |
-| 修改 | <code>ALT + LMB + 点击</code> | `node.select` | 默认：<code>ALT + LMB</code> |
-| 修改 | <code>CTRL + ALT + LMB + 点击</code> | `node.select` | 默认：<code>CTRL + ALT + LMB</code> |
-| 修改 | <code>SHIFT + LMB + 点击</code> | `node.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + LMB</code>；toggle=True |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `node.select`<br><small>toggle=True</small> | 默认：<code>CTRL + SHIFT + LMB</code>；toggle=True |
-| 修改 | <code>SHIFT + ALT + LMB + 点击</code> | `node.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + ALT + LMB</code>；toggle=True |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB + 点击</code> | `node.select`<br><small>toggle=True</small> | 默认：<code>CTRL + SHIFT + ALT + LMB</code>；toggle=True |
-| 修改 | <code>LMB + 拖动</code> | `node.select_box`<br><small>tweak=True</small> | 默认：<code>RMB + 拖动</code>；tweak=True |
-| 修改 | <code>ALT + RMB</code> | `node.backimage_sample` | 默认：<code>ALT + LMB</code> |
-| 修改 | <code>F</code> | `node.link_make`<br><small>replace=False, active=False</small> | 默认：<code>J</code>；replace=False |
-| 修改 | <code>SHIFT + F</code> | `node.link_make`<br><small>replace=True, active=False</small> | 默认：<code>SHIFT + J</code>；replace=True |
-| 修改 | <code>F</code> | `node.join_named`<br><small>active=False</small> | 默认：<code>F</code> |
-| 修改 | <code>CTRL + A</code> | `node.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + SHIFT + F</code> | `node.find_node` | 默认：<code>CTRL + F</code> |
-| 修改 | <code>TAB</code> | `node.group_edit`<br><small>exit=False, active=False</small> | 默认：<code>TAB</code>；exit=False |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate`<br><small>view2d_edge_pan=True, release_confirm=True</small> | 默认：<code>LMB + 拖动</code>；release_confirm=True, view2d_edge_pan=True |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>ALT + RMB + 拖动</code> | `node.move_detach_links_release`<br><small>NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])]</small> | 默认：<code>ALT + LMB + 拖动</code>；NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])] |
-| 修改 | <code>ALT + LMB + 拖动</code> | `node.move_detach_links`<br><small>TRANSFORM_OT_translate=[('view2d_edge_pan', True)]</small> | 默认：<code>ALT + RMB + 拖动</code>；TRANSFORM_OT_translate=[('view2d_edge_pan', True)] |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='NODE_MT_context_menu'</small> | 默认：<code>W</code>；name='NODE_MT_context_menu' |
-| 修改 | <code>MMB</code> | `transform.translate` | 默认：<code>RMB + 拖动</code>；release_confirm=True, view2d_edge_pan=True |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>F + 双击</code> | `node.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `node.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `node.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `node.backimage_sample` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `node.duplicate_move` | Blender Default 中没有此绑定 |
-| 新增 | <code>LMB + 双击</code> | `node.group_edit` | Blender Default 中没有此绑定 |
-| 新增 | <code>ESC</code> | `node.group_edit`<br><small>exit=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>TAB</code> | `wm.call_menu`<br><small>name='NODE_MT_add'</small> | Blender Default 中没有此绑定 |
-| 移除 | <code>RMB</code> | `node.select`<br><small>select_passthrough=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + RMB</code> | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>ALT + RMB</code> | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + ALT + RMB</code> | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + RMB</code> | `node.select`<br><small>toggle=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + RMB</code> | `node.select`<br><small>toggle=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + ALT + RMB</code> | `node.select`<br><small>toggle=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + ALT + RMB</code> | `node.select`<br><small>toggle=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>RMB + 点击</code> | `node.select`<br><small>deselect_all=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>LMB + 点击</code> | `node.select`<br><small>deselect_all=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>RMB + 拖动</code> | `node.translate_attach`<br><small>TRANSFORM_OT_translate=[('view2d_edge_pan', True)]</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `LMB + 点击` | `node.select`（select_passthrough=True） | 默认：`LMB`；select_passthrough=True |
+| 修改 | `CTRL + LMB + 点击` | `node.select` | 默认：`CTRL + LMB` |
+| 修改 | `ALT + LMB + 点击` | `node.select` | 默认：`ALT + LMB` |
+| 修改 | `CTRL + ALT + LMB + 点击` | `node.select` | 默认：`CTRL + ALT + LMB` |
+| 修改 | `SHIFT + LMB + 点击` | `node.select`（toggle=True） | 默认：`SHIFT + LMB`；toggle=True |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `node.select`（toggle=True） | 默认：`CTRL + SHIFT + LMB`；toggle=True |
+| 修改 | `SHIFT + ALT + LMB + 点击` | `node.select`（toggle=True） | 默认：`SHIFT + ALT + LMB`；toggle=True |
+| 修改 | `CTRL + SHIFT + ALT + LMB + 点击` | `node.select`（toggle=True） | 默认：`CTRL + SHIFT + ALT + LMB`；toggle=True |
+| 修改 | `LMB + 拖动` | `node.select_box`（tweak=True） | 默认：`RMB + 拖动`；tweak=True |
+| 修改 | `ALT + RMB` | `node.backimage_sample` | 默认：`ALT + LMB` |
+| 修改 | `F` | `node.link_make`（replace=False, active=False） | 默认：`J`；replace=False |
+| 修改 | `SHIFT + F` | `node.link_make`（replace=True, active=False） | 默认：`SHIFT + J`；replace=True |
+| 修改 | `F` | `node.join_named`（active=False） | 默认：`F` |
+| 修改 | `CTRL + A` | `node.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `node.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + SHIFT + F` | `node.find_node` | 默认：`CTRL + F` |
+| 修改 | `TAB` | `node.group_edit`（exit=False, active=False） | 默认：`TAB`；exit=False |
+| 修改 | `LMB + 拖动` | `transform.translate`（view2d_edge_pan=True, release_confirm=True） | 默认：`LMB + 拖动`；release_confirm=True, view2d_edge_pan=True |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `ALT + RMB + 拖动` | `node.move_detach_links_release`（NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])]） | 默认：`ALT + LMB + 拖动`；NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])] |
+| 修改 | `ALT + LMB + 拖动` | `node.move_detach_links`（TRANSFORM_OT_translate=[('view2d_edge_pan', True)]） | 默认：`ALT + RMB + 拖动`；TRANSFORM_OT_translate=[('view2d_edge_pan', True)] |
+| 修改 | `RMB` | `wm.call_menu`（name='NODE_MT_context_menu'） | 默认：`W`；name='NODE_MT_context_menu' |
+| 修改 | `MMB` | `transform.translate` | 默认：`RMB + 拖动`；release_confirm=True, view2d_edge_pan=True |
+| 新增 | `CTRL + C` | `anyimage.track_native_copy` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + V` | `anyimage.paste_clipboard_image` | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `F + 双击` | `node.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `node.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `node.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + LMB + 双击` | `node.backimage_sample` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `node.duplicate_move` | Blender Default 中没有此绑定 |
+| 新增 | `LMB + 双击` | `node.group_edit` | Blender Default 中没有此绑定 |
+| 新增 | `ESC` | `node.group_edit`（exit=True） | Blender Default 中没有此绑定 |
+| 新增 | `TAB` | `wm.call_menu`（name='NODE_MT_add'） | Blender Default 中没有此绑定 |
+| 移除 | `RMB` | `node.select`（select_passthrough=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + RMB` | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `ALT + RMB` | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + ALT + RMB` | `node.select` | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + RMB` | `node.select`（toggle=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + RMB` | `node.select`（toggle=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + ALT + RMB` | `node.select`（toggle=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + ALT + RMB` | `node.select`（toggle=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `RMB + 点击` | `node.select`（deselect_all=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `LMB + 点击` | `node.select`（deselect_all=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `RMB + 拖动` | `node.translate_attach`（TRANSFORM_OT_translate=[('view2d_edge_pan', True)]） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### Node Generic
 
@@ -615,7 +604,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
 
 ## 动画
 
@@ -625,11 +614,12 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + SHIFT + F</code> | `anim.channels_select_filter` | 默认：<code>CTRL + F</code> |
-| 修改 | <code>CTRL + A</code> | `anim.channels_select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='DOPESHEET_MT_channel_context_menu'</small> | 默认：<code>W</code>；name='DOPESHEET_MT_channel_context_menu' |
-| 新增 | <code>F</code> | `anim.channels_view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `anim.channels_select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + SHIFT + F` | `anim.channels_select_filter` | 默认：`CTRL + F` |
+| 修改 | `CTRL + A` | `anim.channels_select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `anim.channels_select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='DOPESHEET_MT_channel_context_menu'） | 默认：`W`；name='DOPESHEET_MT_channel_context_menu' |
+| 新增 | `F` | `anim.channels_view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `anim.channels_select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Clip Graph Editor
 
@@ -637,13 +627,14 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB</code> | `clip.graph_select` | 默认：<code>RMB</code> |
-| 修改 | <code>SHIFT + LMB</code> | `clip.graph_select`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + A</code> | `clip.graph_select_all_markers`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>SHIFT + RMB</code> | `clip.change_frame` | 默认：<code>LMB</code> |
-| 新增 | <code>CTRL + F</code> | `clip.graph_select_all_markers`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `LMB` | `clip.graph_select` | 默认：`RMB` |
+| 修改 | `SHIFT + LMB` | `clip.graph_select`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `CTRL + A` | `clip.graph_select_all_markers`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `clip.graph_select_all_markers`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `SHIFT + RMB` | `clip.change_frame` | 默认：`LMB` |
+| 新增 | `CTRL + F` | `clip.graph_select_all_markers`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Dopesheet
 
@@ -651,29 +642,30 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB</code> | `action.clickselect`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>ALT + LMB</code> | `action.clickselect`<br><small>column=True</small> | 默认：<code>ALT + RMB</code>；column=True |
-| 修改 | <code>SHIFT + LMB</code> | `action.clickselect`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>SHIFT + ALT + LMB</code> | `action.clickselect`<br><small>extend=True, column=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；extend=True, column=True |
-| 修改 | <code>CTRL + ALT + LMB</code> | `action.clickselect`<br><small>channel=True</small> | 默认：<code>CTRL + ALT + RMB</code>；channel=True |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB</code> | `action.clickselect`<br><small>extend=True, channel=True</small> | 默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True, channel=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `action.select_leftright`<br><small>mode='CHECK'</small> | 默认：<code>CTRL + RMB + 点击</code>；mode='CHECK' |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `action.select_leftright`<br><small>mode='CHECK', extend=True</small> | 默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True |
-| 修改 | <code>CTRL + A</code> | `action.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>LMB + 拖动</code> | `action.select_box`<br><small>mode='SET', tweak=True</small> | 默认：<code>RMB + 拖动</code>；tweak=True, mode='SET' |
-| 修改 | <code>SHIFT + LMB + 拖动</code> | `action.select_box`<br><small>mode='ADD', tweak=True</small> | 默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD' |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `action.select_box`<br><small>mode='SUB', tweak=True</small> | 默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB' |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `action.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `action.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>TAB</code> | `anim.channels_editable_toggle`<br><small>active=False</small> | 默认：<code>TAB</code> |
-| 修改 | <code>CTRL + SHIFT + F</code> | `anim.channels_select_filter` | 默认：<code>CTRL + F</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.transform`<br><small>mode='TIME_TRANSLATE'</small> | 默认：<code>RMB + 拖动</code>；mode='TIME_TRANSLATE' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='DOPESHEET_MT_context_menu'</small> | 默认：<code>W</code>；name='DOPESHEET_MT_context_menu' |
-| 修改 | <code>SHIFT + RMB</code> | `anim.change_frame` | 默认：<code>LMB</code> |
-| 新增 | <code>F + 双击</code> | `view3d.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `action.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `action.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `action.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `LMB` | `action.clickselect`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `ALT + LMB` | `action.clickselect`（column=True） | 默认：`ALT + RMB`；column=True |
+| 修改 | `SHIFT + LMB` | `action.clickselect`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `SHIFT + ALT + LMB` | `action.clickselect`（extend=True, column=True） | 默认：`SHIFT + ALT + RMB`；extend=True, column=True |
+| 修改 | `CTRL + ALT + LMB` | `action.clickselect`（channel=True） | 默认：`CTRL + ALT + RMB`；channel=True |
+| 修改 | `CTRL + SHIFT + ALT + LMB` | `action.clickselect`（extend=True, channel=True） | 默认：`CTRL + SHIFT + ALT + RMB`；extend=True, channel=True |
+| 修改 | `CTRL + LMB + 点击` | `action.select_leftright`（mode='CHECK'） | 默认：`CTRL + RMB + 点击`；mode='CHECK' |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `action.select_leftright`（mode='CHECK', extend=True） | 默认：`CTRL + SHIFT + RMB + 点击`；mode='CHECK', extend=True |
+| 修改 | `CTRL + A` | `action.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `action.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `LMB + 拖动` | `action.select_box`（mode='SET', tweak=True） | 默认：`RMB + 拖动`；tweak=True, mode='SET' |
+| 修改 | `SHIFT + LMB + 拖动` | `action.select_box`（mode='ADD', tweak=True） | 默认：`SHIFT + RMB + 拖动`；tweak=True, mode='ADD' |
+| 修改 | `CTRL + LMB + 拖动` | `action.select_box`（mode='SUB', tweak=True） | 默认：`CTRL + RMB + 拖动`；tweak=True, mode='SUB' |
+| 修改 | `CTRL + RMB + 拖动` | `action.select_lasso`（mode='ADD'） | 默认：`CTRL + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `action.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `TAB` | `anim.channels_editable_toggle`（active=False） | 默认：`TAB` |
+| 修改 | `CTRL + SHIFT + F` | `anim.channels_select_filter` | 默认：`CTRL + F` |
+| 修改 | `LMB + 拖动` | `transform.transform`（mode='TIME_TRANSLATE'） | 默认：`RMB + 拖动`；mode='TIME_TRANSLATE' |
+| 修改 | `RMB` | `wm.call_menu`（name='DOPESHEET_MT_context_menu'） | 默认：`W`；name='DOPESHEET_MT_context_menu' |
+| 修改 | `SHIFT + RMB` | `anim.change_frame` | 默认：`LMB` |
+| 新增 | `F + 双击` | `view3d.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `action.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `action.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `action.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Graph Editor
 
@@ -681,30 +673,31 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB</code> | `graph.clickselect`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>ALT + LMB</code> | `graph.clickselect`<br><small>column=True</small> | 默认：<code>ALT + RMB</code>；column=True |
-| 修改 | <code>SHIFT + LMB</code> | `graph.clickselect`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>SHIFT + ALT + LMB</code> | `graph.clickselect`<br><small>extend=True, column=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；extend=True, column=True |
-| 修改 | <code>CTRL + ALT + LMB</code> | `graph.clickselect`<br><small>curves=True</small> | 默认：<code>CTRL + ALT + RMB</code>；curves=True |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB</code> | `graph.clickselect`<br><small>extend=True, curves=True</small> | 默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True, curves=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `graph.select_leftright`<br><small>mode='CHECK'</small> | 默认：<code>CTRL + RMB + 点击</code>；mode='CHECK' |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `graph.select_leftright`<br><small>mode='CHECK', extend=True</small> | 默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True |
-| 修改 | <code>CTRL + A</code> | `graph.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>LMB + 拖动</code> | `graph.select_box`<br><small>tweak=True, mode='SET'</small> | 默认：<code>RMB + 拖动</code>；tweak=True, mode='SET' |
-| 修改 | <code>SHIFT + LMB + 拖动</code> | `graph.select_box`<br><small>tweak=True, mode='ADD'</small> | 默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD' |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `graph.select_box`<br><small>tweak=True, mode='SUB'</small> | 默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB' |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `graph.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `graph.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>CTRL + RMB + 点击</code> | `graph.click_insert` | 默认：<code>CTRL + LMB + 点击</code> |
-| 修改 | <code>CTRL + SHIFT + RMB + 点击</code> | `graph.click_insert`<br><small>extend=True</small> | 默认：<code>CTRL + SHIFT + LMB + 点击</code>；extend=True |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='GRAPH_MT_context_menu'</small> | 默认：<code>W</code>；name='GRAPH_MT_context_menu' |
-| 修改 | <code>SHIFT + RMB</code> | `graph.cursor_set` | 默认：<code>LMB</code> |
-| 新增 | <code>F + 双击</code> | `graph.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `graph.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `graph.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `graph.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `LMB` | `graph.clickselect`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `ALT + LMB` | `graph.clickselect`（column=True） | 默认：`ALT + RMB`；column=True |
+| 修改 | `SHIFT + LMB` | `graph.clickselect`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `SHIFT + ALT + LMB` | `graph.clickselect`（extend=True, column=True） | 默认：`SHIFT + ALT + RMB`；extend=True, column=True |
+| 修改 | `CTRL + ALT + LMB` | `graph.clickselect`（curves=True） | 默认：`CTRL + ALT + RMB`；curves=True |
+| 修改 | `CTRL + SHIFT + ALT + LMB` | `graph.clickselect`（extend=True, curves=True） | 默认：`CTRL + SHIFT + ALT + RMB`；extend=True, curves=True |
+| 修改 | `CTRL + LMB + 点击` | `graph.select_leftright`（mode='CHECK'） | 默认：`CTRL + RMB + 点击`；mode='CHECK' |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `graph.select_leftright`（mode='CHECK', extend=True） | 默认：`CTRL + SHIFT + RMB + 点击`；mode='CHECK', extend=True |
+| 修改 | `CTRL + A` | `graph.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `graph.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `LMB + 拖动` | `graph.select_box`（tweak=True, mode='SET'） | 默认：`RMB + 拖动`；tweak=True, mode='SET' |
+| 修改 | `SHIFT + LMB + 拖动` | `graph.select_box`（tweak=True, mode='ADD'） | 默认：`SHIFT + RMB + 拖动`；tweak=True, mode='ADD' |
+| 修改 | `CTRL + LMB + 拖动` | `graph.select_box`（tweak=True, mode='SUB'） | 默认：`CTRL + RMB + 拖动`；tweak=True, mode='SUB' |
+| 修改 | `CTRL + RMB + 拖动` | `graph.select_lasso`（mode='ADD'） | 默认：`CTRL + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `graph.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `CTRL + RMB + 点击` | `graph.click_insert` | 默认：`CTRL + LMB + 点击` |
+| 修改 | `CTRL + SHIFT + RMB + 点击` | `graph.click_insert`（extend=True） | 默认：`CTRL + SHIFT + LMB + 点击`；extend=True |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `RMB` | `wm.call_menu`（name='GRAPH_MT_context_menu'） | 默认：`W`；name='GRAPH_MT_context_menu' |
+| 修改 | `SHIFT + RMB` | `graph.cursor_set` | 默认：`LMB` |
+| 新增 | `F + 双击` | `graph.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `graph.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `graph.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `graph.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Markers
 
@@ -712,19 +705,20 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 拖动</code> | `marker.move`<br><small>tweak=True</small> | 默认：<code>RMB + 拖动</code>；tweak=True |
-| 修改 | <code>LMB</code> | `marker.select` | 默认：<code>RMB</code> |
-| 修改 | <code>SHIFT + LMB</code> | `marker.select`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + LMB</code> | `marker.select`<br><small>camera=True</small> | 默认：<code>CTRL + RMB</code>；camera=True |
-| 修改 | <code>CTRL + SHIFT + LMB</code> | `marker.select`<br><small>extend=True, camera=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；extend=True, camera=True |
-| 修改 | <code>LMB + 拖动</code> | `marker.select_box`<br><small>tweak=True</small> | 默认：<code>RMB + 拖动</code>；tweak=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `marker.select_leftright`<br><small>mode='CLICK_SIDE', extend=False</small> | 默认：<code>CTRL + RMB + 点击</code>；mode='CLICK_SIDE', extend=False |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `marker.select_leftright`<br><small>mode='CLICK_SIDE', extend=True</small> | 默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CLICK_SIDE', extend=True |
-| 修改 | <code>SHIFT + LMB + 拖动</code> | `marker.select_box`<br><small>mode='ADD', tweak=True</small> | 默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD' |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `marker.select_box`<br><small>mode='SUB', tweak=True</small> | 默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB' |
-| 修改 | <code>CTRL + A</code> | `marker.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 新增 | <code>CTRL + F</code> | `marker.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `marker.duplicate` | Blender Default 中没有此绑定 |
+| 修改 | `LMB + 拖动` | `marker.move`（tweak=True） | 默认：`RMB + 拖动`；tweak=True |
+| 修改 | `LMB` | `marker.select` | 默认：`RMB` |
+| 修改 | `SHIFT + LMB` | `marker.select`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `CTRL + LMB` | `marker.select`（camera=True） | 默认：`CTRL + RMB`；camera=True |
+| 修改 | `CTRL + SHIFT + LMB` | `marker.select`（extend=True, camera=True） | 默认：`CTRL + SHIFT + RMB`；extend=True, camera=True |
+| 修改 | `LMB + 拖动` | `marker.select_box`（tweak=True） | 默认：`RMB + 拖动`；tweak=True |
+| 修改 | `CTRL + LMB + 点击` | `marker.select_leftright`（mode='CLICK_SIDE', extend=False） | 默认：`CTRL + RMB + 点击`；mode='CLICK_SIDE', extend=False |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `marker.select_leftright`（mode='CLICK_SIDE', extend=True） | 默认：`CTRL + SHIFT + RMB + 点击`；mode='CLICK_SIDE', extend=True |
+| 修改 | `SHIFT + LMB + 拖动` | `marker.select_box`（mode='ADD', tweak=True） | 默认：`SHIFT + RMB + 拖动`；tweak=True, mode='ADD' |
+| 修改 | `CTRL + LMB + 拖动` | `marker.select_box`（mode='SUB', tweak=True） | 默认：`CTRL + RMB + 拖动`；tweak=True, mode='SUB' |
+| 修改 | `CTRL + A` | `marker.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `marker.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 新增 | `CTRL + F` | `marker.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `marker.duplicate` | Blender Default 中没有此绑定 |
 
 ### NLA Editor
 
@@ -732,26 +726,26 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB</code> | `nla.click_select`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB</code> | `nla.click_select`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `nla.select_leftright`<br><small>mode='CHECK'</small> | 默认：<code>CTRL + RMB + 点击</code>；mode='CHECK' |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `nla.select_leftright`<br><small>mode='CHECK', extend=True</small> | 默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True |
-| 修改 | <code>CTRL + A</code> | `nla.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>LMB + 拖动</code> | `nla.select_box`<br><small>tweak=True, mode='SET'</small> | 默认：<code>RMB + 拖动</code>；tweak=True, mode='SET' |
-| 修改 | <code>SHIFT + LMB + 拖动</code> | `nla.select_box`<br><small>tweak=True, mode='ADD'</small> | 默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD' |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `nla.select_box`<br><small>tweak=True, mode='SUB'</small> | 默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB' |
-| 修改 | <code>ALT + D</code> | `nla.duplicate_linked_move` | 默认：<code>SHIFT + D</code> |
-| 修改 | <code>SHIFT + D</code> | `nla.duplicate_move` | 默认：<code>ALT + D</code> |
-| 修改 | <code>CTRL + SHIFT + A</code> | `nla.apply_scale` | 默认：<code>CTRL + A</code> |
-| 修改 | <code>ALT + R</code> | `nla.clear_scale` | 默认：<code>ALT + S</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.transform`<br><small>mode='TRANSLATION'</small> | 默认：<code>RMB + 拖动</code>；mode='TRANSLATION' |
-| 修改 | <code>S</code> | `transform.transform`<br><small>mode='TIME_SCALE', active=False</small> | 默认：<code>S</code>；mode='TIME_SCALE' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='NLA_MT_context_menu'</small> | 默认：<code>W</code>；name='NLA_MT_context_menu' |
-| 修改 | <code>SHIFT + RMB</code> | `anim.change_frame`<br><small>seq_solo_preview=True</small> | 默认：<code>LMB</code>；seq_solo_preview=True |
-| 新增 | <code>F + 双击</code> | `nla.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `nla.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `nla.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `nla.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `LMB` | `nla.click_select`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `SHIFT + LMB` | `nla.click_select`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `CTRL + LMB + 点击` | `nla.select_leftright`（mode='CHECK'） | 默认：`CTRL + RMB + 点击`；mode='CHECK' |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `nla.select_leftright`（mode='CHECK', extend=True） | 默认：`CTRL + SHIFT + RMB + 点击`；mode='CHECK', extend=True |
+| 修改 | `CTRL + A` | `nla.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `nla.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `LMB + 拖动` | `nla.select_box`（tweak=True, mode='SET'） | 默认：`RMB + 拖动`；tweak=True, mode='SET' |
+| 修改 | `SHIFT + LMB + 拖动` | `nla.select_box`（tweak=True, mode='ADD'） | 默认：`SHIFT + RMB + 拖动`；tweak=True, mode='ADD' |
+| 修改 | `CTRL + LMB + 拖动` | `nla.select_box`（tweak=True, mode='SUB'） | 默认：`CTRL + RMB + 拖动`；tweak=True, mode='SUB' |
+| 修改 | `ALT + D` | `nla.duplicate_linked_move` | 默认：`SHIFT + D` |
+| 修改 | `SHIFT + D` | `nla.duplicate_move` | 默认：`ALT + D` |
+| 修改 | `ALT + A` | `nla.apply_scale` | 默认：`CTRL + A` |
+| 修改 | `ALT + E` | `nla.clear_scale` | 默认：`ALT + S` |
+| 修改 | `LMB + 拖动` | `transform.transform`（mode='TRANSLATION'） | 默认：`RMB + 拖动`；mode='TRANSLATION' |
+| 修改 | `RMB` | `wm.call_menu`（name='NLA_MT_context_menu'） | 默认：`W`；name='NLA_MT_context_menu' |
+| 修改 | `SHIFT + RMB` | `anim.change_frame`（seq_solo_preview=True） | 默认：`LMB`；seq_solo_preview=True |
+| 新增 | `F + 双击` | `nla.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `nla.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `nla.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `nla.duplicate_move` | Blender Default 中没有此绑定 |
 
 ### NLA Generic
 
@@ -759,8 +753,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>TAB</code> | `nla.tweakmode_enter`<br><small>use_upper_stack_evaluation=True, active=False</small> | 默认：<code>TAB</code>；use_upper_stack_evaluation=True |
-| 修改 | <code>TAB</code> | `nla.tweakmode_exit`<br><small>active=False</small> | 默认：<code>TAB</code> |
+| 修改 | `TAB` | `nla.tweakmode_enter`（use_upper_stack_evaluation=True, active=False） | 默认：`TAB`；use_upper_stack_evaluation=True |
+| 修改 | `TAB` | `nla.tweakmode_exit`（active=False） | 默认：`TAB` |
 
 ## 图像与 UV
 
@@ -770,13 +764,13 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>RMB</code> | `image.sample` | 默认：<code>LMB</code> |
-| 修改 | <code>CTRL + RMB</code> | `image.curves_point_set`<br><small>point='BLACK_POINT'</small> | 默认：<code>CTRL + LMB</code>；point='BLACK_POINT' |
-| 修改 | <code>SHIFT + RMB</code> | `image.curves_point_set`<br><small>point='WHITE_POINT'</small> | 默认：<code>SHIFT + LMB</code>；point='WHITE_POINT' |
-| 修改 | <code>TAB</code> | `object.mode_set`<br><small>mode='EDIT', toggle=True, active=False</small> | 默认：<code>TAB</code>；mode='EDIT', toggle=True |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='IMAGE_MT_mask_context_menu'</small> | 默认：<code>W</code>；name='IMAGE_MT_mask_context_menu' |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `image.sample` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `image.view_all`<br><small>fit_view=True</small> | Blender Default 中没有此绑定 |
+| 修改 | `RMB` | `image.sample` | 默认：`LMB` |
+| 修改 | `CTRL + RMB` | `image.curves_point_set`（point='BLACK_POINT'） | 默认：`CTRL + LMB`；point='BLACK_POINT' |
+| 修改 | `SHIFT + RMB` | `image.curves_point_set`（point='WHITE_POINT'） | 默认：`SHIFT + LMB`；point='WHITE_POINT' |
+| 修改 | `TAB` | `object.mode_set`（mode='EDIT', toggle=True, active=False） | 默认：`TAB`；mode='EDIT', toggle=True |
+| 修改 | `RMB` | `wm.call_menu`（name='IMAGE_MT_mask_context_menu'） | 默认：`W`；name='IMAGE_MT_mask_context_menu' |
+| 新增 | `SHIFT + LMB + 双击` | `image.sample` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `image.view_all`（fit_view=True） | Blender Default 中没有此绑定 |
 
 ### Image Editor Tool: Uv, Grab
 
@@ -784,8 +778,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.size'</small> | 默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size' |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.size'） | 默认：`F`；data_path_primary='tool_settings.uv_sculpt.size' |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.strength'） | 默认：`SHIFT + F`；data_path_primary='tool_settings.uv_sculpt.strength' |
 
 ### Image Editor Tool: Uv, Pinch
 
@@ -793,8 +787,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.size'</small> | 默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size' |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.size'） | 默认：`F`；data_path_primary='tool_settings.uv_sculpt.size' |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.strength'） | 默认：`SHIFT + F`；data_path_primary='tool_settings.uv_sculpt.strength' |
 
 ### Image Editor Tool: Uv, Relax
 
@@ -802,8 +796,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.size'</small> | 默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size' |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength' |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.size'） | 默认：`F`；data_path_primary='tool_settings.uv_sculpt.size' |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.uv_sculpt.strength'） | 默认：`SHIFT + F`；data_path_primary='tool_settings.uv_sculpt.strength' |
 
 ### Image Generic
 
@@ -811,7 +805,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
 
 ### Image Paint
 
@@ -819,15 +813,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True</small> | 默认：<code>F</code>；data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True |
-| 修改 | <code>ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True</small> | 默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True |
-| 修改 | <code>SHIFT + ALT + S</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False</small> | 默认：<code>CTRL + F</code>；data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False |
-| 修改 | <code>CTRL + ALT + F</code> | `wm.radial_control`<br><small>data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True, active=False</small> | 默认：<code>CTRL + ALT + F</code>；data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True |
-| 修改 | <code>RMB</code> | `wm.call_panel`<br><small>name='VIEW3D_PT_paint_texture_context_menu'</small> | 默认：<code>W</code>；name='VIEW3D_PT_paint_texture_context_menu' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='VIEW3D_AST_brush_texture_paint'</small> | 默认：<code>SPACE</code>；name='VIEW3D_AST_brush_texture_paint' |
-| 修改 | <code>B</code> | `wm.call_asset_shelf_popover`<br><small>name='IMAGE_AST_brush_paint'</small> | 默认：<code>SPACE</code>；name='IMAGE_AST_brush_paint' |
-| 新增 | <code>SHIFT + LMB + 双击</code> | `paint.sample_color` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + SHIFT + LMB + 双击</code> | `paint.sample_color`<br><small>merged=True</small> | Blender Default 中没有此绑定 |
+| 修改 | `S` | `wm.radial_control`（data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True） | 默认：`F`；data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True |
+| 修改 | `ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True） | 默认：`SHIFT + F`；data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True |
+| 修改 | `SHIFT + ALT + S` | `wm.radial_control`（data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False） | 默认：`CTRL + F`；data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False |
+| 修改 | `CTRL + ALT + F` | `wm.radial_control`（data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True, active=False） | 默认：`CTRL + ALT + F`；data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True |
+| 修改 | `RMB` | `wm.call_panel`（name='VIEW3D_PT_paint_texture_context_menu'） | 默认：`W`；name='VIEW3D_PT_paint_texture_context_menu' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='VIEW3D_AST_brush_texture_paint'） | 默认：`SPACE`；name='VIEW3D_AST_brush_texture_paint' |
+| 修改 | `B` | `wm.call_asset_shelf_popover`（name='IMAGE_AST_brush_paint'） | 默认：`SPACE`；name='IMAGE_AST_brush_paint' |
+| 新增 | `SHIFT + LMB + 双击` | `paint.sample_color` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + SHIFT + LMB + 双击` | `paint.sample_color`（merged=True） | Blender Default 中没有此绑定 |
 
 ### UV Editor
 
@@ -835,37 +829,38 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 点击</code> | `uv.select`<br><small>deselect_all=True</small> | 默认：<code>RMB + 点击</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB + 点击</code> | `uv.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + RMB</code>；toggle=True |
-| 修改 | <code>ALT + LMB + 点击</code> | `uv.select_loop` | 默认：<code>ALT + RMB</code> |
-| 修改 | <code>SHIFT + ALT + LMB + 点击</code> | `uv.select_loop`<br><small>extend=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + ALT + LMB + 点击</code> | `uv.select_edge_ring` | 默认：<code>CTRL + ALT + RMB</code> |
-| 修改 | <code>CTRL + SHIFT + ALT + LMB + 点击</code> | `uv.select_edge_ring`<br><small>extend=True</small> | 默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `uv.shortest_path_pick`<br><small>use_fill=False</small> | 默认：<code>CTRL + RMB</code>；use_fill=False |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `uv.shortest_path_pick`<br><small>use_fill=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；use_fill=True |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `uv.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `uv.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>CTRL + A</code> | `uv.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + NUMPAD 8</code> | `uv.move_on_axis`<br><small>type='DYNAMIC', axis='Y', distance=1</small> | 默认：<code>CTRL + NUMPAD 8</code>；axis='Y', type='DYNAMIC', distance=1 |
-| 修改 | <code>CTRL + NUMPAD 2</code> | `uv.move_on_axis`<br><small>type='DYNAMIC', axis='Y', distance=-1</small> | 默认：<code>CTRL + NUMPAD 2</code>；axis='Y', type='DYNAMIC', distance=-1 |
-| 修改 | <code>CTRL + NUMPAD 6</code> | `uv.move_on_axis`<br><small>type='DYNAMIC', axis='X', distance=1</small> | 默认：<code>CTRL + NUMPAD 6</code>；axis='X', type='DYNAMIC', distance=1 |
-| 修改 | <code>CTRL + NUMPAD 4</code> | `uv.move_on_axis`<br><small>type='DYNAMIC', axis='X', distance=-1</small> | 默认：<code>CTRL + NUMPAD 4</code>；axis='X', type='DYNAMIC', distance=-1 |
-| 修改 | <code>SHIFT + NUMPAD 8</code> | `uv.move_on_axis`<br><small>type='PIXEL', axis='Y', distance=1</small> | 默认：<code>SHIFT + NUMPAD 8</code>；axis='Y', type='PIXEL', distance=1 |
-| 修改 | <code>SHIFT + NUMPAD 2</code> | `uv.move_on_axis`<br><small>type='PIXEL', axis='Y', distance=-1</small> | 默认：<code>SHIFT + NUMPAD 2</code>；axis='Y', type='PIXEL', distance=-1 |
-| 修改 | <code>SHIFT + NUMPAD 6</code> | `uv.move_on_axis`<br><small>type='PIXEL', axis='X', distance=1</small> | 默认：<code>SHIFT + NUMPAD 6</code>；axis='X', type='PIXEL', distance=1 |
-| 修改 | <code>SHIFT + NUMPAD 4</code> | `uv.move_on_axis`<br><small>type='PIXEL', axis='X', distance=-1</small> | 默认：<code>SHIFT + NUMPAD 4</code>；axis='X', type='PIXEL', distance=-1 |
-| 修改 | <code>NUMPAD 8</code> | `uv.move_on_axis`<br><small>type='UDIM', axis='Y', distance=1</small> | 默认：<code>NUMPAD 8</code>；axis='Y', type='UDIM', distance=1 |
-| 修改 | <code>NUMPAD 2</code> | `uv.move_on_axis`<br><small>type='UDIM', axis='Y', distance=-1</small> | 默认：<code>NUMPAD 2</code>；axis='Y', type='UDIM', distance=-1 |
-| 修改 | <code>NUMPAD 6</code> | `uv.move_on_axis`<br><small>type='UDIM', axis='X', distance=1</small> | 默认：<code>NUMPAD 6</code>；axis='X', type='UDIM', distance=1 |
-| 修改 | <code>NUMPAD 4</code> | `uv.move_on_axis`<br><small>type='UDIM', axis='X', distance=-1</small> | 默认：<code>NUMPAD 4</code>；axis='X', type='UDIM', distance=-1 |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='IMAGE_MT_uvs_context_menu'</small> | 默认：<code>W</code>；name='IMAGE_MT_uvs_context_menu' |
-| 修改 | <code>SHIFT + RMB</code> | `uv.cursor_set` | 默认：<code>LMB + 点击</code> |
-| 新增 | <code>SHIFT + RMB + 拖动</code> | `transform.translate`<br><small>cursor_transform=True, release_confirm=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `uv.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 移除 | <code>RMB</code> | `uv.select`<br><small>deselect_all=True, select_passthrough=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `LMB + 点击` | `uv.select`（deselect_all=True） | 默认：`RMB + 点击`；deselect_all=True |
+| 修改 | `SHIFT + LMB + 点击` | `uv.select`（toggle=True） | 默认：`SHIFT + RMB`；toggle=True |
+| 修改 | `ALT + LMB + 点击` | `uv.select_loop` | 默认：`ALT + RMB` |
+| 修改 | `SHIFT + ALT + LMB + 点击` | `uv.select_loop`（extend=True） | 默认：`SHIFT + ALT + RMB`；extend=True |
+| 修改 | `CTRL + ALT + LMB + 点击` | `uv.select_edge_ring` | 默认：`CTRL + ALT + RMB` |
+| 修改 | `CTRL + SHIFT + ALT + LMB + 点击` | `uv.select_edge_ring`（extend=True） | 默认：`CTRL + SHIFT + ALT + RMB`；extend=True |
+| 修改 | `CTRL + LMB + 点击` | `uv.shortest_path_pick`（use_fill=False） | 默认：`CTRL + RMB`；use_fill=False |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `uv.shortest_path_pick`（use_fill=True） | 默认：`CTRL + SHIFT + RMB`；use_fill=True |
+| 修改 | `CTRL + RMB + 拖动` | `uv.select_lasso`（mode='ADD'） | 默认：`CTRL + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `uv.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `CTRL + A` | `uv.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `uv.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + NUMPAD 8` | `uv.move_on_axis`（type='DYNAMIC', axis='Y', distance=1） | 默认：`CTRL + NUMPAD 8`；axis='Y', type='DYNAMIC', distance=1 |
+| 修改 | `CTRL + NUMPAD 2` | `uv.move_on_axis`（type='DYNAMIC', axis='Y', distance=-1） | 默认：`CTRL + NUMPAD 2`；axis='Y', type='DYNAMIC', distance=-1 |
+| 修改 | `CTRL + NUMPAD 6` | `uv.move_on_axis`（type='DYNAMIC', axis='X', distance=1） | 默认：`CTRL + NUMPAD 6`；axis='X', type='DYNAMIC', distance=1 |
+| 修改 | `CTRL + NUMPAD 4` | `uv.move_on_axis`（type='DYNAMIC', axis='X', distance=-1） | 默认：`CTRL + NUMPAD 4`；axis='X', type='DYNAMIC', distance=-1 |
+| 修改 | `SHIFT + NUMPAD 8` | `uv.move_on_axis`（type='PIXEL', axis='Y', distance=1） | 默认：`SHIFT + NUMPAD 8`；axis='Y', type='PIXEL', distance=1 |
+| 修改 | `SHIFT + NUMPAD 2` | `uv.move_on_axis`（type='PIXEL', axis='Y', distance=-1） | 默认：`SHIFT + NUMPAD 2`；axis='Y', type='PIXEL', distance=-1 |
+| 修改 | `SHIFT + NUMPAD 6` | `uv.move_on_axis`（type='PIXEL', axis='X', distance=1） | 默认：`SHIFT + NUMPAD 6`；axis='X', type='PIXEL', distance=1 |
+| 修改 | `SHIFT + NUMPAD 4` | `uv.move_on_axis`（type='PIXEL', axis='X', distance=-1） | 默认：`SHIFT + NUMPAD 4`；axis='X', type='PIXEL', distance=-1 |
+| 修改 | `NUMPAD 8` | `uv.move_on_axis`（type='UDIM', axis='Y', distance=1） | 默认：`NUMPAD 8`；axis='Y', type='UDIM', distance=1 |
+| 修改 | `NUMPAD 2` | `uv.move_on_axis`（type='UDIM', axis='Y', distance=-1） | 默认：`NUMPAD 2`；axis='Y', type='UDIM', distance=-1 |
+| 修改 | `NUMPAD 6` | `uv.move_on_axis`（type='UDIM', axis='X', distance=1） | 默认：`NUMPAD 6`；axis='X', type='UDIM', distance=1 |
+| 修改 | `NUMPAD 4` | `uv.move_on_axis`（type='UDIM', axis='X', distance=-1） | 默认：`NUMPAD 4`；axis='X', type='UDIM', distance=-1 |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `RMB` | `wm.call_menu`（name='IMAGE_MT_uvs_context_menu'） | 默认：`W`；name='IMAGE_MT_uvs_context_menu' |
+| 修改 | `SHIFT + RMB` | `uv.cursor_set` | 默认：`LMB + 点击` |
+| 新增 | `SHIFT + RMB + 拖动` | `transform.translate`（cursor_transform=True, release_confirm=True） | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `uv.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 移除 | `RMB` | `uv.select`（deselect_all=True, select_passthrough=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ## 视频、跟踪与遮罩
 
@@ -875,7 +870,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
 
 ### Clip Editor
 
@@ -883,18 +878,19 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB</code> | `clip.select`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB</code> | `clip.select`<br><small>extend=True</small> | 默认：<code>SHIFT + RMB</code>；extend=True |
-| 修改 | <code>CTRL + A</code> | `clip.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + ALT + RMB + 拖动</code> | `clip.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + ALT + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + ALT + RMB + 拖动</code> | `clip.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>SHIFT + RMB</code> | `clip.cursor_set` | 默认：<code>LMB + 点击</code> |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='CLIP_MT_tracking_context_menu'</small> | 默认：<code>W</code>；name='CLIP_MT_tracking_context_menu' |
-| 新增 | <code>F + 双击</code> | `clip.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `clip.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `clip.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `LMB` | `clip.select`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `SHIFT + LMB` | `clip.select`（extend=True） | 默认：`SHIFT + RMB`；extend=True |
+| 修改 | `CTRL + A` | `clip.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `clip.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + ALT + RMB + 拖动` | `clip.select_lasso`（mode='ADD'） | 默认：`CTRL + ALT + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + ALT + RMB + 拖动` | `clip.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + ALT + LMB + 拖动`；mode='SUB' |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `SHIFT + RMB` | `clip.cursor_set` | 默认：`LMB + 点击` |
+| 修改 | `RMB` | `wm.call_menu`（name='CLIP_MT_tracking_context_menu'） | 默认：`W`；name='CLIP_MT_tracking_context_menu' |
+| 新增 | `F + 双击` | `clip.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `clip.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `clip.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Mask Editing
 
@@ -902,18 +898,19 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>SHIFT + LMB</code> | `mask.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + A</code> | `mask.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + ALT + RMB + 拖动</code> | `mask.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + ALT + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + ALT + RMB + 拖动</code> | `mask.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>CTRL + LMB</code> | `clip.select` | 默认：<code>CTRL + RMB</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>SHIFT + RMB</code> | `uv.cursor_set` | 默认：<code>LMB + 点击</code> |
-| 新增 | <code>SHIFT + RMB + 拖动</code> | `transform.translate`<br><small>cursor_transform=True, release_confirm=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `mask.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `mask.duplicate_move` | Blender Default 中没有此绑定 |
-| 移除 | <code>RMB</code> | `mask.select`<br><small>deselect_all=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `SHIFT + LMB` | `mask.select`（toggle=True） | 默认：`SHIFT + RMB`；toggle=True |
+| 修改 | `CTRL + A` | `mask.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `mask.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + ALT + RMB + 拖动` | `mask.select_lasso`（mode='ADD'） | 默认：`CTRL + ALT + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + ALT + RMB + 拖动` | `mask.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + ALT + LMB + 拖动`；mode='SUB' |
+| 修改 | `CTRL + LMB` | `clip.select` | 默认：`CTRL + RMB` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `SHIFT + RMB` | `uv.cursor_set` | 默认：`LMB + 点击` |
+| 新增 | `SHIFT + RMB + 拖动` | `transform.translate`（cursor_transform=True, release_confirm=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `mask.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `mask.duplicate_move` | Blender Default 中没有此绑定 |
+| 移除 | `RMB` | `mask.select`（deselect_all=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### Paint Face Mask (Weight, Vertex, Texture)
 
@@ -921,16 +918,17 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `paint.face_select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `view3d.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='ADD' |
-| 新增 | <code>CTRL + F</code> | `paint.face_select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 移除 | <code>ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=False, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=True, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + ALT + RMB</code> | `paint.face_select_loop`<br><small>extend=True, select=False</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=False, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>SHIFT + ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=True, select=True</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>CTRL + SHIFT + ALT + RMB</code> | `paint.vert_select_loop`<br><small>extend=True, select=False</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `CTRL + A` | `paint.face_select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `paint.face_select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `view3d.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `CTRL + RMB + 拖动` | `view3d.select_lasso`（mode='ADD'） | 默认：`CTRL + SHIFT + ALT + LMB + 拖动`；mode='ADD' |
+| 新增 | `CTRL + F` | `paint.face_select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 移除 | `ALT + RMB` | `paint.face_select_loop`（extend=False, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + ALT + RMB` | `paint.face_select_loop`（extend=True, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + ALT + RMB` | `paint.face_select_loop`（extend=True, select=False） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `ALT + RMB` | `paint.vert_select_loop`（extend=False, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `SHIFT + ALT + RMB` | `paint.vert_select_loop`（extend=True, select=True） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `CTRL + SHIFT + ALT + RMB` | `paint.vert_select_loop`（extend=True, select=False） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### Preview
 
@@ -938,29 +936,30 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 点击</code> | `sequencer.select`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB + 点击</code> | `sequencer.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `sequencer.select`<br><small>center=True</small> | 默认：<code>CTRL + RMB</code>；center=True |
-| 修改 | <code>ALT + LMB + 点击</code> | `sequencer.select`<br><small>ignore_connections=True</small> | 默认：<code>ALT + RMB</code>；ignore_connections=True |
-| 修改 | <code>CTRL + SHIFT + LMB + 点击</code> | `sequencer.select`<br><small>toggle=True, center=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；toggle=True, center=True |
-| 修改 | <code>SHIFT + ALT + LMB + 点击</code> | `sequencer.select`<br><small>toggle=True, ignore_connections=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；toggle=True, ignore_connections=True |
-| 修改 | <code>CTRL + A</code> | `sequencer.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>R + 双击</code> | `transform.rotate` | 默认：<code>R</code> |
-| 修改 | <code>LMB + 拖动</code> | `transform.translate` | 默认：<code>RMB + 拖动</code> |
-| 修改 | <code>ALT + W</code> | `sequencer.strip_transform_clear`<br><small>property='POSITION'</small> | 默认：<code>ALT + G</code>；property='POSITION' |
-| 修改 | <code>ALT + R</code> | `sequencer.strip_transform_clear`<br><small>property='SCALE'</small> | 默认：<code>ALT + S</code>；property='SCALE' |
-| 修改 | <code>ALT + E</code> | `sequencer.strip_transform_clear`<br><small>property='ROTATION'</small> | 默认：<code>ALT + R</code>；property='ROTATION' |
-| 修改 | <code>CTRL + RMB + 拖动</code> | `sequencer.select_lasso`<br><small>mode='ADD'</small> | 默认：<code>CTRL + LMB + 拖动</code>；mode='ADD' |
-| 修改 | <code>CTRL + SHIFT + RMB + 拖动</code> | `sequencer.select_lasso`<br><small>mode='SUB'</small> | 默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='SEQUENCER_MT_preview_context_menu'</small> | 默认：<code>W</code>；name='SEQUENCER_MT_preview_context_menu' |
-| 修改 | <code>SHIFT + RMB</code> | `sequencer.cursor_set` | 默认：<code>LMB + 点击</code> |
-| 新增 | <code>SHIFT + RMB + 拖动</code> | `transform.translate`<br><small>cursor_transform=True, release_confirm=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>F + 双击</code> | `sequencer.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `sequencer.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.move', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>R</code> | `wm.tool_set_by_id`<br><small>name='builtin.rotate', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `wm.tool_set_by_id`<br><small>name='builtin.scale', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `sequencer.preview_duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `LMB + 点击` | `sequencer.select`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `SHIFT + LMB + 点击` | `sequencer.select`（toggle=True） | 默认：`SHIFT + RMB`；toggle=True |
+| 修改 | `CTRL + LMB + 点击` | `sequencer.select`（center=True） | 默认：`CTRL + RMB`；center=True |
+| 修改 | `ALT + LMB + 点击` | `sequencer.select`（ignore_connections=True） | 默认：`ALT + RMB`；ignore_connections=True |
+| 修改 | `CTRL + SHIFT + LMB + 点击` | `sequencer.select`（toggle=True, center=True） | 默认：`CTRL + SHIFT + RMB`；toggle=True, center=True |
+| 修改 | `SHIFT + ALT + LMB + 点击` | `sequencer.select`（toggle=True, ignore_connections=True） | 默认：`SHIFT + ALT + RMB`；toggle=True, ignore_connections=True |
+| 修改 | `CTRL + A` | `sequencer.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `sequencer.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `R + 双击` | `transform.rotate` | 默认：`R` |
+| 修改 | `LMB + 拖动` | `transform.translate` | 默认：`RMB + 拖动` |
+| 修改 | `ALT + W` | `sequencer.strip_transform_clear`（property='POSITION'） | 默认：`ALT + G`；property='POSITION' |
+| 修改 | `ALT + R` | `sequencer.strip_transform_clear`（property='SCALE'） | 默认：`ALT + S`；property='SCALE' |
+| 修改 | `ALT + E` | `sequencer.strip_transform_clear`（property='ROTATION'） | 默认：`ALT + R`；property='ROTATION' |
+| 修改 | `CTRL + RMB + 拖动` | `sequencer.select_lasso`（mode='ADD'） | 默认：`CTRL + LMB + 拖动`；mode='ADD' |
+| 修改 | `CTRL + SHIFT + RMB + 拖动` | `sequencer.select_lasso`（mode='SUB'） | 默认：`CTRL + SHIFT + LMB + 拖动`；mode='SUB' |
+| 修改 | `RMB` | `wm.call_menu`（name='SEQUENCER_MT_preview_context_menu'） | 默认：`W`；name='SEQUENCER_MT_preview_context_menu' |
+| 修改 | `SHIFT + RMB` | `sequencer.cursor_set` | 默认：`LMB + 点击` |
+| 新增 | `SHIFT + RMB + 拖动` | `transform.translate`（cursor_transform=True, release_confirm=True） | Blender Default 中没有此绑定 |
+| 新增 | `F + 双击` | `sequencer.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `sequencer.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.move', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `R` | `wm.tool_set_by_id`（name='builtin.rotate', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `E` | `wm.tool_set_by_id`（name='builtin.scale', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `sequencer.preview_duplicate_move` | Blender Default 中没有此绑定 |
 
 ### Sequencer
 
@@ -968,28 +967,29 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 点击</code> | `sequencer.select`<br><small>deselect_all=True</small> | 默认：<code>RMB</code>；deselect_all=True |
-| 修改 | <code>SHIFT + LMB + 点击</code> | `sequencer.select`<br><small>toggle=True</small> | 默认：<code>SHIFT + RMB</code>；toggle=True |
-| 修改 | <code>CTRL + LMB</code> | `sequencer.select`<br><small>linked_time=True</small> | 默认：<code>CTRL + RMB</code>；linked_time=True |
-| 修改 | <code>CTRL + SHIFT + LMB</code> | `sequencer.select`<br><small>extend=True, linked_time=True</small> | 默认：<code>CTRL + SHIFT + RMB</code>；linked_time=True, extend=True |
-| 修改 | <code>CTRL + LMB + 点击</code> | `sequencer.select`<br><small>side_of_frame=True</small> | 默认：<code>CTRL + RMB + 点击</code>；side_of_frame=True |
-| 修改 | <code>ALT + LMB</code> | `sequencer.select`<br><small>deselect_all=True, ignore_connections=True</small> | 默认：<code>ALT + RMB</code>；deselect_all=True, ignore_connections=True |
-| 修改 | <code>SHIFT + ALT + LMB</code> | `sequencer.select`<br><small>toggle=True, ignore_connections=True</small> | 默认：<code>SHIFT + ALT + RMB</code>；toggle=True, ignore_connections=True |
-| 修改 | <code>LMB + 拖动</code> | `sequencer.select_box`<br><small>mode='SET', tweak=True</small> | 默认：<code>RMB + 拖动</code>；tweak=True, mode='SET' |
-| 修改 | <code>SHIFT + LMB + 拖动</code> | `sequencer.select_box`<br><small>mode='ADD', tweak=True</small> | 默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD' |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `sequencer.select_box`<br><small>mode='SUB', tweak=True</small> | 默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB' |
-| 修改 | <code>ALT + LMB + 拖动</code> | `sequencer.select_box`<br><small>mode='SET', tweak=True, ignore_connections=True</small> | 默认：<code>ALT + RMB + 拖动</code>；tweak=True, ignore_connections=True, mode='SET' |
-| 修改 | <code>B</code> | `sequencer.select_box`<br><small>active=False</small> | 默认：<code>B</code> |
-| 修改 | <code>CTRL + A</code> | `sequencer.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>LMB + 拖动</code> | `transform.seq_slide`<br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small> | 默认：<code>RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True |
-| 修改 | <code>ALT + LMB + 拖动</code> | `transform.seq_slide`<br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small> | 默认：<code>ALT + RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True |
-| 修改 | <code>CTRL + LMB + 拖动</code> | `transform.seq_slide`<br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small> | 默认：<code>CTRL + RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='SEQUENCER_MT_context_menu'</small> | 默认：<code>W</code>；name='SEQUENCER_MT_context_menu' |
-| 新增 | <code>F + 双击</code> | `sequencer.view_all` | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `sequencer.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>B</code> | `sequencer.split` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + B</code> | `sequencer.split`<br><small>type='HARD'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + D</code> | `sequencer.duplicate_move` | Blender Default 中没有此绑定 |
+| 修改 | `LMB + 点击` | `sequencer.select`（deselect_all=True） | 默认：`RMB`；deselect_all=True |
+| 修改 | `SHIFT + LMB + 点击` | `sequencer.select`（toggle=True） | 默认：`SHIFT + RMB`；toggle=True |
+| 修改 | `CTRL + LMB` | `sequencer.select`（linked_time=True） | 默认：`CTRL + RMB`；linked_time=True |
+| 修改 | `CTRL + SHIFT + LMB` | `sequencer.select`（extend=True, linked_time=True） | 默认：`CTRL + SHIFT + RMB`；linked_time=True, extend=True |
+| 修改 | `CTRL + LMB + 点击` | `sequencer.select`（side_of_frame=True） | 默认：`CTRL + RMB + 点击`；side_of_frame=True |
+| 修改 | `ALT + LMB` | `sequencer.select`（deselect_all=True, ignore_connections=True） | 默认：`ALT + RMB`；deselect_all=True, ignore_connections=True |
+| 修改 | `SHIFT + ALT + LMB` | `sequencer.select`（toggle=True, ignore_connections=True） | 默认：`SHIFT + ALT + RMB`；toggle=True, ignore_connections=True |
+| 修改 | `LMB + 拖动` | `sequencer.select_box`（mode='SET', tweak=True） | 默认：`RMB + 拖动`；tweak=True, mode='SET' |
+| 修改 | `SHIFT + LMB + 拖动` | `sequencer.select_box`（mode='ADD', tweak=True） | 默认：`SHIFT + RMB + 拖动`；tweak=True, mode='ADD' |
+| 修改 | `CTRL + LMB + 拖动` | `sequencer.select_box`（mode='SUB', tweak=True） | 默认：`CTRL + RMB + 拖动`；tweak=True, mode='SUB' |
+| 修改 | `ALT + LMB + 拖动` | `sequencer.select_box`（mode='SET', tweak=True, ignore_connections=True） | 默认：`ALT + RMB + 拖动`；tweak=True, ignore_connections=True, mode='SET' |
+| 修改 | `B` | `sequencer.select_box`（active=False） | 默认：`B` |
+| 修改 | `CTRL + A` | `sequencer.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `sequencer.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `LMB + 拖动` | `transform.seq_slide`（use_restore_handle_selection=True, view2d_edge_pan=True） | 默认：`RMB + 拖动`；view2d_edge_pan=True, use_restore_handle_selection=True |
+| 修改 | `ALT + LMB + 拖动` | `transform.seq_slide`（use_restore_handle_selection=True, view2d_edge_pan=True） | 默认：`ALT + RMB + 拖动`；view2d_edge_pan=True, use_restore_handle_selection=True |
+| 修改 | `CTRL + LMB + 拖动` | `transform.seq_slide`（use_restore_handle_selection=True, view2d_edge_pan=True） | 默认：`CTRL + RMB + 拖动`；view2d_edge_pan=True, use_restore_handle_selection=True |
+| 修改 | `RMB` | `wm.call_menu`（name='SEQUENCER_MT_context_menu'） | 默认：`W`；name='SEQUENCER_MT_context_menu' |
+| 新增 | `F + 双击` | `sequencer.view_all` | Blender Default 中没有此绑定 |
+| 新增 | `F` | `sequencer.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `B` | `sequencer.split` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + B` | `sequencer.split`（type='HARD'） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + D` | `sequencer.duplicate_move` | Blender Default 中没有此绑定 |
 
 ## 文件、资源与 Outliner
 
@@ -999,10 +999,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
-| 移除 | <code>W</code> | `wm.call_menu`<br><small>name='FILEBROWSER_MT_context_menu'</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>RMB</code> | `wm.call_menu`<br><small>name='ASSETBROWSER_MT_context_menu'</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
-| 移除 | <code>APP</code> | `wm.call_menu`<br><small>name='ASSETBROWSER_MT_context_menu'</small> | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
+| 移除 | `W` | `wm.call_menu`（name='FILEBROWSER_MT_context_menu'） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `RMB` | `wm.call_menu`（name='ASSETBROWSER_MT_context_menu'） | 当前 Keymap 中没有此 Blender Default 绑定 |
+| 移除 | `APP` | `wm.call_menu`（name='ASSETBROWSER_MT_context_menu'） | 当前 Keymap 中没有此 Blender Default 绑定 |
 
 ### File Browser Main
 
@@ -1010,10 +1010,11 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `file.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='ASSETBROWSER_MT_context_menu'</small> | 默认：<code>W</code>；name='ASSETBROWSER_MT_context_menu' |
-| 新增 | <code>F</code> | `file.view_selected` | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `file.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + A` | `file.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `file.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='ASSETBROWSER_MT_context_menu'） | 默认：`W`；name='ASSETBROWSER_MT_context_menu' |
+| 新增 | `F` | `file.view_selected` | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `file.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Outliner
 
@@ -1021,15 +1022,15 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>LMB + 双击</code> | `outliner.item_activate`<br><small>deselect_all=True, recurse=True</small> | 默认：<code>LMB + 双击</code>；recurse=True, deselect_all=True |
-| 修改 | <code>CTRL + LMB + 双击</code> | `outliner.item_activate`<br><small>extend=True, deselect_all=True, recurse=True</small> | 默认：<code>CTRL + LMB + 双击</code>；recurse=True, extend=True, deselect_all=True |
-| 修改 | <code>SHIFT + LMB + 双击</code> | `outliner.item_activate`<br><small>extend_range=True, deselect_all=True, recurse=True</small> | 默认：<code>SHIFT + LMB + 双击</code>；recurse=True, extend_range=True, deselect_all=True |
-| 修改 | <code>CTRL + SHIFT + LMB + 双击</code> | `outliner.item_activate`<br><small>extend=True, extend_range=True, deselect_all=True, recurse=True</small> | 默认：<code>CTRL + SHIFT + LMB + 双击</code>；recurse=True, extend=True, extend_range=True, deselect_all=True |
-| 修改 | <code>CTRL + A</code> | `outliner.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>CTRL + SHIFT + F</code> | `outliner.start_filter` | 默认：<code>CTRL + F</code> |
-| 新增 | <code>CTRL + F</code> | `outliner.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>F</code> | `outliner.show_active` | Blender Default 中没有此绑定 |
-| 新增 | <code>SHIFT + F</code> | `outliner.show_hierarchy` | Blender Default 中没有此绑定 |
+| 修改 | `LMB + 双击` | `outliner.item_activate`（deselect_all=True, recurse=True） | 默认：`LMB + 双击`；recurse=True, deselect_all=True |
+| 修改 | `CTRL + LMB + 双击` | `outliner.item_activate`（extend=True, deselect_all=True, recurse=True） | 默认：`CTRL + LMB + 双击`；recurse=True, extend=True, deselect_all=True |
+| 修改 | `SHIFT + LMB + 双击` | `outliner.item_activate`（extend_range=True, deselect_all=True, recurse=True） | 默认：`SHIFT + LMB + 双击`；recurse=True, extend_range=True, deselect_all=True |
+| 修改 | `CTRL + SHIFT + LMB + 双击` | `outliner.item_activate`（extend=True, extend_range=True, deselect_all=True, recurse=True） | 默认：`CTRL + SHIFT + LMB + 双击`；recurse=True, extend=True, extend_range=True, deselect_all=True |
+| 修改 | `CTRL + A` | `outliner.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `CTRL + SHIFT + F` | `outliner.start_filter` | 默认：`CTRL + F` |
+| 新增 | `CTRL + F` | `outliner.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
+| 新增 | `F` | `outliner.show_active` | Blender Default 中没有此绑定 |
+| 新增 | `SHIFT + F` | `outliner.show_hierarchy` | Blender Default 中没有此绑定 |
 
 ## 其他编辑器
 
@@ -1039,7 +1040,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>F</code> | `FLIP`<br><small>active=False</small> | 默认：<code>F</code> |
+| 修改 | `F` | `FLIP`（active=False） | 默认：`F` |
 
 ### Info
 
@@ -1047,9 +1048,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + A</code> | `info.select_all`<br><small>action='SELECT'</small> | 默认：<code>A</code>；action='SELECT' |
-| 修改 | <code>RMB</code> | `wm.call_menu`<br><small>name='INFO_MT_context_menu'</small> | 默认：<code>W</code>；name='INFO_MT_context_menu' |
-| 新增 | <code>CTRL + F</code> | `info.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + A` | `info.select_all`（action='SELECT'） | 默认：`A`；action='SELECT' |
+| 修改 | `ALT + A` | `info.select_all`（action='DESELECT', active=False） | 默认：`ALT + A`；action='DESELECT' |
+| 修改 | `RMB` | `wm.call_menu`（name='INFO_MT_context_menu'） | 默认：`W`；name='INFO_MT_context_menu' |
+| 新增 | `CTRL + F` | `info.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### Knife Tool Modal Map
 
@@ -1057,9 +1059,9 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 新增 | <code>Q</code> | `X_AXIS` | Blender Default 中没有此绑定 |
-| 新增 | <code>W</code> | `Y_AXIS` | Blender Default 中没有此绑定 |
-| 新增 | <code>E</code> | `Z_AXIS` | Blender Default 中没有此绑定 |
+| 新增 | `Q` | `X_AXIS` | Blender Default 中没有此绑定 |
+| 新增 | `W` | `Y_AXIS` | Blender Default 中没有此绑定 |
+| 新增 | `E` | `Z_AXIS` | Blender Default 中没有此绑定 |
 
 ### Property Editor
 
@@ -1067,10 +1069,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>CTRL + SHIFT + F</code> | `buttons.start_filter` | 默认：<code>CTRL + F</code> |
-| 修改 | <code>CTRL + SHIFT + A</code> | `object.modifier_apply`<br><small>report=True</small> | 默认：<code>CTRL + A</code>；report=True |
-| 修改 | <code>CTRL + SHIFT + A</code> | `constraint.apply`<br><small>report=True</small> | 默认：<code>CTRL + A</code>；report=True |
-| 新增 | <code>CTRL + D</code> | `constraint.copy` | Blender Default 中没有此绑定 |
+| 修改 | `CTRL + SHIFT + F` | `buttons.start_filter` | 默认：`CTRL + F` |
+| 修改 | `ALT + A` | `object.modifier_apply`（report=True） | 默认：`CTRL + A`；report=True |
+| 修改 | `ALT + A` | `constraint.apply`（report=True） | 默认：`CTRL + A`；report=True |
+| 新增 | `CTRL + D` | `constraint.copy` | Blender Default 中没有此绑定 |
 
 ### Spreadsheet Generic
 
@@ -1078,7 +1080,7 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_channels', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_channels' |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_channels', active=False） | 默认：`T`；data_path='space_data.show_region_channels' |
 
 ### Video Sequence Editor
 
@@ -1086,10 +1088,10 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>T</code> | `wm.context_toggle`<br><small>data_path='space_data.show_region_toolbar', active=False</small> | 默认：<code>T</code>；data_path='space_data.show_region_toolbar' |
-| 新增 | <code>W</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True, active=False</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>Q</code> | `wm.tool_set_by_id`<br><small>name='builtin.select_box', cycle=True</small> | Blender Default 中没有此绑定 |
-| 新增 | <code>CTRL + F</code> | `sequencer.select_all`<br><small>action='INVERT'</small> | Blender Default 中没有此绑定 |
+| 修改 | `T` | `wm.context_toggle`（data_path='space_data.show_region_toolbar', active=False） | 默认：`T`；data_path='space_data.show_region_toolbar' |
+| 新增 | `W` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True, active=False） | Blender Default 中没有此绑定 |
+| 新增 | `Q` | `wm.tool_set_by_id`（name='builtin.select_box', cycle=True） | Blender Default 中没有此绑定 |
+| 新增 | `CTRL + F` | `sequencer.select_all`（action='INVERT'） | Blender Default 中没有此绑定 |
 
 ### View3D Walk Modal
 
@@ -1097,8 +1099,8 @@
 
 | 类型 | 当前按键 | Operator | 与 Blender Default 的差异 |
 | --- | --- | --- | --- |
-| 修改 | <code>V</code> | `JUMP` | 默认：<code>V</code> |
-| 修改 | <code>V + 松开</code> | `JUMP_STOP` | 默认：<code>V + 松开</code> |
-| 修改 | <code>SPACE</code> | `TELEPORT`<br><small>active=False</small> | 默认：<code>SPACE</code> |
-| 新增 | <code>SPACE</code> | `JUMP` | Blender Default 中没有此绑定 |
-| 新增 | <code>SPACE</code> | `JUMP_STOP` | Blender Default 中没有此绑定 |
+| 修改 | `V` | `JUMP` | 默认：`V` |
+| 修改 | `V + 松开` | `JUMP_STOP` | 默认：`V + 松开` |
+| 修改 | `SPACE` | `TELEPORT`（active=False） | 默认：`SPACE` |
+| 新增 | `SPACE` | `JUMP` | Blender Default 中没有此绑定 |
+| 新增 | `SPACE` | `JUMP_STOP` | Blender Default 中没有此绑定 |

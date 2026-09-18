@@ -71,7 +71,7 @@ jobs:
         id: pack
         run: |
           uv run pack --target ${{ matrix.target }}
-          archive="dist/Startup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip"
+          archive="dist/BlenderStartup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip"
           if [ ! -f "$archive" ]; then
             echo "Missing archive: $archive" >&2
             exit 1
@@ -87,5 +87,5 @@ jobs:
           # outputs object, so the archive lands on the same release.
           upload_url: ${{ needs.draft_release.outputs.upload_url }}
           asset_path: ${{ steps.pack.outputs.archive }}
-          asset_name: Startup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip
+          asset_name: BlenderStartup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip
           asset_content_type: application/zip

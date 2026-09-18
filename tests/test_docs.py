@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from tools.docs import documentation_command
+from tools.docs import documentation_version
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -11,6 +12,7 @@ MKDOCS_FILE = PROJECT_ROOT / "mkdocs.yml"
 DOCS_ROOT = PROJECT_ROOT / "docs"
 VERSION_LITERAL_PATTERN = re.compile(r"\bv?\d+\.\d+\.\d+\b")
 LEGACY_TEMPLATE_NAME_PATTERN = re.compile(r"O General|O_General")
+HTML_TAG_PATTERN = re.compile(r"</?[A-Za-z][^>]*>")
 
 
 def project_config():
@@ -20,6 +22,14 @@ def project_config():
 
 
 class DocsTest(unittest.TestCase):
+    def test_documents_do_not_contain_html(self):
+        documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]
+
+        for document in documents:
+            with self.subTest(document=document.relative_to(PROJECT_ROOT)):
+                content = document.read_text(encoding="utf-8")
+                self.assertIsNone(HTML_TAG_PATTERN.search(content))
+
     def test_documents_do_not_use_the_legacy_template_name(self):
         documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]
 
@@ -61,8 +71,17 @@ class DocsTest(unittest.TestCase):
 
 
 class DocumentationCommandTest(unittest.TestCase):
+    def test_documentation_version_omits_the_patch(self):
+        project_version = project_config()["project"]["version"]
+        major_minor = ".".join(project_version.split(".")[:2])
+
+        self.assertEqual(
+            documentation_version(),
+            f"{major_minor}.x",
+        )
+
     def test_build_writes_the_multi_version_site_locally(self):
-        version = project_config()["project"]["version"]
+        version = documentation_version()
 
         self.assertEqual(
             documentation_command("build"),
@@ -77,7 +96,7 @@ class DocumentationCommandTest(unittest.TestCase):
         )
 
     def test_deploy_publishes_the_project_version_as_latest(self):
-        version = project_config()["project"]["version"]
+        version = documentation_version()
 
         self.assertEqual(
             documentation_command("deploy"),

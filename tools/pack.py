@@ -154,7 +154,7 @@ def read_project_version():
 
 def archive_name(bundle):
     project_version = read_project_version()
-    return f"Startup.v{project_version}.{target_id(bundle)}.zip"
+    return f"BlenderStartup.v{project_version}.{target_id(bundle)}.zip"
 
 
 def build_template(bundle, output_directory=DEFAULT_OUTPUT_DIRECTORY):

@@ -23,18 +23,26 @@ def project_version():
     return project["version"]
 
 
+def documentation_version():
+    """Return the major.minor series used for versioned documentation."""
+    parts = project_version().split(".")
+    if len(parts) < 2:
+        raise ValueError("Project version must contain major and minor parts")
+    return f"{parts[0]}.{parts[1]}.x"
+
+
 def documentation_command(command):
     """Return the command line that runs one documentation subcommand."""
     if command == "build":
         # 本地构建多版本站点，只提交到本地 gh-pages 分支，不推送。
-        return (*MIKE_DEPLOY_COMMAND, project_version(), "latest")
+        return (*MIKE_DEPLOY_COMMAND, documentation_version(), "latest")
     if command == "deploy":
         # mike 在内容没有变化时不提交也不推送，--allow-empty 保证部署动作能到达远端。
         return (
             *MIKE_DEPLOY_COMMAND,
             "--push",
             "--allow-empty",
-            project_version(),
+            documentation_version(),
             "latest",
         )
     return DOCUMENTATION_COMMANDS[command]
@@ -76,7 +84,7 @@ def build_parser():
 
     commands.add_parser(
         "build",
-        help="Build the multi-version site locally without pushing",
+        help="Build the current major.minor documentation locally",
     )
     commands.add_parser(
         "dev",
@@ -84,7 +92,7 @@ def build_parser():
     )
     commands.add_parser(
         "deploy",
-        help="Publish the current project version and point latest at it",
+        help="Publish the current major.minor documentation and update latest",
     )
     return parser
 

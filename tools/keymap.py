@@ -215,7 +215,7 @@ def markdown_cell(value):
 
 
 def key_markup(event):
-    return f"<code>{markdown_cell(event_label(event))}</code>"
+    return f"`{markdown_cell(event_label(event))}`"
 
 
 REFERENCE_CATEGORIES = (
@@ -291,7 +291,7 @@ def render_item_row(status, item, detail):
     properties = property_label(item)
     action = f"`{operator}`"
     if properties:
-        action += f"<br><small>{markdown_cell(properties)}</small>"
+        action += f"（{markdown_cell(properties)}）"
     return (
         f"| {status} | {key_markup(event)} | "
         f"{action} | {detail} |"
@@ -312,12 +312,10 @@ def render_reference(target_id, target, differences):
         "本页由当前 `Refined Industry Compatible` Keymap 与同版本的 "
         "**Blender Default** 自动比较生成。Industry Compatible 不是比较基线。",
         "",
-        '<div class="keymap-summary">',
-        f"<div><strong>{modified_count}</strong>修改绑定</div>",
-        f"<div><strong>{added_count}</strong>新增绑定</div>",
-        f"<div><strong>{removed_count}</strong>移除绑定</div>",
-        f"<div><strong>{len(differences)}</strong>受影响 Keymap</div>",
-        "</div>",
+        f"- **修改绑定**：{modified_count}",
+        f"- **新增绑定**：{added_count}",
+        f"- **移除绑定**：{removed_count}",
+        f"- **受影响 Keymap**：{len(differences)}",
         "",
         "!!! note \"怎样理解差异\"",
         "",
