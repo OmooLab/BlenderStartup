@@ -1,36 +1,31 @@
+import re
 import tomllib
 import unittest
 from pathlib import Path
+
+from tools.docs import documentation_command
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MKDOCS_FILE = PROJECT_ROOT / "mkdocs.yml"
 DOCS_ROOT = PROJECT_ROOT / "docs"
+VERSION_LITERAL_PATTERN = re.compile(r"\bv?\d+\.\d+\.\d+\b")
+
+
+def project_config():
+    return tomllib.loads(
+        (PROJECT_ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    )
 
 
 class DocsTest(unittest.TestCase):
-    def test_documented_version_matches_project(self):
-        project = tomllib.loads(
-            (PROJECT_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-        )
-        version = project["project"]["version"]
+    def test_documents_do_not_pin_concrete_versions(self):
+        documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]
 
-        self.assertIn(
-            f"Startup.v{version}.b45.zip",
-            (DOCS_ROOT / "getting-started" / "install.md").read_text(
-                encoding="utf-8"
-            ),
-        )
-        self.assertIn(
-            f"Startup.v{version}.b52.zip",
-            (DOCS_ROOT / "getting-started" / "install.md").read_text(
-                encoding="utf-8"
-            ),
-        )
-        self.assertIn(
-            f"Startup.v{version}.b45.zip",
-            (PROJECT_ROOT / "README.md").read_text(encoding="utf-8"),
-        )
+        for document in documents:
+            with self.subTest(document=document.relative_to(PROJECT_ROOT)):
+                content = document.read_text(encoding="utf-8")
+                self.assertIsNone(VERSION_LITERAL_PATTERN.search(content))
 
     def test_navigation_references_existing_markdown_files(self):
         config = MKDOCS_FILE.read_text(encoding="utf-8")
@@ -54,6 +49,37 @@ class DocsTest(unittest.TestCase):
                 self.assertIn("**Blender Default**", content)
                 self.assertIn("Industry Compatible 不是比较基线", content)
                 self.assertIn("受影响 Keymap", content)
+
+
+class DocumentationCommandTest(unittest.TestCase):
+    def test_build_treats_warnings_as_errors(self):
+        self.assertEqual(
+            documentation_command("build"),
+            ("mkdocs", "build", "--strict"),
+        )
+
+    def test_dev_previews_the_site(self):
+        self.assertEqual(
+            documentation_command("dev"),
+            ("mkdocs", "serve"),
+        )
+
+    def test_deploy_publishes_the_project_version_as_latest(self):
+        version = project_config()["project"]["version"]
+
+        self.assertEqual(
+            documentation_command("deploy"),
+            ("mike", "deploy", "--update-aliases", version, "latest"),
+        )
+
+    def test_project_exposes_the_pack_and_docs_commands(self):
+        self.assertEqual(
+            project_config()["project"]["scripts"],
+            {
+                "pack": "tools.pack:main",
+                "docs": "tools.docs:main",
+            },
+        )
 
 
 if __name__ == "__main__":

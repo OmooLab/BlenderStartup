@@ -1,11 +1,11 @@
 # 安装与启用
 
-当前版本为 **0.2.22**，请按 Blender 版本选择安装包：
+请按 Blender 版本选择安装包，文件名格式为 `Startup.v<版本号>.b<目标>.zip`：
 
 | Blender | 安装包 |
 | --- | --- |
-| Blender 4.5 LTS 及兼容版本 | `Startup.v0.2.22.b45.zip` |
-| Blender 5.2 及兼容版本 | `Startup.v0.2.22.b52.zip` |
+| Blender 4.5 LTS 及兼容版本 | `Startup.v<版本号>.b45.zip` |
+| Blender 5.2 及兼容版本 | `Startup.v<版本号>.b52.zip` |
 
 !!! warning
 

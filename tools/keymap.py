@@ -1,3 +1,5 @@
+"""Generate the Keymap reference pages relative to Blender Default."""
+
 import argparse
 import ast
 import runpy
@@ -390,7 +392,30 @@ def generate(target_id, baseline_file):
     return differences
 
 
-def parse_args():
+def generate_targets(target_ids, baseline_directory=None):
+    """Regenerate the reference page of every requested build target."""
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        for target_id in target_ids:
+            target = TARGETS[target_id]
+            if baseline_directory:
+                baseline_file = (
+                    Path(baseline_directory)
+                    / f"blender_default_{target_id}.py"
+                )
+            else:
+                baseline_file = download_source(
+                    target["source"],
+                    temporary_directory,
+                    target_id,
+                )
+            differences = generate(target_id, baseline_file)
+            print(
+                f"Generated {target['output']} "
+                f"from {len(differences)} changed keymaps"
+            )
+
+
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description="Generate Keymap docs relative to Blender Default.",
     )
@@ -407,31 +432,16 @@ def parse_args():
             "blender_default_b52.py. Official sources are downloaded when omitted."
         ),
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
-def main():
-    args = parse_args()
-    target_ids = TARGETS if args.target == "all" else (args.target,)
-    with tempfile.TemporaryDirectory() as temporary_directory:
-        for target_id in target_ids:
-            target = TARGETS[target_id]
-            if args.baseline_directory:
-                baseline_file = (
-                    args.baseline_directory
-                    / f"blender_default_{target_id}.py"
-                )
-            else:
-                baseline_file = download_source(
-                    target["source"],
-                    temporary_directory,
-                    target_id,
-                )
-            differences = generate(target_id, baseline_file)
-            print(
-                f"Generated {target['output']} "
-                f"from {len(differences)} changed keymaps"
-            )
+def main(argv=None):
+    args = parse_args(argv)
+    generate_targets(requested_targets(args.target), args.baseline_directory)
+
+
+def requested_targets(target):
+    return tuple(TARGETS) if target == "all" else (target,)
 
 
 if __name__ == "__main__":

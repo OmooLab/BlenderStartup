@@ -1,3 +1,6 @@
+"""Pack Blender Startup application templates into installable archives."""
+
+import argparse
 import os
 import tempfile
 import tomllib
@@ -6,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = PROJECT_ROOT / "src" / "startup"
 TEMPLATE_ROOT = PROJECT_ROOT / "template"
 DEFAULT_OUTPUT_DIRECTORY = PROJECT_ROOT / "dist"
@@ -120,6 +123,10 @@ def validate_target_bundle(bundle):
     raise RuntimeError(f"Target bundle is incomplete: {missing_text}")
 
 
+def target_id(bundle):
+    return f"b{bundle.version[0]}{bundle.version[1]}"
+
+
 def include_common_source(relative_path):
     if any(part == "__pycache__" for part in relative_path.parts):
         return False
@@ -147,8 +154,7 @@ def read_project_version():
 
 def archive_name(bundle):
     project_version = read_project_version()
-    target_id = f"b{bundle.version[0]}{bundle.version[1]}"
-    return f"Startup.v{project_version}.{target_id}.zip"
+    return f"Startup.v{project_version}.{target_id(bundle)}.zip"
 
 
 def build_template(bundle, output_directory=DEFAULT_OUTPUT_DIRECTORY):
@@ -175,10 +181,22 @@ def build_template(bundle, output_directory=DEFAULT_OUTPUT_DIRECTORY):
     return archive_file
 
 
-def build_templates(output_directory=DEFAULT_OUTPUT_DIRECTORY):
+def select_bundles(target_ids=None):
+    bundles = find_target_bundles()
+    if target_ids is None:
+        return bundles
+
+    selected = [bundle for bundle in bundles if target_id(bundle) in target_ids]
+    missing = sorted(set(target_ids) - {target_id(bundle) for bundle in selected})
+    if missing:
+        raise RuntimeError(f"Unknown build targets: {', '.join(missing)}")
+    return selected
+
+
+def build_templates(output_directory=DEFAULT_OUTPUT_DIRECTORY, target_ids=None):
     return [
         build_template(bundle, output_directory)
-        for bundle in find_target_bundles()
+        for bundle in select_bundles(target_ids)
     ]
 
 
@@ -245,8 +263,30 @@ def validate_archive(archive_file):
         raise RuntimeError(f"Archive contains a corrupt entry: {corrupt_entry}")
 
 
-def main():
-    for archive_file in build_templates():
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Pack Blender Startup application templates.",
+    )
+    parser.add_argument(
+        "-t",
+        "--target",
+        action="append",
+        choices=find_target_ids(TEMPLATE_ROOT),
+        help="Pack one build target; repeat for several, defaults to all",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=DEFAULT_OUTPUT_DIRECTORY,
+        help="Output directory, defaults to dist/",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    for archive_file in build_templates(args.output, args.target):
         archive_size = archive_file.stat().st_size
         print(f"Packed {archive_file} ({archive_size} bytes)")
 

@@ -23,11 +23,11 @@ O General 提供自己的 Startup File、Preferences、Keymap 素材和运行时
 
 两个目标不会隐式复用 `.blend`、Preferences 或 Keymap。文档中的完整快捷键差异也按目标分别生成。
 
-## 版本 0.2.22
+## 安装包命名
 
-安装包命名为：
+安装包命名为 `Startup.v<版本号>.b<目标>.zip`，`<版本号>` 与 `pyproject.toml` 中的项目版本一致，`<目标>` 取构建目标 ID：
 
-- `Startup.v0.2.22.b45.zip`
-- `Startup.v0.2.22.b52.zip`
+- `Startup.v<版本号>.b45.zip`
+- `Startup.v<版本号>.b52.zip`
 
-Mike 文档使用 `0.2.22` 作为版本名，`latest` 作为稳定版别名。
+Mike 文档使用同一个项目版本号作为版本名，`latest` 作为稳定版别名。

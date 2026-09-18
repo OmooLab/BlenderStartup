@@ -8,10 +8,10 @@ Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 
 
 ## 下载
 
-请根据 Blender 版本选择安装包：
+请根据 Blender 版本选择安装包，文件名格式为 `Startup.v<版本号>.b<目标>.zip`：
 
-- Blender 4.5 LTS：`Startup.v0.2.22.b45.zip`
-- Blender 5.2 LTS：`Startup.v0.2.22.b52.zip`
+- Blender 4.5 LTS：`Startup.v<版本号>.b45.zip`
+- Blender 5.2 LTS：`Startup.v<版本号>.b52.zip`
 
 ## 安装
 
@@ -60,19 +60,6 @@ Blender Startup 提供 `Refined Industry Compatible` Keymap。首次进入模板
 ### Toggle Phantom
 
 在 Object Mode 中打开右键菜单，选择 `Toggle Phantom`，可快速将对象切换为便于观察和穿透选择的半透明状态。再次执行即可恢复。
-
-### 粘贴剪贴板图片
-
-复制一张图片后，在支持的编辑器中直接粘贴：
-
-- 3D View 的 Object Mode：创建 Plane 或 Reference Image
-- Sculpt、Vertex Paint、Texture Paint：设为笔刷 Texture
-- Shader Editor、Compositor、Geometry Nodes：创建对应的图片节点
-
-Windows 与 Linux 使用 `Ctrl + V`，macOS 使用 `Cmd + V`。粘贴的图片会打包进当前 `.blend`，保存或分享工程时不容易丢失素材。
-在 3D View 中，图片会按鼠标所在的屏幕位置放置，并使用当前 3D Cursor 作为视图深度基准；在 Node Editor 中，图片节点会创建在鼠标位置。
-
-Linux 用户需安装 `wl-clipboard`（Wayland）或 `xclip`（X11）才能读取剪贴板图片。
 
 ## 卸载
 

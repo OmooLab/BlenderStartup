@@ -585,10 +585,10 @@ wheels = [
 [[package]]
 name = "startup"
 version = "0.2.23"
-source = { virtual = "." }
+source = { editable = "." }
 
 [package.dev-dependencies]
-docs = [
+dev = [
     { name = "mike" },
     { name = "mkdocs-material" },
 ]
@@ -596,7 +596,7 @@ docs = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-docs = [
+dev = [
     { name = "mike", specifier = ">=2.1,<3" },
     { name = "mkdocs-material", specifier = ">=9.6,<10" },
 ]

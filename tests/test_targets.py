@@ -2,16 +2,17 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from pack import KEYCONFIG_PREFIX
-from pack import KEYCONFIG_SUFFIX
-from pack import SPLASH_NAME
-from pack import STARTUP_PREFIX
-from pack import STARTUP_SUFFIX
-from pack import USERPREF_PREFIX
-from pack import USERPREF_SUFFIX
-from pack import find_target_bundles
-from pack import parse_target_version
-from pack import target_id_from_filename
+from tools.pack import KEYCONFIG_PREFIX
+from tools.pack import KEYCONFIG_SUFFIX
+from tools.pack import SPLASH_NAME
+from tools.pack import STARTUP_PREFIX
+from tools.pack import STARTUP_SUFFIX
+from tools.pack import USERPREF_PREFIX
+from tools.pack import USERPREF_SUFFIX
+from tools.pack import find_target_bundles
+from tools.pack import parse_target_version
+from tools.pack import target_id
+from tools.pack import target_id_from_filename
 
 
 class TargetVersionTest(unittest.TestCase):
@@ -50,6 +51,10 @@ class TargetVersionTest(unittest.TestCase):
             self.assertEqual(
                 [bundle.version for bundle in bundles],
                 [(4, 5), (5, 2)],
+            )
+            self.assertEqual(
+                [target_id(bundle) for bundle in bundles],
+                ["b45", "b52"],
             )
 
     def test_rejects_incomplete_bundle(self):

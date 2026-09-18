@@ -27,11 +27,10 @@
 
 ## 生成方式
 
-参考页由 `tools/generate_keymap_reference.py` 自动生成。Keymap 发生变化后，项目维护者运行：
+参考页由 `tools/keymap.py` 自动生成。Keymap 发生变化后，项目维护者运行：
 
 ```powershell
-$env:UV_CACHE_DIR='.uv-cache'
-uv run python tools/generate_keymap_reference.py
+uv run docs keymap
 ```
 
 生成器使用 Blender 官方对应版本的 `blender_default.py`，避免靠人工记忆维护差异。

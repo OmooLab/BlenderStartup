@@ -7,7 +7,7 @@ Blender Startup 是 OmooLab 为 Blender 打造的启动方案。它保留 Blende
 <div class="hero-actions" markdown>
 [五分钟上手](getting-started/first-five-minutes.md){ .md-button .md-button--primary }
 [了解快捷键](keymap/index.md){ .md-button }
-[安装 0.2.22](getting-started/install.md){ .md-button }
+[安装与启用](getting-started/install.md){ .md-button }
 </div>
 
 </div>
@@ -40,7 +40,6 @@ Refined Industry Compatible 不要求你在 Blender 和 Industry Compatible 之�
 ## 开箱即用的小功能
 
 - **Camera Bookmark**：保存、预览和恢复相机视角
-- **粘贴剪贴板图片**：在 3D View、绘制模式和 Node Editor 中直接使用图片
 - **Toggle Phantom**：快速切换便于观察与穿透选择的半透明状态
 - **OmooLab 在线内容**：配置扩展仓库与 Blender 5.2 Remote Asset Library
 

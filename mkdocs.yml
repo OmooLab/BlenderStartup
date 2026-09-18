@@ -19,7 +19,6 @@ nav:
   - 实用功能:
       - 功能概览: features/index.md
       - Camera Bookmark: features/camera-bookmark.md
-      - 粘贴剪贴板图片: features/clipboard-image.md
       - Toggle Phantom: features/toggle-phantom.md
       - OmooLab 在线内容: features/online-content.md
   - 配置与版本:

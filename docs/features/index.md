@@ -12,14 +12,6 @@ O General 除了工作区、Preferences 和快捷键，还包含一组小而直�
 
     [使用 Camera Bookmark](camera-bookmark.md)
 
--   :material-content-paste:{ .lg .middle } **粘贴剪贴板图片**
-
-    ---
-
-    在 3D View、Node Editor 和绘制模式中直接粘贴图片，并自动 Pack 到工程。
-
-    [粘贴图片](clipboard-image.md)
-
 -   :material-ghost:{ .lg .middle } **Toggle Phantom**
 
     ---

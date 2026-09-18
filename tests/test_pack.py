@@ -1,12 +1,16 @@
+import io
 import tempfile
 import unittest
 import zipfile
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
-from pack import APP_TEMPLATE_ID
-from pack import KEYCONFIG_ARCHIVE_NAME
-from pack import TEMPLATE_ROOT
-from pack import build_templates
+from tools.pack import APP_TEMPLATE_ID
+from tools.pack import KEYCONFIG_ARCHIVE_NAME
+from tools.pack import TEMPLATE_ROOT
+from tools.pack import build_templates
+from tools.pack import main
+from tools.pack import read_project_version
 
 
 class PackTest(unittest.TestCase):
@@ -17,8 +21,8 @@ class PackTest(unittest.TestCase):
             self.assertEqual(
                 [archive_file.name for archive_file in archive_files],
                 [
-                    "Startup.v0.2.22.b45.zip",
-                    "Startup.v0.2.22.b52.zip",
+                    "Startup.v0.2.23.b45.zip",
+                    "Startup.v0.2.23.b52.zip",
                 ],
             )
             for archive_file in archive_files:
@@ -64,6 +68,23 @@ class PackTest(unittest.TestCase):
                     (TEMPLATE_ROOT / "splash.png").read_bytes(),
                 )
 
+    def test_cli_packs_only_the_requested_target(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with redirect_stdout(io.StringIO()):
+                main(["--target", "b45", "--output", temporary_directory])
+
+            archive_files = sorted(Path(temporary_directory).glob("*.zip"))
+
+        self.assertEqual(
+            [archive_file.name for archive_file in archive_files],
+            [f"Startup.v{read_project_version()}.b45.zip"],
+        )
+
+    def test_cli_rejects_an_unknown_target(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with self.assertRaises(SystemExit), redirect_stderr(io.StringIO()):
+                main(["--target", "b99", "--output", temporary_directory])
+
     def assert_template_layout(self, archive_file):
         with zipfile.ZipFile(archive_file, mode="r") as template_archive:
             entries = set(template_archive.namelist())
@@ -79,9 +100,6 @@ class PackTest(unittest.TestCase):
         self.assertIn(f"{root}camera_bookmark/layout.py", entries)
         self.assertIn(f"{root}camera_bookmark/preview.py", entries)
         self.assertIn(f"{root}camera_bookmark/state.py", entries)
-        self.assertIn(f"{root}clipboard_image/__init__.py", entries)
-        self.assertIn(f"{root}clipboard_image/actions.py", entries)
-        self.assertIn(f"{root}clipboard_image/clipboard.py", entries)
         self.assertIn(f"{root}toggle_phantom/__init__.py", entries)
         self.assertFalse(any("targets/" in entry for entry in entries))
         self.assertFalse(any("blender_manifest.toml" in entry for entry in entries))

@@ -13,7 +13,7 @@
 - 当前提供的 Application Template 称为 `O General`，内部目录与命令行 ID 固定为 `O_General`
 - 不要把项目名 `Blender Startup`、模板显示名 `O General` 和模板 ID `O_General` 混用
 - 构建目标使用 `b<major><minor>` 表示最低适用 Blender 版本，如 `b45` 表示 Blender 4.5+
-- 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v0.2.20.b45.zip`
+- 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v<版本号>.b45.zip`
 - 当前构建目标为 `b45`（Blender 4.5+）和 `b52`（Blender 5.2+）
 
 ## 项目结构
@@ -23,18 +23,20 @@
 ├── README.md                    # 用户入口、安装方法与功能用法
 ├── mkdocs.yml                   # MkDocs Material 与 Mike 配置
 ├── docs/                        # 产品文档、使用说明与快捷键参考
-├── pack.py                      # 发现构建目标并生成 Application Template ZIP
 ├── pyproject.toml               # 项目版本与 uv 环境配置
 ├── src/startup/
 │   ├── __init__.py              # 模板运行时入口与功能注册
 │   ├── camera_bookmark/         # Camera Bookmark
-│   ├── clipboard_image/         # 剪贴板图片粘贴
 │   └── toggle_phantom/          # Toggle Phantom
 ├── template/
 │   ├── splash.png               # 所有构建目标共用的启动图
 │   ├── startup.b45.blend        # 按 Blender 版本区分的 Startup File
 │   ├── userpref.b45.blend       # 按 Blender 版本区分的 Preferences
 │   └── keyconfig.b45.py         # 按 Blender 版本区分的 Keymap
+├── tools/
+│   ├── pack.py                  # 发现构建目标并生成 Application Template ZIP
+│   ├── keymap.py                # 生成相对 Blender Default 的快捷键差异参考
+│   └── docs.py                  # 构建、预览与发布文档的命令行入口
 └── tests/                       # Python 自动化测试
 ```
 
@@ -43,7 +45,8 @@
 - 功能目录不存在时入口应跳过该功能，不影响其余功能注册；新增、删除或重命名功能时同步更新入口和测试
 - 功能内部按职责拆分文件，例如 `camera_bookmark/layout.py`、`preview.py`、`state.py`，不要把无关职责堆进 `__init__.py`
 - `template/` 保存构建素材；同一目标必须同时提供 `startup.b<major><minor>.blend`、`userpref.b<major><minor>.blend` 和 `keyconfig.b<major><minor>.py`
-- 新增构建目标只需补齐同后缀的三项素材并运行 `pack.py`；缺少任一文件时必须构建失败，不生成不完整产物
+- `tools/` 保存仓库维护命令，通过 `pyproject.toml` 的 `[project.scripts]` 暴露为 `uv run pack` 与 `uv run docs`
+- 新增构建目标只需补齐同后缀的三项素材并运行 `uv run pack`；缺少任一文件时必须构建失败，不生成不完整产物
 
 ## 常见命令
 
@@ -57,16 +60,22 @@ uv sync
 uv run python -m unittest discover -s tests -v
 
 # 构建所有版本到 dist/
-uv run python pack.py
+uv run pack
+
+# 只构建一个目标
+uv run pack --target b45
 
 # 构建文档并把警告视为错误
-uv run --group docs mkdocs build --strict
+uv run docs build
+
+# 本地预览文档
+uv run docs dev
 
 # 生成相对 Blender Default 的快捷键差异参考
-uv run python tools/generate_keymap_reference.py
+uv run docs keymap
 
-# 发布当前项目版本，并让 latest 指向它
-uv run --group docs mike deploy --update-aliases <版本号> latest
+# 用 pyproject.toml 中的版本发布文档，并让 latest 指向它
+uv run docs deploy
 ```
 
 修改运行时代码、模板发现逻辑或打包规则后，至少运行全部测试；修改构建相关内容后还要实际执行一次打包。
@@ -104,4 +113,5 @@ uv run --group docs mike deploy --update-aliases <版本号> latest
 - 不使用 `---` 分隔线；一级标题只在文档开头使用一次
 - Mermaid 节点 ID 使用英文字符，节点显示文本可以使用中文
 - 文档只描述当前已实现的行为；版本范围、快捷键、菜单名称、默认值和文件名必须能从代码、素材或测试中验证
-- `docs/reference/keymap-b45.md` 和 `docs/reference/keymap-b52.md` 由 `tools/generate_keymap_reference.py` 生成，不手工修改
+- 文档中不写死项目版本号，安装包统一使用 `Startup.v<版本号>.b<目标>.zip` 这类占位写法
+- `docs/reference/keymap-b45.md` 和 `docs/reference/keymap-b52.md` 由 `tools/keymap.py` 生成，不手工修改

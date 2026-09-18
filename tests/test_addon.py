@@ -226,7 +226,7 @@ class TemplateRegistrationTest(unittest.TestCase):
             ["PACK", "PACK", "APPEND"],
         )
         self.assertEqual(FakeMenu.callbacks, [])
-        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 11)
+        self.assertEqual(len(self.fake_bpy.utils.registered_classes), 9)
         self.assertEqual(len(FakeObjectContextMenu.callbacks), 1)
         self.assertEqual(FakeObjectContextMenu.registration_method, "append")
         context_layout = FakeLayout()
@@ -495,39 +495,6 @@ class TemplateRegistrationTest(unittest.TestCase):
                 for item in keymap.keymap_items.items
             ],
         )
-
-    def test_registers_and_removes_clipboard_image_shortcuts(self):
-        self.addon.register()
-        keymaps = self.fake_bpy.context.window_manager.keyconfigs.addon.keymaps
-
-        clipboard_items = [
-            keymap_item
-            for keymap in keymaps.items
-            for keymap_item in keymap.keymap_items.items
-            if keymap_item.idname == "o.paste_clipboard_image"
-        ]
-        self.assertEqual(len(clipboard_items), 2)
-        for keymap_item in clipboard_items:
-            self.assertEqual(keymap_item.idname, "o.paste_clipboard_image")
-            self.assertEqual((keymap_item.type, keymap_item.value), ("V", "PRESS"))
-            modifier_name = "oskey" if sys.platform == "darwin" else "ctrl"
-            self.assertTrue(getattr(keymap_item, modifier_name))
-
-        copy_items = [
-            keymap_item
-            for keymap in keymaps.items
-            for keymap_item in keymap.keymap_items.items
-            if keymap_item.idname == "o.track_native_copy"
-        ]
-        self.assertEqual(len(copy_items), 2)
-        for keymap_item in copy_items:
-            self.assertEqual((keymap_item.type, keymap_item.value), ("C", "PRESS"))
-            modifier_name = "oskey" if sys.platform == "darwin" else "ctrl"
-            self.assertTrue(getattr(keymap_item, modifier_name))
-
-        self.addon.unregister()
-        for keymap in keymaps.items:
-            self.assertEqual(keymap.keymap_items.items, [])
 
     @staticmethod
     def create_fake_bpy():

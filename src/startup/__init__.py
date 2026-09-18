@@ -15,7 +15,6 @@ TEMPLATE_DIRECTORY = Path(__file__).parent
 FEATURE_MODULE_NAMES = (
     "extension_repo",
     "remote_asset_library",
-    "clipboard_image",
     "toggle_phantom",
     "camera_bookmark",
 )
