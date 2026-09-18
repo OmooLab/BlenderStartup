@@ -14,6 +14,9 @@ from tools.pack import read_project_version
 
 
 class PackTest(unittest.TestCase):
+    def test_uses_the_omoo_lab_template_id(self):
+        self.assertEqual(APP_TEMPLATE_ID, "Omoo_Lab")
+
     def test_builds_one_installable_template_per_target(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             archive_files = build_templates(temporary_directory)

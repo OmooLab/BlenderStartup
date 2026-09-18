@@ -1,50 +1,19 @@
-<div class="hero" markdown>
+# Blender Startup
 
-# 更熟悉，也更顺手的 Blender
+Blender Startup 是 OmooLab 为 Blender 准备的启动方案，目前提供 `Omoo Lab` Application Template。它让你打开 Blender 就能使用整理好的工作区、偏好设置和快捷键，减少重复配置，也方便熟悉其他 DCC 的用户快速上手。
 
-Blender Startup 是 OmooLab 为 Blender 打造的启动方案。它保留 Blender 高效而独特的操作核心，同时吸收其他 DCC 中广泛使用的操作习惯。
+## 符合用途的 Workspace
 
-<div class="hero-actions" markdown>
-[五分钟上手](getting-started/first-five-minutes.md){ .md-button .md-button--primary }
-[了解快捷键](keymap/index.md){ .md-button }
-[安装与启用](getting-started/install.md){ .md-button }
-</div>
+`Omoo Lab` 按常见制作需求整理好 Workspace，进入模板后可以直接开始工作，不必先花时间重新布置界面。
 
-</div>
+## 取长补短的工业兼容按键
 
-## 两套成熟习惯，一套操作方式
+`Refined Industry Compatible` 保留 Blender 的 `G / S / R`、`MMB` 导航等核心手感，同时加入其他 DCC 常用的 `ALT + LMB / MMB / RMB` 导航和 `W / E / R` Transform 工具。熟悉 Blender 的人不用放弃已有习惯，来自其他 DCC 的人也能直接使用原有经验。
 
-Refined Industry Compatible 不要求你在 Blender 和 Industry Compatible 之间二选一。
+## 下载与安装
 
-<div class="grid cards" markdown>
+在 [Releases](https://github.com/OmooLab/BlenderStartup/releases) 下载与 Blender 版本匹配的安装包：Blender 4.5 使用 `Startup.v<版本号>.b45.zip`，Blender 5.2 使用 `Startup.v<版本号>.b52.zip`。不要解压 ZIP。
 
--   :material-mouse:{ .lg .middle } **导航方式并存**
+打开 Blender，点击左上角的 Blender 图标，选择 `Install Application Template...`，再选择刚下载的 ZIP。安装后从启动画面选择 `Omoo Lab`，或使用 `File > New > Omoo Lab`。
 
-    ---
-
-    保留 Blender 以 `MMB` 为核心的视图导航，同时加入其他 DCC 常用的 `ALT + LMB / MMB / RMB` 导航。
-
--   :material-axis-arrow:{ .lg .middle } **Transform 方式并存**
-
-    ---
-
-    保留 Blender 的 `G / S / R` 操作逻辑，同时加入其他 DCC 惯用的 `W / E / R` Transform 工具。
-
-</div>
-
-熟悉 Blender 的人不必放弃原有手感，来自其他 DCC 的人也不用从零开始。它的重点不是改了多少快捷键，而是让两边真正好用的部分自然共存。
-
-[了解 Refined Industry Compatible](keymap/index.md){ .md-button .md-button--primary }
-[查看主要改动](keymap/changes.md){ .md-button }
-
-## 开箱即用的小功能
-
-- **Camera Bookmark**：保存、预览和恢复相机视角
-- **Toggle Phantom**：快速切换便于观察与穿透选择的半透明状态
-- **OmooLab 在线内容**：配置扩展仓库与 Blender 5.2 Remote Asset Library
-
-[查看全部功能](features/index.md)
-
-## 安全地尝试
-
-Blender Startup 以 Application Template 安装，不会替换 Blender 默认的 General 模板。需要原生环境时，使用 `File > New > General` 即可。
+快捷键方案需要手动启用：进入 `Edit > Preferences > Keymap > Preset`，选择 `Refined Industry Compatible`。

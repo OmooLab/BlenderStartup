@@ -10,6 +10,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MKDOCS_FILE = PROJECT_ROOT / "mkdocs.yml"
 DOCS_ROOT = PROJECT_ROOT / "docs"
 VERSION_LITERAL_PATTERN = re.compile(r"\bv?\d+\.\d+\.\d+\b")
+LEGACY_TEMPLATE_NAME_PATTERN = re.compile(r"O General|O_General")
 
 
 def project_config():
@@ -19,6 +20,14 @@ def project_config():
 
 
 class DocsTest(unittest.TestCase):
+    def test_documents_do_not_use_the_legacy_template_name(self):
+        documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]
+
+        for document in documents:
+            with self.subTest(document=document.relative_to(PROJECT_ROOT)):
+                content = document.read_text(encoding="utf-8")
+                self.assertIsNone(LEGACY_TEMPLATE_NAME_PATTERN.search(content))
+
     def test_documents_do_not_pin_concrete_versions(self):
         documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]
 
@@ -61,10 +70,10 @@ class DocumentationCommandTest(unittest.TestCase):
         )
         self.assertNotIn("--push", documentation_command("build"))
 
-    def test_dev_serves_the_multi_version_site(self):
+    def test_dev_serves_the_current_documentation_with_hot_reload(self):
         self.assertEqual(
             documentation_command("dev"),
-            ("mike", "serve"),
+            ("mkdocs", "serve"),
         )
 
     def test_deploy_publishes_the_project_version_as_latest(self):

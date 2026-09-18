@@ -10,7 +10,7 @@ from tools import keymap
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTATION_COMMANDS = {
-    "dev": ("mike", "serve"),
+    "dev": ("mkdocs", "serve"),
 }
 MIKE_DEPLOY_COMMAND = ("mike", "deploy", "--update-aliases")
 
@@ -80,7 +80,7 @@ def build_parser():
     )
     commands.add_parser(
         "dev",
-        help="Serve the locally built multi-version site",
+        help="Serve the current documentation with hot reload",
     )
     commands.add_parser(
         "deploy",

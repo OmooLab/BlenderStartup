@@ -1,6 +1,6 @@
 # 实用功能
 
-O General 除了工作区、Preferences 和快捷键，还包含一组小而直接的功能。它们只在 Application Template 激活期间注册；切换到其他模板后，相关 Operator、Panel 和 Keymap 会注销。
+Omoo Lab 除了工作区、Preferences 和快捷键，还包含一组小而直接的功能。它们只在 Application Template 激活期间注册；切换到其他模板后，相关 Operator、Panel 和 Keymap 会注销。
 
 <div class="grid cards" markdown>
 

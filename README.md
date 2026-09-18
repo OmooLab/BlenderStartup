@@ -1,6 +1,6 @@
 # Blender Startup
 
-Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 `O General` Application Template。它在 Blender 的基础体验上加入了一套全新的快捷方式，以及多项开箱即用的小功能，让常用操作更顺手，也减少重复配置。
+Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 `Omoo Lab` Application Template。它在 Blender 的基础体验上加入了一套全新的快捷方式，以及多项开箱即用的小功能，让常用操作更顺手，也减少重复配置。
 
 它以 Application Template 的形式安装，不会覆盖 Blender 原本的启动文件。需要原生 Blender 环境时，仍然可以照常使用默认的 General 模板。
 
@@ -26,8 +26,8 @@ Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 
 
 安装后，可以通过以下任一方式进入模板：
 
-- 在 Blender 启动画面中选择 `O General`
-- 进入 `File > New > O General`
+- 在 Blender 启动画面中选择 `Omoo Lab`
+- 进入 `File > New > Omoo Lab`
 
 进入后即可使用 Blender Startup 提供的工作区、偏好设置、快捷方式和附加功能。
 
@@ -63,4 +63,4 @@ Blender Startup 提供 `Refined Industry Compatible` Keymap。首次进入模板
 
 ## 卸载
 
-打开 Blender 的 Application Template 安装目录，删除 `O_General` 文件夹即可。Blender Startup 不会修改或删除 Blender 默认的 General 模板。
+打开 Blender 的 Application Template 安装目录，删除 `Omoo_Lab` 文件夹即可。Blender Startup 不会修改或删除 Blender 默认的 General 模板。

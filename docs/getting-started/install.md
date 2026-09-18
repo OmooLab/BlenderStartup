@@ -11,13 +11,13 @@
 
     ZIP 是 Application Template 安装包，不要解压，也不要作为 Extension 安装。
 
-## 安装 O General
+## 安装 Omoo Lab
 
 1. 打开 Blender。
 2. 点击窗口左上角的 Blender 图标。
 3. 选择 `Install Application Template...`。
 4. 选择对应版本的 ZIP 并确认。
-5. 在启动画面选择 `O General`，或使用 `File > New > O General`。
+5. 在启动画面选择 `Omoo Lab`，或使用 `File > New > Omoo Lab`。
 
 ## 启用快捷键
 

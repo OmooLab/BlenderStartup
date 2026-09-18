@@ -14,7 +14,7 @@ SOURCE_ROOT = PROJECT_ROOT / "src" / "startup"
 TEMPLATE_ROOT = PROJECT_ROOT / "template"
 DEFAULT_OUTPUT_DIRECTORY = PROJECT_ROOT / "dist"
 
-APP_TEMPLATE_ID = "O_General"
+APP_TEMPLATE_ID = "Omoo_Lab"
 SPLASH_NAME = "splash.png"
 STARTUP_PREFIX = "startup."
 STARTUP_SUFFIX = ".blend"

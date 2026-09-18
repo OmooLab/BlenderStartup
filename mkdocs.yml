@@ -22,80 +22,82 @@ nav:
       - Toggle Phantom: features/toggle-phantom.md
       - OmooLab 在线内容: features/online-content.md
   - 配置与版本:
-      - O General 与版本差异: configuration/o-general.md
+      - Omoo Lab 与版本差异: configuration/omoo-lab.md
 
 theme:
   name: material
+  logo: assets/logo.png
   language: zh
   font:
     text: Open Sans
     code: Cascadia Code
   palette:
+    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       primary: black
-      accent: amber
       toggle:
-        icon: material/brightness-auto
-        name: 跟随系统主题
+        icon: fontawesome/solid/circle-half-stroke
+        name: Switch to light mode
+
+    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: black
-      accent: amber
       toggle:
-        icon: material/brightness-7
-        name: 切换到深色主题
+        icon: fontawesome/regular/moon
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: amber
       toggle:
-        icon: material/brightness-4
-        name: 切换到浅色主题
+        icon: fontawesome/solid/moon
+        name: Switch to system preference
+
   features:
-    - announce.dismiss
-    - content.code.copy
-    - content.tabs.link
     - header.autohide
     - navigation.footer
     - navigation.indexes
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.top
-    - search.highlight
-    - search.share
-    - search.suggest
+    - content.code.copy
+    - content.code.select
 
 extra:
   version:
     provider: mike
-    alias: true
 
 extra_css:
   - stylesheets/extra.css
 
-copyright: Copyright &copy; 2026 OmooLab
+copyright: Copyright &copy; 2020 - 2024 Omoolab
 
 plugins:
-  - search:
-      lang:
-        - zh
-        - en
+  - search
+  - mkdocstrings
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: zh
+          name: 中文
+          default: true
+        - locale: en
+          name: English
+          nav_translations:
+            快捷键: Keymap
 
 markdown_extensions:
-  - abbr
+  - mkdocs-click
   - admonition
-  - attr_list
-  - def_list
-  - md_in_html
-  - tables
-  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

@@ -2,7 +2,7 @@
 
 ## OmooLab Extensions
 
-首次进入 O General 时，Blender Startup 会检查 Preferences 中是否已经存在同地址的扩展仓库：
+首次进入 Omoo Lab 时，Blender Startup 会检查 Preferences 中是否已经存在同地址的扩展仓库：
 
 `https://extensions.omoolab.xyz/`
 
@@ -22,6 +22,6 @@ Blender 4.5 不添加 Remote Asset Library。
 
 ## 持久性
 
-这些内容写入 Blender 用户 Preferences。切换到 General 或其他 Application Template 后仍然保留，也不会因为 O General 注销而自动删除。
+这些内容写入 Blender 用户 Preferences。切换到 General 或其他 Application Template 后仍然保留，也不会因为 Omoo Lab 注销而自动删除。
 
 如不希望保留，可以在 Blender Preferences 的 Extensions Repository 或 File Paths / Asset Libraries 中手动删除。

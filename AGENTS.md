@@ -10,8 +10,8 @@
 ## 项目与模板命名
 
 - 项目和发行包统一称为 `Blender Startup`，它可以包含多个 Blender Application Template
-- 当前提供的 Application Template 称为 `O General`，内部目录与命令行 ID 固定为 `O_General`
-- 不要把项目名 `Blender Startup`、模板显示名 `O General` 和模板 ID `O_General` 混用
+- 当前提供的 Application Template 称为 `Omoo Lab`，内部目录与命令行 ID 固定为 `Omoo_Lab`
+- 不要把项目名 `Blender Startup`、模板显示名 `Omoo Lab` 和模板 ID `Omoo_Lab` 混用
 - 构建目标使用 `b<major><minor>` 表示最低适用 Blender 版本，如 `b45` 表示 Blender 4.5+
 - 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v<版本号>.b45.zip`
 - 当前构建目标为 `b45`（Blender 4.5+）和 `b52`（Blender 5.2+）
@@ -45,7 +45,7 @@ uv run pack --target b45
 # 本地构建多版本静态页面（只提交到本地 gh-pages 分支，不推送）
 uv run docs build
 
-# 本地预览多版本静态页面
+# 本地热更新预览当前文档
 uv run docs dev
 
 # 生成相对 Blender Default 的快捷键差异参考
@@ -108,7 +108,7 @@ git push origin v<版本号>
 
 ## 文档与 Markdown 规范
 
-- `README.md` 描述当前可用的 `O General` 模板，但以 `Blender Startup` 作为项目名称
+- `README.md` 描述当前可用的 `Omoo Lab` 模板，但以 `Blender Startup` 作为项目名称
 - README 不包含目录结构、注册机制、原子写入、ZIP 内部布局等开发细节
 - 不使用 `---` 分隔线；一级标题只在文档开头使用一次
 - Mermaid 节点 ID 使用英文字符，节点显示文本可以使用中文

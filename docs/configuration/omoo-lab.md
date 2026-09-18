@@ -1,18 +1,18 @@
-# O General 与版本差异
+# Omoo Lab 与版本差异
 
 ## 三个名称的区别
 
 | 名称 | 含义 |
 | --- | --- |
 | Blender Startup | 项目与发行包 |
-| O General | 用户在 Blender 中看到的 Application Template |
-| `O_General` | 模板内部目录和命令行 ID |
+| Omoo Lab | 用户在 Blender 中看到的 Application Template |
+| `Omoo_Lab` | 模板内部目录和命令行 ID |
 
 ## Application Template 的边界
 
-O General 提供自己的 Startup File、Preferences、Keymap 素材和运行时功能。它不会替换 Blender 用户配置目录中的默认 `config/startup.blend`，也不是 Blender Extension。
+Omoo Lab 提供自己的 Startup File、Preferences、Keymap 素材和运行时功能。它不会替换 Blender 用户配置目录中的默认 `config/startup.blend`，也不是 Blender Extension。
 
-运行时功能只在 O General 激活期间注册。扩展仓库、Remote Asset Library 和已经同步到用户脚本目录的 Keymap Preset 属于持久用户配置。
+运行时功能只在 Omoo Lab 激活期间注册。扩展仓库、Remote Asset Library 和已经同步到用户脚本目录的 Keymap Preset 属于持久用户配置。
 
 ## 构建目标
 
