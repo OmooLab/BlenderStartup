@@ -2,7 +2,6 @@
 
 Blender Startup 是 OmooLab 为 Blender 准备的启动方案，目前提供 `Omoo Lab` Application Template。它让你打开 Blender 就能使用整理好的工作区、偏好设置和快捷键，减少重复配置，也方便熟悉其他 DCC 的用户快速上手。
 
-
 ## 合理的设计
 
 **符合用途的 Workspace**
@@ -28,7 +27,7 @@ Blender Startup 是 OmooLab 为 Blender 准备的启动方案，目前提供 `Om
 
 ## 下载与安装
 
-**下载**
+**下载对应 lts 版本**
 
 在 [Releases](https://github.com/OmooLab/BlenderStartup/releases) 下载与 Blender 版本匹配的安装包（不要解压）：
 
@@ -37,26 +36,28 @@ Blender Startup 是 OmooLab 为 Blender 准备的启动方案，目前提供 `Om
 
 **安装 app template**
 
-![install-app-template](assets/install-app-template.png)
-
 点左上角的「Blender 图标」，选择 `Install Application Template...`，再选择刚下载的 ZIP。
 
-**改变你的启动习惯**
+![install-app-template](assets/install-app-template.png)
 
-![new-file](assets/new-file.png)
+## 改变你的启动习惯
 
-安装后从启动画面选择 `Omoo Lab`，或使用 `File > New > Omoo Lab`。
+**工作前先进入 app**
+
+重启 Blender 从启动画面选择 `Omoo Lab`
+
+![splash-screen](assets/splash-screen.png)
+
+或使用 `File > New > Omoo Lab`。
 
 **选择快捷键**
 
 快捷键方案需要手动启用：进入 `Edit > Preferences > Keymap > Preset`，选择 `Refined Industry Compatible`。
 
-## 改变你的启动习惯
+## 直接按 app 启动
 
-复制一份 Blender 快捷方式并命名为 `Omoo Lab`。右键打开“属性”，在“目标”末尾加上 `--app-template Omoo_Lab`：
+创建 Blender 快捷方式。右键打开「属性」，在「目标」末尾加上 `--app-template Omoo_Lab`
 
-```text
-"C:\Program Files\Blender Foundation\Blender\blender.exe" --app-template Omoo_Lab
-```
+![open-as-app](assets/open-as-app.png)
 
-之后双击这个快捷方式，就会直接打开 `Omoo Lab` Application Template，不再经过模板选择。
+之后双击快捷方式，就会直接打开 `Omoo Lab` Application Template，不再经过模板选择。

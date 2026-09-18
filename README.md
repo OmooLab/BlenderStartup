@@ -1,66 +1,65 @@
 # Blender Startup
 
-Blender Startup 是 OmooLab 团队特供的 Blender 启动方案，目前提供 `Omoo Lab` Application Template。它在 Blender 的基础体验上加入了一套全新的快捷方式，以及多项开箱即用的小功能，让常用操作更顺手，也减少重复配置。
+[中文文档](https://docs.omoolab.xyz/blender-startup/0.2.x/)
 
-它以 Application Template 的形式安装，不会覆盖 Blender 原本的启动文件。需要原生 Blender 环境时，仍然可以照常使用默认的 General 模板。
+Blender Startup is OmooLab's startup solution for Blender. It currently provides the `Omoo Lab` Application Template, giving you a set of prepared Workspaces, Preferences, and shortcuts as soon as Blender opens. It reduces repeated setup and helps users coming from other DCCs get up to speed quickly.
 
-完整的使用方法、快捷键设计与 Blender Default 差异参考见 [Blender Startup 文档](https://docs.omoolab.xyz/blender-startup/)。
+## Sensible by Design
 
-## 下载
+**Purpose-built Workspaces**
 
-在 [Releases](https://github.com/OmooLab/BlenderStartup/releases) 页面下载最新安装包，根据 Blender 版本选择，文件名格式为 `BlenderStartup.v<版本号>.b<目标>.zip`：
+`Omoo Lab` organizes Workspaces around common production needs: one layout for one kind of work, with a dedicated space for each purpose.
 
-- Blender 4.5 LTS：`BlenderStartup.v<版本号>.b45.zip`
-- Blender 5.2 LTS：`BlenderStartup.v<版本号>.b52.zip`
+- Layout for fast scene setup
+- Geometry Nodes geometry sandbox
+- Shading material sandbox
+- Compositing post-production and backgrounds
+- Drawing GP canvas
+- Demo for presentation
 
-## 安装
+**Industry-compatible shortcuts that take the best of both**
 
-1. 下载对应 Blender 版本的 ZIP 安装包，不要解压。
-2. 打开 Blender，点击左上角的 Blender 图标。
-3. 选择 `Install Application Template...`。
-4. 选择刚刚下载的 ZIP 文件并确认安装。
+`Refined Industry Compatible` keeps Blender's core feel, including `G / S / R` and `MMB` navigation, while adding navigation familiar from other DCCs with `ALT + LMB / MMB / RMB` and Transform tools on `W / E / R`. Blender users do not have to give up their existing habits, and users coming from other DCCs can rely on the experience they already have.
 
-更新 Blender Startup 时，直接安装新版 ZIP 即可替换旧版本。
+There are many more well-designed shortcuts.
 
-## 开始使用
+**Ready-to-use remote asset libraries and extensions**
 
-安装后，可以通过以下任一方式进入模板：
+Makes useful node groups available right away.
 
-- 在 Blender 启动画面中选择 `Omoo Lab`
-- 进入 `File > New > Omoo Lab`
+## Download and Installation
 
-进入后即可使用 Blender Startup 提供的工作区、偏好设置、快捷方式和附加功能。
+**Download the matching LTS release**
 
-首次进入模板时，如尚未配置，Blender Startup 会加入 `OmooLab Extensions` 扩展仓库，地址为 `https://extensions.omoolab.xyz/`，并启用启动时检查更新。已有的同地址仓库不会重复添加，只会补充启用启动检查，其他设置保持不变。
+Download the package that matches your Blender version from [Releases](https://github.com/OmooLab/BlenderStartup/releases). Do not unzip it.
 
-Blender 5.2 还会加入三个 Remote Asset Library：
+- Blender 4.5 LTS: `BlenderStartup.v{version}.b45.zip`
+- Blender 5.2 LTS: `BlenderStartup.v{version}.b52.zip`
 
-- `O Essentials`：`https://assets.omoolab.xyz/b52/O_Essentials/`
-- `O Extra`：`https://assets.omoolab.xyz/b52/O_Extra/`
-- `Stanford 3D Scanning`：`https://assets.omoolab.xyz/stanford-3d-scanning/`，导入方式为 Append
+**Install the Application Template**
 
-这些配置在切换到其他 Application Template 后仍会保留。
+Click the Blender icon in the top-left corner, choose `Install Application Template...`, then select the ZIP file you downloaded.
 
-如需回到 Blender 默认环境，选择 `File > New > General` 即可。
+![Install Application Template](https://docs.omoolab.xyz/blender-startup/latest/assets/install-app-template.png)
 
-## 快捷方式
+## Change How You Start Blender
 
-Blender Startup 提供 `Refined Industry Compatible` Keymap。首次进入模板后，它会出现在：
+**Start in the app before you work**
 
-`Edit > Preferences > Keymap > Preset`
+After restarting Blender, select `Omoo Lab` from the splash screen.
 
-选择 `Refined Industry Compatible` 即可启用。该 Keymap 不会自动替换你当前使用的快捷键方案。
+![Splash screen](https://docs.omoolab.xyz/blender-startup/latest/assets/splash-screen.png)
 
-## 实用功能
+Or use `File > New > Omoo Lab`.
 
-### Camera Bookmark
+**Select the keymap**
 
-在 Camera View 中按 `Shift + \`` 打开书签菜单。你可以保存、更新和恢复相机视角，书签及其预览图会跟随当前 `.blend` 文件保存。
+The keymap preset must be enabled manually: go to `Edit > Preferences > Keymap > Preset` and select `Refined Industry Compatible`.
 
-### Toggle Phantom
+## Launch Directly as an App
 
-在 Object Mode 中打开右键菜单，选择 `Toggle Phantom`，可快速将对象切换为便于观察和穿透选择的半透明状态。再次执行即可恢复。
+Create a Blender shortcut. Right-click it, open Properties, and append `--app-template Omoo_Lab` to the Target field.
 
-## 卸载
+![Open as app](https://docs.omoolab.xyz/blender-startup/latest/assets/open-as-app.png)
 
-打开 Blender 的 Application Template 安装目录，删除 `Omoo_Lab` 文件夹即可。Blender Startup 不会修改或删除 Blender 默认的 General 模板。
+After that, double-clicking the shortcut opens the `Omoo Lab` Application Template directly, without going through template selection.
