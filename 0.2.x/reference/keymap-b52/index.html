@@ -1043,39 +1043,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3d-view-tool-move" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3D View Tool: Move
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-view-tool-rotate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3D View Tool: Rotate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-view-tool-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3D View Tool: Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#frames" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1920,13 +1887,12 @@
 
 <h1 id="blender-52">Blender 5.2 快捷键差异</h1>
 <p>本页由当前 <code>Refined Industry Compatible</code> Keymap 与同版本的 <strong>Blender Default</strong> 自动比较生成。Industry Compatible 不是比较基线。</p>
-<div class="keymap-summary">
-<div><strong>397</strong>修改绑定</div>
-<div><strong>175</strong>新增绑定</div>
-<div><strong>29</strong>移除绑定</div>
-<div><strong>67</strong>受影响 Keymap</div>
-</div>
-
+<ul>
+<li><strong>修改绑定</strong>：423</li>
+<li><strong>新增绑定</strong>：174</li>
+<li><strong>移除绑定</strong>：29</li>
+<li><strong>受影响 Keymap</strong>：64</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">怎样理解差异</p>
 <p>“修改”表示同一个 Blender Operator 的触发方式或属性发生变化；“新增”和“移除”表示在相同编辑器 Keymap 中只存在于一侧。Blender 在运行时生成的工具 Keymap 不会因为没有出现在导出文件中就被记为删除。</p>
@@ -1960,85 +1926,85 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>deselect_all=True</small></td>
+<td><code>view3d.select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB + 点击</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>toggle=True</small></td>
+<td><code>view3d.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>center=True, object=True</small></td>
+<td><code>view3d.select</code>（center=True, object=True）</td>
 <td>默认：<code>CTRL + RMB</code>；center=True, object=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>enumerate=True</small></td>
+<td><code>view3d.select</code>（enumerate=True）</td>
 <td>默认：<code>ALT + RMB</code>；enumerate=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>toggle=True, center=True</small></td>
+<td><code>view3d.select</code>（toggle=True, center=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；toggle=True, center=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>center=True, enumerate=True</small></td>
+<td><code>view3d.select</code>（center=True, enumerate=True）</td>
 <td>默认：<code>CTRL + ALT + RMB</code>；center=True, enumerate=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>toggle=True, enumerate=True</small></td>
+<td><code>view3d.select</code>（toggle=True, enumerate=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；toggle=True, enumerate=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB + 点击</code></td>
-<td><code>view3d.select</code><br><small>toggle=True, center=True, enumerate=True</small></td>
+<td><code>view3d.select</code>（toggle=True, center=True, enumerate=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + RMB</code>；toggle=True, center=True, enumerate=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>view3d.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>view3d.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>C</code></td>
-<td><code>view3d.select_circle</code><br><small>active=False</small></td>
+<td><code>view3d.select_circle</code>（active=False）</td>
 <td>默认：<code>C</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + GRAVE</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_gizmo', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_gizmo', active=False）</td>
 <td>默认：<code>CTRL + GRAVE</code>；data_path='space_data.show_gizmo'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>SHIFT + RMB + 拖动</code></td>
-<td><code>transform.translate</code><br><small>cursor_transform=True, release_confirm=True</small></td>
+<td><code>transform.translate</code>（cursor_transform=True, release_confirm=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2092,25 +2058,25 @@
 <tr>
 <td>新增</td>
 <td><code>T</code></td>
-<td><code>wm.call_menu_pie</code><br><small>name='VIEW3D_MT_orientations_pie'</small></td>
+<td><code>wm.call_menu_pie</code>（name='VIEW3D_MT_orientations_pie'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>SHIFT + T</code></td>
-<td><code>wm.call_menu_pie</code><br><small>name='VIEW3D_MT_pivot_pie'</small></td>
+<td><code>wm.call_menu_pie</code>（name='VIEW3D_MT_pivot_pie'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + ALT + Q + 可重复</code></td>
-<td><code>view3d.view_roll</code><br><small>angle=5.0, type='LEFT'</small></td>
+<td><code>view3d.view_roll</code>（angle=5.0, type='LEFT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + ALT + E + 可重复</code></td>
-<td><code>view3d.view_roll</code><br><small>angle=5.0, type='RIGHT'</small></td>
+<td><code>view3d.view_roll</code>（angle=5.0, type='RIGHT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2128,7 +2094,7 @@
 <tr>
 <td>移除</td>
 <td><code>RMB</code></td>
-<td><code>view3d.select</code><br><small>deselect_all=True, select_passthrough=True</small></td>
+<td><code>view3d.select</code>（deselect_all=True, select_passthrough=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -2148,68 +2114,8 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3d-view-tool-move">3D View Tool: Move</h3>
-<p>上下文：<code>VIEW_3D / WINDOW</code></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>当前按键</th>
-<th>Operator</th>
-<th>与 Blender Default 的差异</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>新增</td>
-<td><code>RMB</code></td>
-<td><code>transform.translate</code><br><small>release_confirm=True</small></td>
-<td>Blender Default 中没有此绑定</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3d-view-tool-rotate">3D View Tool: Rotate</h3>
-<p>上下文：<code>VIEW_3D / WINDOW</code></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>当前按键</th>
-<th>Operator</th>
-<th>与 Blender Default 的差异</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>新增</td>
-<td><code>RMB</code></td>
-<td><code>transform.rotate</code></td>
-<td>Blender Default 中没有此绑定</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3d-view-tool-scale">3D View Tool: Scale</h3>
-<p>上下文：<code>VIEW_3D / WINDOW</code></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>当前按键</th>
-<th>Operator</th>
-<th>与 Blender Default 的差异</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>新增</td>
-<td><code>RMB</code></td>
-<td><code>transform.resize</code></td>
-<td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
 </table>
@@ -2234,19 +2140,19 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + ALT + WHEEL DOWN</code></td>
-<td><code>screen.keyframe_jump</code><br><small>next=True</small></td>
+<td><code>screen.keyframe_jump</code>（next=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + ALT + WHEEL UP</code></td>
-<td><code>screen.keyframe_jump</code><br><small>next=False</small></td>
+<td><code>screen.keyframe_jump</code>（next=False）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>ESC</code></td>
-<td><code>screen.frame_jump</code><br><small>active=False</small></td>
+<td><code>screen.frame_jump</code>（active=False）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -2266,19 +2172,19 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + Q</code></td>
-<td><code>screen.region_quadview</code><br><small>active=False</small></td>
+<td><code>screen.region_quadview</code>（active=False）</td>
 <td>默认：<code>CTRL + ALT + Q</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + F12</code></td>
-<td><code>render.render</code><br><small>use_viewport=True, use_sequencer_scene=True</small></td>
+<td><code>render.render</code>（use_viewport=True, use_sequencer_scene=True）</td>
 <td>默认：<code>ALT + F12</code>；use_sequencer_scene=True, use_viewport=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + F12</code></td>
-<td><code>render.render</code><br><small>animation=True, use_viewport=True, use_sequencer_scene=True</small></td>
+<td><code>render.render</code>（animation=True, use_viewport=True, use_sequencer_scene=True）</td>
 <td>默认：<code>CTRL + ALT + F12</code>；animation=True, use_sequencer_scene=True, use_viewport=True</td>
 </tr>
 </tbody>
@@ -2324,7 +2230,7 @@
 <tr>
 <td>修改</td>
 <td><code>MMB</code></td>
-<td><code>view2d.pan</code><br><small>active=False</small></td>
+<td><code>view2d.pan</code>（active=False）</td>
 <td>默认：<code>MMB</code></td>
 </tr>
 <tr>
@@ -2374,7 +2280,7 @@
 <tr>
 <td>新增</td>
 <td><code>ALT + GRAVE + 可重复</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.lock_camera'</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.lock_camera'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -2394,6 +2300,18 @@
 <tbody>
 <tr>
 <td>修改</td>
+<td><code>A</code></td>
+<td><code>object.select_all</code>（action='SELECT', active=False）</td>
+<td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>object.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>R + 双击</code></td>
 <td><code>transform.rotate</code></td>
 <td>默认：<code>R</code></td>
@@ -2407,103 +2325,97 @@
 <tr>
 <td>修改</td>
 <td><code>ALT + W</code></td>
-<td><code>object.location_clear</code><br><small>clear_delta=False</small></td>
+<td><code>object.location_clear</code>（clear_delta=False）</td>
 <td>默认：<code>ALT + G</code>；clear_delta=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + E</code></td>
-<td><code>object.rotation_clear</code><br><small>clear_delta=False</small></td>
-<td>默认：<code>ALT + R</code>；clear_delta=False</td>
-</tr>
-<tr>
-<td>修改</td>
-<td><code>ALT + R</code></td>
-<td><code>object.scale_clear</code><br><small>clear_delta=False</small></td>
+<td><code>object.scale_clear</code>（clear_delta=False）</td>
 <td>默认：<code>ALT + S</code>；clear_delta=False</td>
 </tr>
 <tr>
 <td>修改</td>
-<td><code>CTRL + SHIFT + A</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_object_apply'</small></td>
+<td><code>ALT + A</code></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_object_apply'）</td>
 <td>默认：<code>CTRL + A</code>；name='VIEW3D_MT_object_apply'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ONE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=1, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=1, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + ONE</code>；level=1, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + TWO</code></td>
-<td><code>object.subdivision_set</code><br><small>level=2, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=2, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + TWO</code>；level=2, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + THREE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=3, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=3, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + THREE</code>；level=3, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + FOUR</code></td>
-<td><code>object.subdivision_set</code><br><small>level=4, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=4, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + FOUR</code>；level=4, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + FIVE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=5, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=5, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + FIVE</code>；level=5, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_object_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_object_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_object_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>object.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>object.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>A</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_add', active=False</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_add', active=False）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + A</code></td>
-<td><code>object.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>object.select_all</code>（action='SELECT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2527,37 +2439,37 @@
 <tr>
 <td>新增</td>
 <td><code>TAB + 松开</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_add'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_add'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>ONE</code></td>
-<td><code>object.mode_set_with_submode</code><br><small>mode='EDIT', mesh_select_mode={'VERT'}</small></td>
+<td><code>object.mode_set_with_submode</code>（mode='EDIT', mesh_select_mode={'VERT'}）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>TWO</code></td>
-<td><code>object.mode_set_with_submode</code><br><small>mode='EDIT', mesh_select_mode={'EDGE'}</small></td>
+<td><code>object.mode_set_with_submode</code>（mode='EDIT', mesh_select_mode={'EDGE'}）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>THREE</code></td>
-<td><code>object.mode_set_with_submode</code><br><small>mode='EDIT', mesh_select_mode={'FACE'}</small></td>
+<td><code>object.mode_set_with_submode</code>（mode='EDIT', mesh_select_mode={'FACE'}）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>SHIFT + ONE</code></td>
-<td><code>object.mode_set</code><br><small>mode='SCULPT'</small></td>
+<td><code>object.mode_set</code>（mode='SCULPT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>SHIFT + ONE</code></td>
-<td><code>object.mode_set</code><br><small>mode='PAINT_GREASE_PENCIL'</small></td>
+<td><code>object.mode_set</code>（mode='PAINT_GREASE_PENCIL'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -2577,7 +2489,7 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + TAB</code></td>
-<td><code>object.mode_set</code><br><small>mode='EDIT', toggle=True, active=False</small></td>
+<td><code>object.mode_set</code>（mode='EDIT', toggle=True, active=False）</td>
 <td>默认：<code>TAB</code>；mode='EDIT', toggle=True</td>
 </tr>
 <tr>
@@ -2595,7 +2507,7 @@
 <tr>
 <td>新增</td>
 <td><code>ESC</code></td>
-<td><code>object.mode_set</code><br><small>mode='OBJECT'</small></td>
+<td><code>object.mode_set</code>（mode='OBJECT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2632,15 +2544,9 @@
 </tr>
 <tr>
 <td>修改</td>
-<td><code>CTRL + SHIFT + A</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_pose_apply'</small></td>
+<td><code>ALT + A</code></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_pose_apply'）</td>
 <td>默认：<code>CTRL + A</code>；name='VIEW3D_MT_pose_apply'</td>
-</tr>
-<tr>
-<td>修改</td>
-<td><code>ALT + E</code></td>
-<td><code>pose.rot_clear</code></td>
-<td>默认：<code>ALT + R</code></td>
 </tr>
 <tr>
 <td>修改</td>
@@ -2650,26 +2556,32 @@
 </tr>
 <tr>
 <td>修改</td>
-<td><code>ALT + R</code></td>
+<td><code>ALT + E</code></td>
 <td><code>pose.scale_clear</code></td>
 <td>默认：<code>ALT + S</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>pose.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>pose.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>pose.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_pose_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_pose_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_pose_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>pose.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>pose.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -2752,8 +2664,14 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>armature.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>armature.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>armature.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -2764,7 +2682,7 @@
 <tr>
 <td>修改</td>
 <td><code>E</code></td>
-<td><code>armature.extrude_move</code><br><small>active=False</small></td>
+<td><code>armature.extrude_move</code>（active=False）</td>
 <td>默认：<code>E</code></td>
 </tr>
 <tr>
@@ -2776,19 +2694,19 @@
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>armature.fill</code><br><small>active=False</small></td>
+<td><code>armature.fill</code>（active=False）</td>
 <td>默认：<code>F</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_armature_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_armature_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_armature_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>armature.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>armature.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2832,8 +2750,14 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>curve.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>curve.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>curve.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -2844,49 +2768,49 @@
 <tr>
 <td>修改</td>
 <td><code>E</code></td>
-<td><code>curve.extrude_move</code><br><small>active=False</small></td>
+<td><code>curve.extrude_move</code>（active=False）</td>
 <td>默认：<code>E</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>curve.make_segment</code><br><small>active=False</small></td>
+<td><code>curve.make_segment</code>（active=False）</td>
 <td>默认：<code>F</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_curve_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_curve_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_edit_curve_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>curve.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>curve.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2924,49 +2848,55 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>curves.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>curves.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>curves.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>E</code></td>
-<td><code>curves.extrude_move</code><br><small>active=False</small></td>
+<td><code>curves.extrude_move</code>（active=False）</td>
 <td>默认：<code>E</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_curves_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_curves_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_edit_curves_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>curves.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>curves.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -2992,7 +2922,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>grease_pencil.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>grease_pencil.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -3012,19 +2942,19 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_paint.brush.size'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_paint.brush.size'）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.gpencil_paint.brush.size'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + SPACE</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_gpencil_paint'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_gpencil_paint'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_paint'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_greasepencil_draw_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_greasepencil_draw_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_greasepencil_draw_context_menu'</td>
 </tr>
 </tbody>
@@ -3056,43 +2986,43 @@
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>grease_pencil.cyclical_set</code><br><small>type='CLOSE', subdivide_cyclic_segment=True, active=False</small></td>
+<td><code>grease_pencil.cyclical_set</code>（type='CLOSE', subdivide_cyclic_segment=True, active=False）</td>
 <td>默认：<code>F</code>；type='CLOSE', subdivide_cyclic_segment=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>E</code></td>
-<td><code>grease_pencil.extrude_move</code><br><small>active=False</small></td>
+<td><code>grease_pencil.extrude_move</code>（active=False）</td>
 <td>默认：<code>E</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_greasepencil_edit_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_greasepencil_edit_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_greasepencil_edit_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3118,43 +3048,43 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.size', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_sculpt_paint.brush.strength', data_path_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_sculpt_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_sculpt_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_sculpt_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_sculpt_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>V</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_gpencil_sculpt'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_gpencil_sculpt'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_sculpt'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_greasepencil_sculpt_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_greasepencil_sculpt_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_greasepencil_sculpt_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>G</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', asset_library_identifier='', relative_asset_identifier='brushes/essentials_brushes-gp_sculpt.blend/Brush/Grab'</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', asset_library_identifier='', relative_asset_identifier='brushes/essentials_brushes-gp_sculpt.blend/Brush/Grab'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_gpencil_sculpt'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_gpencil_sculpt'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -3174,8 +3104,14 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>grease_pencil.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>grease_pencil.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>grease_pencil.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 </tbody>
 </table>
@@ -3194,25 +3130,25 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.gpencil_vertex_paint.brush.size', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_vertex_paint.brush.strength', data_path_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_vertex_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_vertex_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_vertex_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_greasepencil_vertex_paint_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_greasepencil_vertex_paint_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_greasepencil_vertex_paint_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_gpencil_vertex'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_gpencil_vertex'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_vertex'</td>
 </tr>
 </tbody>
@@ -3232,31 +3168,31 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.size', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.size', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.strength', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>CTRL + F</code>；data_path_primary='tool_settings.gpencil_weight_paint.brush.weight', data_path_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.gpencil_weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.gpencil_weight_paint.brush.texture_slot.angle', color_path='tool_settings.gpencil_weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.gpencil_weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_greasepencil_weight_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_greasepencil_weight_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_greasepencil_weight_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_gpencil_weight'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_gpencil_weight'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_gpencil_weight'</td>
 </tr>
 <tr>
@@ -3268,7 +3204,7 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + ALT + LMB</code></td>
-<td><code>view3d.select</code><br><small>toggle=True</small></td>
+<td><code>view3d.select</code>（toggle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3312,19 +3248,25 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>lattice.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>lattice.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>lattice.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_lattice_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_lattice_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_edit_lattice_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>lattice.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>lattice.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -3356,13 +3298,13 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>transform.skin_resize</code><br><small>active=False</small></td>
+<td><code>transform.skin_resize</code>（active=False）</td>
 <td>默认：<code>CTRL + A</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ONE</code></td>
-<td><code>mesh.select_mode</code><br><small>use_expand=True, type='VERT', active=False</small></td>
+<td><code>mesh.select_mode</code>（use_expand=True, type='VERT', active=False）</td>
 <td>默认：<code>CTRL + ONE</code>；use_expand=True, type='VERT'</td>
 </tr>
 <tr>
@@ -3374,7 +3316,7 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB + 点击</code></td>
-<td><code>mesh.loop_select</code><br><small>toggle=True</small></td>
+<td><code>mesh.loop_select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
@@ -3386,91 +3328,97 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB + 点击</code></td>
-<td><code>mesh.edgering_select</code><br><small>toggle=True</small></td>
+<td><code>mesh.edgering_select</code>（toggle=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>mesh.shortest_path_pick</code><br><small>use_fill=False</small></td>
+<td><code>mesh.shortest_path_pick</code>（use_fill=False）</td>
 <td>默认：<code>CTRL + RMB</code>；use_fill=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>mesh.shortest_path_pick</code><br><small>use_fill=True</small></td>
+<td><code>mesh.shortest_path_pick</code>（use_fill=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；use_fill=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>mesh.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>mesh.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>mesh.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>E</code></td>
-<td><code>view3d.edit_mesh_extrude_move_normal</code><br><small>active=False</small></td>
+<td><code>view3d.edit_mesh_extrude_move_normal</code>（active=False）</td>
 <td>默认：<code>E</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>F + 可重复</code></td>
-<td><code>mesh.edge_face_add</code><br><small>active=False</small></td>
+<td><code>mesh.edge_face_add</code>（active=False）</td>
 <td>默认：<code>F + 可重复</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 点击</code></td>
-<td><code>mesh.dupli_extrude_cursor</code><br><small>rotate_source=True</small></td>
+<td><code>mesh.dupli_extrude_cursor</code>（rotate_source=True）</td>
 <td>默认：<code>CTRL + LMB + 点击</code>；rotate_source=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 点击</code></td>
-<td><code>mesh.dupli_extrude_cursor</code><br><small>rotate_source=False</small></td>
+<td><code>mesh.dupli_extrude_cursor</code>（rotate_source=False）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 点击</code>；rotate_source=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + F</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_mesh_faces', active=False</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_mesh_faces', active=False）</td>
 <td>默认：<code>CTRL + F</code>；name='VIEW3D_MT_edit_mesh_faces'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_mesh_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_mesh_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_edit_mesh_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>mesh.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>mesh.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3508,19 +3456,25 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>mball.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>mball.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>mball.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_edit_metaball_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_edit_metaball_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_edit_metaball_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>mball.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>mball.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3558,25 +3512,25 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>paintcurve.select</code><br><small>extend=True</small></td>
+<td><code>paintcurve.select</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>paintcurve.slide</code><br><small>align=False</small></td>
+<td><code>paintcurve.slide</code>（align=False）</td>
 <td>默认：<code>LMB</code>；align=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + RMB</code></td>
-<td><code>paintcurve.slide</code><br><small>align=True</small></td>
+<td><code>paintcurve.slide</code>（align=True）</td>
 <td>默认：<code>SHIFT + LMB</code>；align=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>paintcurve.select</code><br><small>toggle=True</small></td>
+<td><code>paintcurve.select</code>（toggle=True）</td>
 <td>默认：<code>A</code>；toggle=True</td>
 </tr>
 <tr>
@@ -3614,61 +3568,67 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>paint.vert_select_all</code><br><small>action='SELECT'</small></td>
+<td><code>paint.vert_select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>paint.vert_select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>view3d.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>view3d.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>paint.vert_select_all</code><br><small>action='INVERT'</small></td>
+<td><code>paint.vert_select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=False, select=True</small></td>
+<td><code>paint.face_select_loop</code>（extend=False, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>SHIFT + ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=True, select=True</small></td>
+<td><code>paint.face_select_loop</code>（extend=True, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=True, select=False</small></td>
+<td><code>paint.face_select_loop</code>（extend=True, select=False）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=False, select=True</small></td>
+<td><code>paint.vert_select_loop</code>（extend=False, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>SHIFT + ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=True, select=True</small></td>
+<td><code>paint.vert_select_loop</code>（extend=True, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=True, select=False</small></td>
+<td><code>paint.vert_select_loop</code>（extend=True, select=False）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -3688,25 +3648,31 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>particle.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>particle.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>particle.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.particle_edit.brush.size'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.particle_edit.brush.size'）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.particle_edit.brush.size'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.particle_edit.brush.strength'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.particle_edit.brush.strength'）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.particle_edit.brush.strength'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='VIEW3D_MT_particle_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='VIEW3D_MT_particle_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_MT_particle_context_menu'</td>
 </tr>
 <tr>
@@ -3724,7 +3690,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>particle.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>particle.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -3753,6 +3719,12 @@
 <td><code>transform.translate</code></td>
 <td>默认：<code>RMB + 拖动</code></td>
 </tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>pointcloud.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
 </tbody>
 </table>
 <h3 id="sculpt">Sculpt</h3>
@@ -3770,55 +3742,55 @@
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB</code></td>
-<td><code>sculpt.brush_stroke</code><br><small>brush_toggle='MASK', active=False</small></td>
+<td><code>sculpt.brush_stroke</code>（brush_toggle='MASK', active=False）</td>
 <td>默认：<code>ALT + LMB</code>；brush_toggle='MASK'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + LMB</code></td>
-<td><code>sculpt.brush_stroke</code><br><small>mode='INVERT', brush_toggle='MASK', active=False</small></td>
+<td><code>sculpt.brush_stroke</code>（mode='INVERT', brush_toggle='MASK', active=False）</td>
 <td>默认：<code>CTRL + ALT + LMB</code>；mode='INVERT', brush_toggle='MASK'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + A</code></td>
-<td><code>sculpt.expand</code><br><small>target='MASK', falloff_type='GEODESIC', invert=False, use_mask_preserve=True, use_auto_mask=False</small></td>
+<td><code>sculpt.expand</code>（target='MASK', falloff_type='GEODESIC', invert=False, use_mask_preserve=True, use_auto_mask=False）</td>
 <td>默认：<code>SHIFT + A</code>；target='MASK', falloff_type='GEODESIC', invert=False, use_auto_mask=False, use_mask_preserve=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ONE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=1, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=1, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + ONE</code>；level=1, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + TWO</code></td>
-<td><code>object.subdivision_set</code><br><small>level=2, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=2, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + TWO</code>；level=2, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + THREE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=3, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=3, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + THREE</code>；level=3, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + FOUR</code></td>
-<td><code>object.subdivision_set</code><br><small>level=4, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=4, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + FOUR</code>；level=4, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + FIVE</code></td>
-<td><code>object.subdivision_set</code><br><small>level=5, relative=False, ensure_modifier=True, active=False</small></td>
+<td><code>object.subdivision_set</code>（level=5, relative=False, ensure_modifier=True, active=False）</td>
 <td>默认：<code>CTRL + FIVE</code>；level=5, relative=False, ensure_modifier=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>paint.mask_box_gesture</code><br><small>mode='VALUE', value=0.0, active=False</small></td>
+<td><code>paint.mask_box_gesture</code>（mode='VALUE', value=0.0, active=False）</td>
 <td>默认：<code>B</code>；mode='VALUE', value=0.0</td>
 </tr>
 <tr>
@@ -3848,121 +3820,121 @@
 <tr>
 <td>修改</td>
 <td><code>X</code></td>
-<td><code>paint.brush_colors_flip</code><br><small>active=False</small></td>
+<td><code>paint.brush_colors_flip</code>（active=False）</td>
 <td>默认：<code>X</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + X</code></td>
-<td><code>sculpt.color_filter</code><br><small>strength=1.0, type='FILL', use_immediate=True</small></td>
+<td><code>sculpt.color_filter</code>（strength=1.0, type='FILL', use_immediate=True）</td>
 <td>默认：<code>CTRL + X</code>；type='FILL', strength=1.0, use_immediate=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.sculpt.brush.size', data_path_secondary='tool_settings.sculpt.unified_paint_settings.size', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.sculpt.brush.strength', data_path_secondary='tool_settings.sculpt.unified_paint_settings.strength', use_secondary='tool_settings.sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False）</td>
 <td>默认：<code>CTRL + F</code>；data_path_primary='tool_settings.sculpt.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.sculpt.brush.texture_slot.angle', color_path='tool_settings.sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.sculpt.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + S</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='tool_settings.sculpt.brush.use_smooth_stroke', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='tool_settings.sculpt.brush.use_smooth_stroke', active=False）</td>
 <td>默认：<code>SHIFT + S</code>；data_path='tool_settings.sculpt.brush.use_smooth_stroke'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_sculpt_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_sculpt_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_sculpt_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>V</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw', active=False</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw', active=False）</td>
 <td>默认：<code>V</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Draw'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth', active=False</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth', active=False）</td>
 <td>默认：<code>S</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Smooth'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + T</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill', active=False</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill', active=False）</td>
 <td>默认：<code>SHIFT + T</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Scrape/Fill'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>C</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips', active=False</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips', active=False）</td>
 <td>默认：<code>C</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Clay Strips'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + C</code></td>
-<td><code>brush.asset_activate</code><br><small>asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish', active=False</small></td>
+<td><code>brush.asset_activate</code>（asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish', active=False）</td>
 <td>默认：<code>SHIFT + C</code>；asset_library_type='ESSENTIALS', relative_asset_identifier='brushes/essentials_brushes-mesh_sculpt.blend/Brush/Crease Polish'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_sculpt'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_sculpt'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_sculpt'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB</code></td>
-<td><code>paint.mask_lasso_gesture</code><br><small>value=1.0</small></td>
+<td><code>paint.mask_lasso_gesture</code>（value=1.0）</td>
 <td>默认：<code>CTRL + SHIFT + LMB</code>；value=1.0</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB</code></td>
-<td><code>paint.mask_lasso_gesture</code><br><small>value=0.0</small></td>
+<td><code>paint.mask_lasso_gesture</code>（value=0.0）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB</code>；value=0.0</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>paint.mask_flood_fill</code><br><small>mode='INVERT'</small></td>
+<td><code>paint.mask_flood_fill</code>（mode='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + A</code></td>
-<td><code>paint.mask_flood_fill</code><br><small>mode='VALUE'</small></td>
+<td><code>paint.mask_flood_fill</code>（mode='VALUE'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3974,7 +3946,7 @@
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.box_mask', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.box_mask', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -3986,19 +3958,19 @@
 <tr>
 <td>新增</td>
 <td><code>C</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.box_face_set', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.box_face_set', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>X</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.lasso_trim', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.lasso_trim', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>V</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.lasso_hide', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.lasso_hide', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -4018,20 +3990,26 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.curves_sculpt.brush.size', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.size', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_size', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.curves_sculpt.brush.strength', data_path_secondary='tool_settings.curves_sculpt.unified_paint_settings.strength', use_secondary='tool_settings.curves_sculpt.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.curves_sculpt.brush.texture_slot.angle', color_path='tool_settings.curves_sculpt.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.curves_sculpt.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>curves.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>curves.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>curves.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -4048,13 +4026,13 @@
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_sculpt_curves'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_sculpt_curves'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_sculpt_curves'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>curves.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>curves.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -4074,31 +4052,31 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.vertex_paint.brush.size', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.size', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.vertex_paint.brush.strength', data_path_secondary='tool_settings.vertex_paint.unified_paint_settings.strength', use_secondary='tool_settings.vertex_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>CTRL + F</code>；data_path_primary='tool_settings.vertex_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.vertex_paint.brush.texture_slot.angle', color_path='tool_settings.vertex_paint.brush.cursor_color_add', fill_color_path='tool_settings.vertex_paint.brush.color', fill_color_override_path='tool_settings.vertex_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.vertex_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.vertex_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_paint_vertex_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_paint_vertex_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_paint_vertex_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_vertex_paint'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_vertex_paint'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_vertex_paint'</td>
 </tr>
 <tr>
@@ -4124,31 +4102,31 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.weight_paint.brush.size', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.size', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.weight_paint.brush.strength', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.strength', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>CTRL + F</code>；data_path_primary='tool_settings.weight_paint.brush.weight', data_path_secondary='tool_settings.weight_paint.unified_paint_settings.weight', use_secondary='tool_settings.weight_paint.unified_paint_settings.use_unified_weight', rotation_path='tool_settings.weight_paint.brush.texture_slot.angle', color_path='tool_settings.weight_paint.brush.cursor_color_add', fill_color_path='', fill_color_override_path='', fill_color_override_test_path='', zoom_path='', image_id='tool_settings.weight_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_paint_weight_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_paint_weight_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_paint_weight_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_weight_paint'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_weight_paint'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_weight_paint'</td>
 </tr>
 <tr>
@@ -4160,7 +4138,7 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + ALT + LMB</code></td>
-<td><code>view3d.select</code><br><small>toggle=True</small></td>
+<td><code>view3d.select</code>（toggle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4193,7 +4171,7 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 点击</code></td>
-<td><code>node.select</code><br><small>select_passthrough=True</small></td>
+<td><code>node.select</code>（select_passthrough=True）</td>
 <td>默认：<code>LMB</code>；select_passthrough=True</td>
 </tr>
 <tr>
@@ -4217,31 +4195,31 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 点击</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + LMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>默认：<code>CTRL + SHIFT + LMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB + 点击</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + ALT + LMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB + 点击</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>node.select_box</code><br><small>tweak=True</small></td>
+<td><code>node.select_box</code>（tweak=True）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True</td>
 </tr>
 <tr>
@@ -4253,26 +4231,32 @@
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>node.link_make</code><br><small>replace=False, active=False</small></td>
+<td><code>node.link_make</code>（replace=False, active=False）</td>
 <td>默认：<code>J</code>；replace=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + F</code></td>
-<td><code>node.link_make</code><br><small>replace=True, active=False</small></td>
+<td><code>node.link_make</code>（replace=True, active=False）</td>
 <td>默认：<code>SHIFT + J</code>；replace=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>node.join_named</code><br><small>active=False</small></td>
+<td><code>node.join_named</code>（active=False）</td>
 <td>默认：<code>F</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>node.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>node.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>node.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -4283,13 +4267,13 @@
 <tr>
 <td>修改</td>
 <td><code>TAB</code></td>
-<td><code>node.group_edit</code><br><small>exit=False, active=False</small></td>
+<td><code>node.group_edit</code>（exit=False, active=False）</td>
 <td>默认：<code>TAB</code>；exit=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>transform.translate</code><br><small>view2d_edge_pan=True, release_confirm=True</small></td>
+<td><code>transform.translate</code>（view2d_edge_pan=True, release_confirm=True）</td>
 <td>默认：<code>LMB + 拖动</code>；release_confirm=True, view2d_edge_pan=True</td>
 </tr>
 <tr>
@@ -4301,19 +4285,19 @@
 <tr>
 <td>修改</td>
 <td><code>ALT + RMB + 拖动</code></td>
-<td><code>node.move_detach_links_release</code><br><small>NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])]</small></td>
+<td><code>node.move_detach_links_release</code>（NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])]）</td>
 <td>默认：<code>ALT + LMB + 拖动</code>；NODE_OT_translate_attach=[('TRANSFORM_OT_translate', [('view2d_edge_pan', True)])]</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB + 拖动</code></td>
-<td><code>node.move_detach_links</code><br><small>TRANSFORM_OT_translate=[('view2d_edge_pan', True)]</small></td>
+<td><code>node.move_detach_links</code>（TRANSFORM_OT_translate=[('view2d_edge_pan', True)]）</td>
 <td>默认：<code>ALT + RMB + 拖动</code>；TRANSFORM_OT_translate=[('view2d_edge_pan', True)]</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='NODE_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='NODE_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='NODE_MT_context_menu'</td>
 </tr>
 <tr>
@@ -4324,8 +4308,20 @@
 </tr>
 <tr>
 <td>新增</td>
+<td><code>CTRL + C</code></td>
+<td><code>anyimage.track_native_copy</code></td>
+<td>Blender Default 中没有此绑定</td>
+</tr>
+<tr>
+<td>新增</td>
+<td><code>CTRL + V</code></td>
+<td><code>anyimage.paste_clipboard_image</code></td>
+<td>Blender Default 中没有此绑定</td>
+</tr>
+<tr>
+<td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4343,7 +4339,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>node.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>node.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4367,19 +4363,19 @@
 <tr>
 <td>新增</td>
 <td><code>ESC</code></td>
-<td><code>node.group_edit</code><br><small>exit=True</small></td>
+<td><code>node.group_edit</code>（exit=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>TAB</code></td>
-<td><code>wm.call_menu</code><br><small>name='NODE_MT_add'</small></td>
+<td><code>wm.call_menu</code>（name='NODE_MT_add'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>RMB</code></td>
-<td><code>node.select</code><br><small>select_passthrough=True</small></td>
+<td><code>node.select</code>（select_passthrough=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
@@ -4403,43 +4399,43 @@
 <tr>
 <td>移除</td>
 <td><code>SHIFT + RMB</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + RMB</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>SHIFT + ALT + RMB</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + ALT + RMB</code></td>
-<td><code>node.select</code><br><small>toggle=True</small></td>
+<td><code>node.select</code>（toggle=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>RMB + 点击</code></td>
-<td><code>node.select</code><br><small>deselect_all=True</small></td>
+<td><code>node.select</code>（deselect_all=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>LMB + 点击</code></td>
-<td><code>node.select</code><br><small>deselect_all=True</small></td>
+<td><code>node.select</code>（deselect_all=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>RMB + 拖动</code></td>
-<td><code>node.translate_attach</code><br><small>TRANSFORM_OT_translate=[('view2d_edge_pan', True)]</small></td>
+<td><code>node.translate_attach</code>（TRANSFORM_OT_translate=[('view2d_edge_pan', True)]）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -4459,7 +4455,7 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
 </tr>
 </tbody>
@@ -4486,13 +4482,19 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>anim.channels_select_all</code><br><small>action='SELECT'</small></td>
+<td><code>anim.channels_select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>anim.channels_select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='DOPESHEET_MT_channel_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='DOPESHEET_MT_channel_context_menu'）</td>
 <td>默认：<code>W</code>；name='DOPESHEET_MT_channel_context_menu'</td>
 </tr>
 <tr>
@@ -4504,7 +4506,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>anim.channels_select_all</code><br><small>action='INVERT'</small></td>
+<td><code>anim.channels_select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -4530,14 +4532,20 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>clip.graph_select</code><br><small>extend=True</small></td>
+<td><code>clip.graph_select</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>clip.graph_select_all_markers</code><br><small>action='SELECT'</small></td>
+<td><code>clip.graph_select_all_markers</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>clip.graph_select_all_markers</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -4560,7 +4568,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>clip.graph_select_all_markers</code><br><small>action='INVERT'</small></td>
+<td><code>clip.graph_select_all_markers</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -4580,91 +4588,97 @@
 <tr>
 <td>修改</td>
 <td><code>LMB</code></td>
-<td><code>action.clickselect</code><br><small>deselect_all=True</small></td>
+<td><code>action.clickselect</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB</code></td>
-<td><code>action.clickselect</code><br><small>column=True</small></td>
+<td><code>action.clickselect</code>（column=True）</td>
 <td>默认：<code>ALT + RMB</code>；column=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>action.clickselect</code><br><small>extend=True</small></td>
+<td><code>action.clickselect</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB</code></td>
-<td><code>action.clickselect</code><br><small>extend=True, column=True</small></td>
+<td><code>action.clickselect</code>（extend=True, column=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；extend=True, column=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + LMB</code></td>
-<td><code>action.clickselect</code><br><small>channel=True</small></td>
+<td><code>action.clickselect</code>（channel=True）</td>
 <td>默认：<code>CTRL + ALT + RMB</code>；channel=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB</code></td>
-<td><code>action.clickselect</code><br><small>extend=True, channel=True</small></td>
+<td><code>action.clickselect</code>（extend=True, channel=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True, channel=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>action.select_leftright</code><br><small>mode='CHECK'</small></td>
+<td><code>action.select_leftright</code>（mode='CHECK'）</td>
 <td>默认：<code>CTRL + RMB + 点击</code>；mode='CHECK'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>action.select_leftright</code><br><small>mode='CHECK', extend=True</small></td>
+<td><code>action.select_leftright</code>（mode='CHECK', extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>action.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>action.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>action.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>action.select_box</code><br><small>mode='SET', tweak=True</small></td>
+<td><code>action.select_box</code>（mode='SET', tweak=True）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True, mode='SET'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 拖动</code></td>
-<td><code>action.select_box</code><br><small>mode='ADD', tweak=True</small></td>
+<td><code>action.select_box</code>（mode='ADD', tweak=True）</td>
 <td>默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>action.select_box</code><br><small>mode='SUB', tweak=True</small></td>
+<td><code>action.select_box</code>（mode='SUB', tweak=True）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>action.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>action.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>action.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>action.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>TAB</code></td>
-<td><code>anim.channels_editable_toggle</code><br><small>active=False</small></td>
+<td><code>anim.channels_editable_toggle</code>（active=False）</td>
 <td>默认：<code>TAB</code></td>
 </tr>
 <tr>
@@ -4676,13 +4690,13 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>transform.transform</code><br><small>mode='TIME_TRANSLATE'</small></td>
+<td><code>transform.transform</code>（mode='TIME_TRANSLATE'）</td>
 <td>默认：<code>RMB + 拖动</code>；mode='TIME_TRANSLATE'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='DOPESHEET_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='DOPESHEET_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='DOPESHEET_MT_context_menu'</td>
 </tr>
 <tr>
@@ -4706,7 +4720,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>action.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>action.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4732,85 +4746,91 @@
 <tr>
 <td>修改</td>
 <td><code>LMB</code></td>
-<td><code>graph.clickselect</code><br><small>deselect_all=True</small></td>
+<td><code>graph.clickselect</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB</code></td>
-<td><code>graph.clickselect</code><br><small>column=True</small></td>
+<td><code>graph.clickselect</code>（column=True）</td>
 <td>默认：<code>ALT + RMB</code>；column=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>graph.clickselect</code><br><small>extend=True</small></td>
+<td><code>graph.clickselect</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB</code></td>
-<td><code>graph.clickselect</code><br><small>extend=True, column=True</small></td>
+<td><code>graph.clickselect</code>（extend=True, column=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；extend=True, column=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + LMB</code></td>
-<td><code>graph.clickselect</code><br><small>curves=True</small></td>
+<td><code>graph.clickselect</code>（curves=True）</td>
 <td>默认：<code>CTRL + ALT + RMB</code>；curves=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB</code></td>
-<td><code>graph.clickselect</code><br><small>extend=True, curves=True</small></td>
+<td><code>graph.clickselect</code>（extend=True, curves=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True, curves=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>graph.select_leftright</code><br><small>mode='CHECK'</small></td>
+<td><code>graph.select_leftright</code>（mode='CHECK'）</td>
 <td>默认：<code>CTRL + RMB + 点击</code>；mode='CHECK'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>graph.select_leftright</code><br><small>mode='CHECK', extend=True</small></td>
+<td><code>graph.select_leftright</code>（mode='CHECK', extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>graph.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>graph.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>graph.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>graph.select_box</code><br><small>tweak=True, mode='SET'</small></td>
+<td><code>graph.select_box</code>（tweak=True, mode='SET'）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True, mode='SET'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 拖动</code></td>
-<td><code>graph.select_box</code><br><small>tweak=True, mode='ADD'</small></td>
+<td><code>graph.select_box</code>（tweak=True, mode='ADD'）</td>
 <td>默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>graph.select_box</code><br><small>tweak=True, mode='SUB'</small></td>
+<td><code>graph.select_box</code>（tweak=True, mode='SUB'）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>graph.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>graph.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>graph.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>graph.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
@@ -4822,7 +4842,7 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 点击</code></td>
-<td><code>graph.click_insert</code><br><small>extend=True</small></td>
+<td><code>graph.click_insert</code>（extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 点击</code>；extend=True</td>
 </tr>
 <tr>
@@ -4840,7 +4860,7 @@
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='GRAPH_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='GRAPH_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='GRAPH_MT_context_menu'</td>
 </tr>
 <tr>
@@ -4864,7 +4884,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>graph.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>graph.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4890,7 +4910,7 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>marker.move</code><br><small>tweak=True</small></td>
+<td><code>marker.move</code>（tweak=True）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True</td>
 </tr>
 <tr>
@@ -4902,61 +4922,67 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>marker.select</code><br><small>extend=True</small></td>
+<td><code>marker.select</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB</code></td>
-<td><code>marker.select</code><br><small>camera=True</small></td>
+<td><code>marker.select</code>（camera=True）</td>
 <td>默认：<code>CTRL + RMB</code>；camera=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB</code></td>
-<td><code>marker.select</code><br><small>extend=True, camera=True</small></td>
+<td><code>marker.select</code>（extend=True, camera=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；extend=True, camera=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>marker.select_box</code><br><small>tweak=True</small></td>
+<td><code>marker.select_box</code>（tweak=True）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>marker.select_leftright</code><br><small>mode='CLICK_SIDE', extend=False</small></td>
+<td><code>marker.select_leftright</code>（mode='CLICK_SIDE', extend=False）</td>
 <td>默认：<code>CTRL + RMB + 点击</code>；mode='CLICK_SIDE', extend=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>marker.select_leftright</code><br><small>mode='CLICK_SIDE', extend=True</small></td>
+<td><code>marker.select_leftright</code>（mode='CLICK_SIDE', extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CLICK_SIDE', extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 拖动</code></td>
-<td><code>marker.select_box</code><br><small>mode='ADD', tweak=True</small></td>
+<td><code>marker.select_box</code>（mode='ADD', tweak=True）</td>
 <td>默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>marker.select_box</code><br><small>mode='SUB', tweak=True</small></td>
+<td><code>marker.select_box</code>（mode='SUB', tweak=True）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>marker.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>marker.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>marker.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>marker.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>marker.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -4982,49 +5008,55 @@
 <tr>
 <td>修改</td>
 <td><code>LMB</code></td>
-<td><code>nla.click_select</code><br><small>deselect_all=True</small></td>
+<td><code>nla.click_select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>nla.click_select</code><br><small>extend=True</small></td>
+<td><code>nla.click_select</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>nla.select_leftright</code><br><small>mode='CHECK'</small></td>
+<td><code>nla.select_leftright</code>（mode='CHECK'）</td>
 <td>默认：<code>CTRL + RMB + 点击</code>；mode='CHECK'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>nla.select_leftright</code><br><small>mode='CHECK', extend=True</small></td>
+<td><code>nla.select_leftright</code>（mode='CHECK', extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB + 点击</code>；mode='CHECK', extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>nla.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>nla.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>nla.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>nla.select_box</code><br><small>tweak=True, mode='SET'</small></td>
+<td><code>nla.select_box</code>（tweak=True, mode='SET'）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True, mode='SET'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 拖动</code></td>
-<td><code>nla.select_box</code><br><small>tweak=True, mode='ADD'</small></td>
+<td><code>nla.select_box</code>（tweak=True, mode='ADD'）</td>
 <td>默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>nla.select_box</code><br><small>tweak=True, mode='SUB'</small></td>
+<td><code>nla.select_box</code>（tweak=True, mode='SUB'）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB'</td>
 </tr>
 <tr>
@@ -5041,38 +5073,32 @@
 </tr>
 <tr>
 <td>修改</td>
-<td><code>CTRL + SHIFT + A</code></td>
+<td><code>ALT + A</code></td>
 <td><code>nla.apply_scale</code></td>
 <td>默认：<code>CTRL + A</code></td>
 </tr>
 <tr>
 <td>修改</td>
-<td><code>ALT + R</code></td>
+<td><code>ALT + E</code></td>
 <td><code>nla.clear_scale</code></td>
 <td>默认：<code>ALT + S</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>transform.transform</code><br><small>mode='TRANSLATION'</small></td>
+<td><code>transform.transform</code>（mode='TRANSLATION'）</td>
 <td>默认：<code>RMB + 拖动</code>；mode='TRANSLATION'</td>
 </tr>
 <tr>
 <td>修改</td>
-<td><code>S</code></td>
-<td><code>transform.transform</code><br><small>mode='TIME_SCALE', active=False</small></td>
-<td>默认：<code>S</code>；mode='TIME_SCALE'</td>
-</tr>
-<tr>
-<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='NLA_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='NLA_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='NLA_MT_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + RMB</code></td>
-<td><code>anim.change_frame</code><br><small>seq_solo_preview=True</small></td>
+<td><code>anim.change_frame</code>（seq_solo_preview=True）</td>
 <td>默认：<code>LMB</code>；seq_solo_preview=True</td>
 </tr>
 <tr>
@@ -5090,7 +5116,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>nla.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>nla.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -5116,13 +5142,13 @@
 <tr>
 <td>修改</td>
 <td><code>TAB</code></td>
-<td><code>nla.tweakmode_enter</code><br><small>use_upper_stack_evaluation=True, active=False</small></td>
+<td><code>nla.tweakmode_enter</code>（use_upper_stack_evaluation=True, active=False）</td>
 <td>默认：<code>TAB</code>；use_upper_stack_evaluation=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>TAB</code></td>
-<td><code>nla.tweakmode_exit</code><br><small>active=False</small></td>
+<td><code>nla.tweakmode_exit</code>（active=False）</td>
 <td>默认：<code>TAB</code></td>
 </tr>
 </tbody>
@@ -5149,25 +5175,25 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB</code></td>
-<td><code>image.curves_point_set</code><br><small>point='BLACK_POINT'</small></td>
+<td><code>image.curves_point_set</code>（point='BLACK_POINT'）</td>
 <td>默认：<code>CTRL + LMB</code>；point='BLACK_POINT'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + RMB</code></td>
-<td><code>image.curves_point_set</code><br><small>point='WHITE_POINT'</small></td>
+<td><code>image.curves_point_set</code>（point='WHITE_POINT'）</td>
 <td>默认：<code>SHIFT + LMB</code>；point='WHITE_POINT'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>TAB</code></td>
-<td><code>object.mode_set</code><br><small>mode='EDIT', toggle=True, active=False</small></td>
+<td><code>object.mode_set</code>（mode='EDIT', toggle=True, active=False）</td>
 <td>默认：<code>TAB</code>；mode='EDIT', toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='IMAGE_MT_mask_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='IMAGE_MT_mask_context_menu'）</td>
 <td>默认：<code>W</code>；name='IMAGE_MT_mask_context_menu'</td>
 </tr>
 <tr>
@@ -5179,7 +5205,7 @@
 <tr>
 <td>新增</td>
 <td><code>F</code></td>
-<td><code>image.view_all</code><br><small>fit_view=True</small></td>
+<td><code>image.view_all</code>（fit_view=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -5199,13 +5225,13 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.size'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.size'）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.strength'）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength'</td>
 </tr>
 </tbody>
@@ -5225,13 +5251,13 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.size'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.size'）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.strength'）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength'</td>
 </tr>
 </tbody>
@@ -5251,13 +5277,13 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.size'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.size'）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.uv_sculpt.size'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.uv_sculpt.strength'</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.uv_sculpt.strength'）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.uv_sculpt.strength'</td>
 </tr>
 </tbody>
@@ -5277,7 +5303,7 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
 </tr>
 </tbody>
@@ -5297,43 +5323,43 @@
 <tr>
 <td>修改</td>
 <td><code>S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True）</td>
 <td>默认：<code>F</code>；data_path_primary='tool_settings.image_paint.brush.size', data_path_secondary='tool_settings.image_paint.unified_paint_settings.size', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_size', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='space_data.zoom', image_id='tool_settings.image_paint.brush', secondary_tex=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True）</td>
 <td>默认：<code>SHIFT + F</code>；data_path_primary='tool_settings.image_paint.brush.strength', data_path_secondary='tool_settings.image_paint.unified_paint_settings.strength', use_secondary='tool_settings.image_paint.unified_paint_settings.use_unified_strength', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + S</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False）</td>
 <td>默认：<code>CTRL + F</code>；data_path_primary='tool_settings.image_paint.brush.texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + ALT + F</code></td>
-<td><code>wm.radial_control</code><br><small>data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True, active=False</small></td>
+<td><code>wm.radial_control</code>（data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True, active=False）</td>
 <td>默认：<code>CTRL + ALT + F</code>；data_path_primary='tool_settings.image_paint.brush.mask_texture_slot.angle', data_path_secondary='', use_secondary='', rotation_path='tool_settings.image_paint.brush.mask_texture_slot.angle', color_path='tool_settings.image_paint.brush.cursor_color_add', fill_color_path='tool_settings.image_paint.brush.color', fill_color_override_path='tool_settings.image_paint.unified_paint_settings.color', fill_color_override_test_path='tool_settings.image_paint.unified_paint_settings.use_unified_color', zoom_path='', image_id='tool_settings.image_paint.brush', secondary_tex=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_panel</code><br><small>name='VIEW3D_PT_paint_texture_context_menu'</small></td>
+<td><code>wm.call_panel</code>（name='VIEW3D_PT_paint_texture_context_menu'）</td>
 <td>默认：<code>W</code>；name='VIEW3D_PT_paint_texture_context_menu'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='VIEW3D_AST_brush_texture_paint'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='VIEW3D_AST_brush_texture_paint'）</td>
 <td>默认：<code>SPACE</code>；name='VIEW3D_AST_brush_texture_paint'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>wm.call_asset_shelf_popover</code><br><small>name='IMAGE_AST_brush_paint'</small></td>
+<td><code>wm.call_asset_shelf_popover</code>（name='IMAGE_AST_brush_paint'）</td>
 <td>默认：<code>SPACE</code>；name='IMAGE_AST_brush_paint'</td>
 </tr>
 <tr>
@@ -5345,7 +5371,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + SHIFT + LMB + 双击</code></td>
-<td><code>paint.sample_color</code><br><small>merged=True</small></td>
+<td><code>paint.sample_color</code>（merged=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -5365,13 +5391,13 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 点击</code></td>
-<td><code>uv.select</code><br><small>deselect_all=True</small></td>
+<td><code>uv.select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB + 点击</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 点击</code></td>
-<td><code>uv.select</code><br><small>toggle=True</small></td>
+<td><code>uv.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
@@ -5383,7 +5409,7 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB + 点击</code></td>
-<td><code>uv.select_loop</code><br><small>extend=True</small></td>
+<td><code>uv.select_loop</code>（extend=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；extend=True</td>
 </tr>
 <tr>
@@ -5395,109 +5421,115 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + LMB + 点击</code></td>
-<td><code>uv.select_edge_ring</code><br><small>extend=True</small></td>
+<td><code>uv.select_edge_ring</code>（extend=True）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>uv.shortest_path_pick</code><br><small>use_fill=False</small></td>
+<td><code>uv.shortest_path_pick</code>（use_fill=False）</td>
 <td>默认：<code>CTRL + RMB</code>；use_fill=False</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>uv.shortest_path_pick</code><br><small>use_fill=True</small></td>
+<td><code>uv.shortest_path_pick</code>（use_fill=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；use_fill=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>uv.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>uv.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>uv.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>uv.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>uv.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>uv.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>uv.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>CTRL + NUMPAD 8</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='DYNAMIC', axis='Y', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='DYNAMIC', axis='Y', distance=1）</td>
 <td>默认：<code>CTRL + NUMPAD 8</code>；axis='Y', type='DYNAMIC', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + NUMPAD 2</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='DYNAMIC', axis='Y', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='DYNAMIC', axis='Y', distance=-1）</td>
 <td>默认：<code>CTRL + NUMPAD 2</code>；axis='Y', type='DYNAMIC', distance=-1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + NUMPAD 6</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='DYNAMIC', axis='X', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='DYNAMIC', axis='X', distance=1）</td>
 <td>默认：<code>CTRL + NUMPAD 6</code>；axis='X', type='DYNAMIC', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + NUMPAD 4</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='DYNAMIC', axis='X', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='DYNAMIC', axis='X', distance=-1）</td>
 <td>默认：<code>CTRL + NUMPAD 4</code>；axis='X', type='DYNAMIC', distance=-1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + NUMPAD 8</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='PIXEL', axis='Y', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='PIXEL', axis='Y', distance=1）</td>
 <td>默认：<code>SHIFT + NUMPAD 8</code>；axis='Y', type='PIXEL', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + NUMPAD 2</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='PIXEL', axis='Y', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='PIXEL', axis='Y', distance=-1）</td>
 <td>默认：<code>SHIFT + NUMPAD 2</code>；axis='Y', type='PIXEL', distance=-1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + NUMPAD 6</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='PIXEL', axis='X', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='PIXEL', axis='X', distance=1）</td>
 <td>默认：<code>SHIFT + NUMPAD 6</code>；axis='X', type='PIXEL', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + NUMPAD 4</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='PIXEL', axis='X', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='PIXEL', axis='X', distance=-1）</td>
 <td>默认：<code>SHIFT + NUMPAD 4</code>；axis='X', type='PIXEL', distance=-1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>NUMPAD 8</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='UDIM', axis='Y', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='UDIM', axis='Y', distance=1）</td>
 <td>默认：<code>NUMPAD 8</code>；axis='Y', type='UDIM', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>NUMPAD 2</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='UDIM', axis='Y', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='UDIM', axis='Y', distance=-1）</td>
 <td>默认：<code>NUMPAD 2</code>；axis='Y', type='UDIM', distance=-1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>NUMPAD 6</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='UDIM', axis='X', distance=1</small></td>
+<td><code>uv.move_on_axis</code>（type='UDIM', axis='X', distance=1）</td>
 <td>默认：<code>NUMPAD 6</code>；axis='X', type='UDIM', distance=1</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>NUMPAD 4</code></td>
-<td><code>uv.move_on_axis</code><br><small>type='UDIM', axis='X', distance=-1</small></td>
+<td><code>uv.move_on_axis</code>（type='UDIM', axis='X', distance=-1）</td>
 <td>默认：<code>NUMPAD 4</code>；axis='X', type='UDIM', distance=-1</td>
 </tr>
 <tr>
@@ -5515,7 +5547,7 @@
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='IMAGE_MT_uvs_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='IMAGE_MT_uvs_context_menu'）</td>
 <td>默认：<code>W</code>；name='IMAGE_MT_uvs_context_menu'</td>
 </tr>
 <tr>
@@ -5527,25 +5559,25 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + RMB + 拖动</code></td>
-<td><code>transform.translate</code><br><small>cursor_transform=True, release_confirm=True</small></td>
+<td><code>transform.translate</code>（cursor_transform=True, release_confirm=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>uv.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>uv.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>RMB</code></td>
-<td><code>uv.select</code><br><small>deselect_all=True, select_passthrough=True</small></td>
+<td><code>uv.select</code>（deselect_all=True, select_passthrough=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -5566,7 +5598,7 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
 </tr>
 </tbody>
@@ -5586,31 +5618,37 @@
 <tr>
 <td>修改</td>
 <td><code>LMB</code></td>
-<td><code>clip.select</code><br><small>deselect_all=True</small></td>
+<td><code>clip.select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>clip.select</code><br><small>extend=True</small></td>
+<td><code>clip.select</code>（extend=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>clip.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>clip.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>clip.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>CTRL + ALT + RMB + 拖动</code></td>
-<td><code>clip.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>clip.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + ALT + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + RMB + 拖动</code></td>
-<td><code>clip.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>clip.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
@@ -5634,7 +5672,7 @@
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='CLIP_MT_tracking_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='CLIP_MT_tracking_context_menu'）</td>
 <td>默认：<code>W</code>；name='CLIP_MT_tracking_context_menu'</td>
 </tr>
 <tr>
@@ -5652,7 +5690,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>clip.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>clip.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -5672,25 +5710,31 @@
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB</code></td>
-<td><code>mask.select</code><br><small>toggle=True</small></td>
+<td><code>mask.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>mask.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>mask.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>mask.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>CTRL + ALT + RMB + 拖动</code></td>
-<td><code>mask.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>mask.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + ALT + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + ALT + RMB + 拖动</code></td>
-<td><code>mask.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>mask.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
@@ -5720,13 +5764,13 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + RMB + 拖动</code></td>
-<td><code>transform.translate</code><br><small>cursor_transform=True, release_confirm=True</small></td>
+<td><code>transform.translate</code>（cursor_transform=True, release_confirm=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>mask.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>mask.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -5738,7 +5782,7 @@
 <tr>
 <td>移除</td>
 <td><code>RMB</code></td>
-<td><code>mask.select</code><br><small>deselect_all=True</small></td>
+<td><code>mask.select</code>（deselect_all=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -5758,61 +5802,67 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>paint.face_select_all</code><br><small>action='SELECT'</small></td>
+<td><code>paint.face_select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>paint.face_select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>view3d.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>view3d.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>view3d.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + SHIFT + ALT + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>paint.face_select_all</code><br><small>action='INVERT'</small></td>
+<td><code>paint.face_select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=False, select=True</small></td>
+<td><code>paint.face_select_loop</code>（extend=False, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>SHIFT + ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=True, select=True</small></td>
+<td><code>paint.face_select_loop</code>（extend=True, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + ALT + RMB</code></td>
-<td><code>paint.face_select_loop</code><br><small>extend=True, select=False</small></td>
+<td><code>paint.face_select_loop</code>（extend=True, select=False）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=False, select=True</small></td>
+<td><code>paint.vert_select_loop</code>（extend=False, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>SHIFT + ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=True, select=True</small></td>
+<td><code>paint.vert_select_loop</code>（extend=True, select=True）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>CTRL + SHIFT + ALT + RMB</code></td>
-<td><code>paint.vert_select_loop</code><br><small>extend=True, select=False</small></td>
+<td><code>paint.vert_select_loop</code>（extend=True, select=False）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -5832,44 +5882,50 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>deselect_all=True</small></td>
+<td><code>sequencer.select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>toggle=True</small></td>
+<td><code>sequencer.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>center=True</small></td>
+<td><code>sequencer.select</code>（center=True）</td>
 <td>默认：<code>CTRL + RMB</code>；center=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>ignore_connections=True</small></td>
+<td><code>sequencer.select</code>（ignore_connections=True）</td>
 <td>默认：<code>ALT + RMB</code>；ignore_connections=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>toggle=True, center=True</small></td>
+<td><code>sequencer.select</code>（toggle=True, center=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；toggle=True, center=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>toggle=True, ignore_connections=True</small></td>
+<td><code>sequencer.select</code>（toggle=True, ignore_connections=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；toggle=True, ignore_connections=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>sequencer.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>sequencer.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>sequencer.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
@@ -5886,37 +5942,37 @@
 <tr>
 <td>修改</td>
 <td><code>ALT + W</code></td>
-<td><code>sequencer.strip_transform_clear</code><br><small>property='POSITION'</small></td>
+<td><code>sequencer.strip_transform_clear</code>（property='POSITION'）</td>
 <td>默认：<code>ALT + G</code>；property='POSITION'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + R</code></td>
-<td><code>sequencer.strip_transform_clear</code><br><small>property='SCALE'</small></td>
+<td><code>sequencer.strip_transform_clear</code>（property='SCALE'）</td>
 <td>默认：<code>ALT + S</code>；property='SCALE'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + E</code></td>
-<td><code>sequencer.strip_transform_clear</code><br><small>property='ROTATION'</small></td>
+<td><code>sequencer.strip_transform_clear</code>（property='ROTATION'）</td>
 <td>默认：<code>ALT + R</code>；property='ROTATION'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + RMB + 拖动</code></td>
-<td><code>sequencer.select_lasso</code><br><small>mode='ADD'</small></td>
+<td><code>sequencer.select_lasso</code>（mode='ADD'）</td>
 <td>默认：<code>CTRL + LMB + 拖动</code>；mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + RMB + 拖动</code></td>
-<td><code>sequencer.select_lasso</code><br><small>mode='SUB'</small></td>
+<td><code>sequencer.select_lasso</code>（mode='SUB'）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 拖动</code>；mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='SEQUENCER_MT_preview_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='SEQUENCER_MT_preview_context_menu'）</td>
 <td>默认：<code>W</code>；name='SEQUENCER_MT_preview_context_menu'</td>
 </tr>
 <tr>
@@ -5928,7 +5984,7 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + RMB + 拖动</code></td>
-<td><code>transform.translate</code><br><small>cursor_transform=True, release_confirm=True</small></td>
+<td><code>transform.translate</code>（cursor_transform=True, release_confirm=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -5946,19 +6002,19 @@
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.move', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.move', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>R</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.rotate', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.rotate', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>E</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.scale', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.scale', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -5984,103 +6040,109 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>deselect_all=True</small></td>
+<td><code>sequencer.select</code>（deselect_all=True）</td>
 <td>默认：<code>RMB</code>；deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>toggle=True</small></td>
+<td><code>sequencer.select</code>（toggle=True）</td>
 <td>默认：<code>SHIFT + RMB</code>；toggle=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB</code></td>
-<td><code>sequencer.select</code><br><small>linked_time=True</small></td>
+<td><code>sequencer.select</code>（linked_time=True）</td>
 <td>默认：<code>CTRL + RMB</code>；linked_time=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB</code></td>
-<td><code>sequencer.select</code><br><small>extend=True, linked_time=True</small></td>
+<td><code>sequencer.select</code>（extend=True, linked_time=True）</td>
 <td>默认：<code>CTRL + SHIFT + RMB</code>；linked_time=True, extend=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 点击</code></td>
-<td><code>sequencer.select</code><br><small>side_of_frame=True</small></td>
+<td><code>sequencer.select</code>（side_of_frame=True）</td>
 <td>默认：<code>CTRL + RMB + 点击</code>；side_of_frame=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB</code></td>
-<td><code>sequencer.select</code><br><small>deselect_all=True, ignore_connections=True</small></td>
+<td><code>sequencer.select</code>（deselect_all=True, ignore_connections=True）</td>
 <td>默认：<code>ALT + RMB</code>；deselect_all=True, ignore_connections=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + ALT + LMB</code></td>
-<td><code>sequencer.select</code><br><small>toggle=True, ignore_connections=True</small></td>
+<td><code>sequencer.select</code>（toggle=True, ignore_connections=True）</td>
 <td>默认：<code>SHIFT + ALT + RMB</code>；toggle=True, ignore_connections=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>sequencer.select_box</code><br><small>mode='SET', tweak=True</small></td>
+<td><code>sequencer.select_box</code>（mode='SET', tweak=True）</td>
 <td>默认：<code>RMB + 拖动</code>；tweak=True, mode='SET'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 拖动</code></td>
-<td><code>sequencer.select_box</code><br><small>mode='ADD', tweak=True</small></td>
+<td><code>sequencer.select_box</code>（mode='ADD', tweak=True）</td>
 <td>默认：<code>SHIFT + RMB + 拖动</code>；tweak=True, mode='ADD'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>sequencer.select_box</code><br><small>mode='SUB', tweak=True</small></td>
+<td><code>sequencer.select_box</code>（mode='SUB', tweak=True）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；tweak=True, mode='SUB'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB + 拖动</code></td>
-<td><code>sequencer.select_box</code><br><small>mode='SET', tweak=True, ignore_connections=True</small></td>
+<td><code>sequencer.select_box</code>（mode='SET', tweak=True, ignore_connections=True）</td>
 <td>默认：<code>ALT + RMB + 拖动</code>；tweak=True, ignore_connections=True, mode='SET'</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>B</code></td>
-<td><code>sequencer.select_box</code><br><small>active=False</small></td>
+<td><code>sequencer.select_box</code>（active=False）</td>
 <td>默认：<code>B</code></td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>sequencer.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>sequencer.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>sequencer.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>LMB + 拖动</code></td>
-<td><code>transform.seq_slide</code><br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small></td>
+<td><code>transform.seq_slide</code>（use_restore_handle_selection=True, view2d_edge_pan=True）</td>
 <td>默认：<code>RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>ALT + LMB + 拖动</code></td>
-<td><code>transform.seq_slide</code><br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small></td>
+<td><code>transform.seq_slide</code>（use_restore_handle_selection=True, view2d_edge_pan=True）</td>
 <td>默认：<code>ALT + RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 拖动</code></td>
-<td><code>transform.seq_slide</code><br><small>use_restore_handle_selection=True, view2d_edge_pan=True</small></td>
+<td><code>transform.seq_slide</code>（use_restore_handle_selection=True, view2d_edge_pan=True）</td>
 <td>默认：<code>CTRL + RMB + 拖动</code>；view2d_edge_pan=True, use_restore_handle_selection=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='SEQUENCER_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='SEQUENCER_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='SEQUENCER_MT_context_menu'</td>
 </tr>
 <tr>
@@ -6104,7 +6166,7 @@
 <tr>
 <td>新增</td>
 <td><code>SHIFT + B</code></td>
-<td><code>sequencer.split</code><br><small>type='HARD'</small></td>
+<td><code>sequencer.split</code>（type='HARD'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -6131,25 +6193,25 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>W</code></td>
-<td><code>wm.call_menu</code><br><small>name='FILEBROWSER_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='FILEBROWSER_MT_context_menu'）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='ASSETBROWSER_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='ASSETBROWSER_MT_context_menu'）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 <tr>
 <td>移除</td>
 <td><code>APP</code></td>
-<td><code>wm.call_menu</code><br><small>name='ASSETBROWSER_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='ASSETBROWSER_MT_context_menu'）</td>
 <td>当前 Keymap 中没有此 Blender Default 绑定</td>
 </tr>
 </tbody>
@@ -6169,13 +6231,19 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>file.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>file.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>file.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='ASSETBROWSER_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='ASSETBROWSER_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='ASSETBROWSER_MT_context_menu'</td>
 </tr>
 <tr>
@@ -6187,7 +6255,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>file.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>file.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -6207,31 +6275,31 @@
 <tr>
 <td>修改</td>
 <td><code>LMB + 双击</code></td>
-<td><code>outliner.item_activate</code><br><small>deselect_all=True, recurse=True</small></td>
+<td><code>outliner.item_activate</code>（deselect_all=True, recurse=True）</td>
 <td>默认：<code>LMB + 双击</code>；recurse=True, deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + LMB + 双击</code></td>
-<td><code>outliner.item_activate</code><br><small>extend=True, deselect_all=True, recurse=True</small></td>
+<td><code>outliner.item_activate</code>（extend=True, deselect_all=True, recurse=True）</td>
 <td>默认：<code>CTRL + LMB + 双击</code>；recurse=True, extend=True, deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>SHIFT + LMB + 双击</code></td>
-<td><code>outliner.item_activate</code><br><small>extend_range=True, deselect_all=True, recurse=True</small></td>
+<td><code>outliner.item_activate</code>（extend_range=True, deselect_all=True, recurse=True）</td>
 <td>默认：<code>SHIFT + LMB + 双击</code>；recurse=True, extend_range=True, deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + SHIFT + LMB + 双击</code></td>
-<td><code>outliner.item_activate</code><br><small>extend=True, extend_range=True, deselect_all=True, recurse=True</small></td>
+<td><code>outliner.item_activate</code>（extend=True, extend_range=True, deselect_all=True, recurse=True）</td>
 <td>默认：<code>CTRL + SHIFT + LMB + 双击</code>；recurse=True, extend=True, extend_range=True, deselect_all=True</td>
 </tr>
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>outliner.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>outliner.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
@@ -6243,7 +6311,7 @@
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>outliner.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>outliner.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
@@ -6276,7 +6344,7 @@
 <tr>
 <td>修改</td>
 <td><code>F</code></td>
-<td><code>FLIP</code><br><small>active=False</small></td>
+<td><code>FLIP</code>（active=False）</td>
 <td>默认：<code>F</code></td>
 </tr>
 </tbody>
@@ -6296,19 +6364,25 @@
 <tr>
 <td>修改</td>
 <td><code>CTRL + A</code></td>
-<td><code>info.select_all</code><br><small>action='SELECT'</small></td>
+<td><code>info.select_all</code>（action='SELECT'）</td>
 <td>默认：<code>A</code>；action='SELECT'</td>
 </tr>
 <tr>
 <td>修改</td>
+<td><code>ALT + A</code></td>
+<td><code>info.select_all</code>（action='DESELECT', active=False）</td>
+<td>默认：<code>ALT + A</code>；action='DESELECT'</td>
+</tr>
+<tr>
+<td>修改</td>
 <td><code>RMB</code></td>
-<td><code>wm.call_menu</code><br><small>name='INFO_MT_context_menu'</small></td>
+<td><code>wm.call_menu</code>（name='INFO_MT_context_menu'）</td>
 <td>默认：<code>W</code>；name='INFO_MT_context_menu'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>info.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>info.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -6365,14 +6439,14 @@
 </tr>
 <tr>
 <td>修改</td>
-<td><code>CTRL + SHIFT + A</code></td>
-<td><code>object.modifier_apply</code><br><small>report=True</small></td>
+<td><code>ALT + A</code></td>
+<td><code>object.modifier_apply</code>（report=True）</td>
 <td>默认：<code>CTRL + A</code>；report=True</td>
 </tr>
 <tr>
 <td>修改</td>
-<td><code>CTRL + SHIFT + A</code></td>
-<td><code>constraint.apply</code><br><small>report=True</small></td>
+<td><code>ALT + A</code></td>
+<td><code>constraint.apply</code>（report=True）</td>
 <td>默认：<code>CTRL + A</code>；report=True</td>
 </tr>
 <tr>
@@ -6398,7 +6472,7 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_channels', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_channels', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_channels'</td>
 </tr>
 </tbody>
@@ -6418,25 +6492,25 @@
 <tr>
 <td>修改</td>
 <td><code>T</code></td>
-<td><code>wm.context_toggle</code><br><small>data_path='space_data.show_region_toolbar', active=False</small></td>
+<td><code>wm.context_toggle</code>（data_path='space_data.show_region_toolbar', active=False）</td>
 <td>默认：<code>T</code>；data_path='space_data.show_region_toolbar'</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>W</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True, active=False</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True, active=False）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>Q</code></td>
-<td><code>wm.tool_set_by_id</code><br><small>name='builtin.select_box', cycle=True</small></td>
+<td><code>wm.tool_set_by_id</code>（name='builtin.select_box', cycle=True）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 <tr>
 <td>新增</td>
 <td><code>CTRL + F</code></td>
-<td><code>sequencer.select_all</code><br><small>action='INVERT'</small></td>
+<td><code>sequencer.select_all</code>（action='INVERT'）</td>
 <td>Blender Default 中没有此绑定</td>
 </tr>
 </tbody>
@@ -6468,7 +6542,7 @@
 <tr>
 <td>修改</td>
 <td><code>SPACE</code></td>
-<td><code>TELEPORT</code><br><small>active=False</small></td>
+<td><code>TELEPORT</code>（active=False）</td>
 <td>默认：<code>SPACE</code></td>
 </tr>
 <tr>
