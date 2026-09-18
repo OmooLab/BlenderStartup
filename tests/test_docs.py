@@ -13,6 +13,17 @@ DOCS_ROOT = PROJECT_ROOT / "docs"
 VERSION_LITERAL_PATTERN = re.compile(r"\bv?\d+\.\d+\.\d+\b")
 LEGACY_TEMPLATE_NAME_PATTERN = re.compile(r"O General|O_General")
 HTML_TAG_PATTERN = re.compile(r"</?[A-Za-z][^>]*>")
+FENCED_CODE_PATTERN = re.compile(r"^(`{3,}|~{3,}).*?^\1", re.MULTILINE | re.DOTALL)
+CODE_SPAN_PATTERN = re.compile(r"`[^`\n]*`")
+
+
+def markdown_body(content):
+    """剔除代码块与行内代码，只保留正文，代码里的尖括号不会被当成 HTML。"""
+    return CODE_SPAN_PATTERN.sub("", FENCED_CODE_PATTERN.sub("", content))
+
+
+def document_body(document):
+    return markdown_body(document.read_text(encoding="utf-8"))
 
 
 def project_config():
@@ -27,8 +38,15 @@ class DocsTest(unittest.TestCase):
 
         for document in documents:
             with self.subTest(document=document.relative_to(PROJECT_ROOT)):
-                content = document.read_text(encoding="utf-8")
-                self.assertIsNone(HTML_TAG_PATTERN.search(content))
+                self.assertIsNone(HTML_TAG_PATTERN.search(document_body(document)))
+
+    def test_code_is_not_treated_as_html(self):
+        self.assertIsNone(
+            HTML_TAG_PATTERN.search(markdown_body("`BlenderStartup.v<版本号>.b45.zip`"))
+        )
+        self.assertIsNotNone(
+            HTML_TAG_PATTERN.search(markdown_body("正文里直接写 <div> 标签"))
+        )
 
     def test_documents_do_not_use_the_legacy_template_name(self):
         documents = [PROJECT_ROOT / "README.md", *sorted(DOCS_ROOT.rglob("*.md"))]

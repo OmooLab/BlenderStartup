@@ -26,6 +26,7 @@ nav:
 
 theme:
   name: material
+  favicon: assets/favicon.png
   logo: assets/logo.png
   language: zh
   font:

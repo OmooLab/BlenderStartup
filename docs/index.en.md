@@ -1,10 +1,8 @@
 # Blender Startup
 
-[中文文档](https://docs.omoolab.xyz/blender-startup/0.2.x/)
+![cover](assets/cover.png)
 
-![cover](https://docs.omoolab.xyz/blender-startup/latest/assets/cover.png)
-
-Blender Startup is OmooLab's startup solution for Blender. It currently provides the `Omoo Lab` Application Template, giving you a set of prepared Workspaces, Preferences, and shortcuts as soon as Blender opens. It reduces repeated setup and helps users coming from other DCCs get up to speed quickly.
+Blender Startup is OmooLab's startup solution for Blender. It currently provides the `Omoo Lab` Application Template. It gives you a set of prepared Workspaces, Preferences, and shortcuts as soon as Blender opens, reducing repeated setup and helping users coming from other DCCs get up to speed quickly.
 
 ## Sensible by Design
 
@@ -35,22 +33,22 @@ Makes useful node groups available right away.
 
 Download the package that matches your Blender version from [Releases](https://github.com/OmooLab/BlenderStartup/releases). Do not unzip it.
 
-- Blender 4.5 LTS: `BlenderStartup.v{version}.b45.zip`
-- Blender 5.2 LTS: `BlenderStartup.v{version}.b52.zip`
+- Blender 4.5 LTS: `BlenderStartup.v<version>.b45.zip`
+- Blender 5.2 LTS: `BlenderStartup.v<version>.b52.zip`
 
 **Install the Application Template**
 
 Click the Blender icon in the top-left corner, choose `Install Application Template...`, then select the ZIP file you downloaded.
 
-![Install Application Template](https://docs.omoolab.xyz/blender-startup/latest/assets/install-app-template.png)
+![install-app-template](assets/install-app-template.png)
 
-## Change How You Start Blender
+## Change Your Startup Habits
 
-**Start in the app before you work**
+**Enter the app before you work**
 
 After restarting Blender, select `Omoo Lab` from the splash screen.
 
-![Splash screen](https://docs.omoolab.xyz/blender-startup/latest/assets/splash-screen.png)
+![splash-screen](assets/splash-screen.png)
 
 Or use `File > New > Omoo Lab`.
 
@@ -62,6 +60,6 @@ The keymap preset must be enabled manually: go to `Edit > Preferences > Keymap >
 
 Create a Blender shortcut. Right-click it, open Properties, and append `--app-template Omoo_Lab` to the Target field.
 
-![Open as app](https://docs.omoolab.xyz/blender-startup/latest/assets/open-as-app.png)
+![open-as-app](assets/open-as-app.png)
 
 After that, double-clicking the shortcut opens the `Omoo Lab` Application Template directly, without going through template selection.

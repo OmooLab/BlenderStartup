@@ -1,5 +1,7 @@
 # Blender Startup
 
+![cover](assets/cover.png)
+
 Blender Startup 是 OmooLab 为 Blender 准备的启动方案，目前提供 `Omoo Lab` Application Template。它让你打开 Blender 就能使用整理好的工作区、偏好设置和快捷键，减少重复配置，也方便熟悉其他 DCC 的用户快速上手。
 
 ## 合理的设计
