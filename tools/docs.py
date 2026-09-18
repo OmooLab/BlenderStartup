@@ -1,4 +1,4 @@
-"""Build, preview, and publish the project documentation."""
+"""Build, preview, and publish the versioned project documentation."""
 
 import argparse
 import subprocess
@@ -10,9 +10,9 @@ from tools import keymap
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTATION_COMMANDS = {
-    "build": ("mkdocs", "build", "--strict"),
-    "dev": ("mkdocs", "serve"),
+    "dev": ("mike", "serve"),
 }
+MIKE_DEPLOY_COMMAND = ("mike", "deploy", "--update-aliases")
 
 
 def project_version():
@@ -25,11 +25,15 @@ def project_version():
 
 def documentation_command(command):
     """Return the command line that runs one documentation subcommand."""
+    if command == "build":
+        # 本地构建多版本站点，只提交到本地 gh-pages 分支，不推送。
+        return (*MIKE_DEPLOY_COMMAND, project_version(), "latest")
     if command == "deploy":
+        # mike 在内容没有变化时不提交也不推送，--allow-empty 保证部署动作能到达远端。
         return (
-            "mike",
-            "deploy",
-            "--update-aliases",
+            *MIKE_DEPLOY_COMMAND,
+            "--push",
+            "--allow-empty",
             project_version(),
             "latest",
         )
@@ -72,11 +76,11 @@ def build_parser():
 
     commands.add_parser(
         "build",
-        help="Build the site, treating warnings as errors",
+        help="Build the multi-version site locally without pushing",
     )
     commands.add_parser(
         "dev",
-        help="Preview the site with live reload",
+        help="Serve the locally built multi-version site",
     )
     commands.add_parser(
         "deploy",

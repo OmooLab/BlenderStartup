@@ -1,0 +1,91 @@
+name: Release
+
+on:
+  push:
+    tags:
+      # Publish on any tag starting with a `v`, e.g., v0.2.23
+      - "v*"
+
+jobs:
+  check_version:
+    name: Check Version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.read_version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+
+      - name: Check tag matches project version
+        id: read_version
+        run: |
+          version="$(uv run python -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match pyproject.toml version $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  draft_release:
+    name: Draft Release
+    needs: check_version
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.draft_release.outputs.upload_url }}
+      version: ${{ needs.check_version.outputs.version }}
+    steps:
+      - name: Publish Release v${{ needs.check_version.outputs.version }}
+        id: draft_release
+        uses: release-drafter/release-drafter@v5
+        with:
+          name: v${{ needs.check_version.outputs.version }}
+          tag: v${{ needs.check_version.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build_template:
+    name: Build ${{ matrix.target }}
+    needs: draft_release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: ["b45", "b52"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+
+      - name: Pack template
+        id: pack
+        run: |
+          uv run pack --target ${{ matrix.target }}
+          archive="dist/Startup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip"
+          if [ ! -f "$archive" ]; then
+            echo "Missing archive: $archive" >&2
+            exit 1
+          fi
+          echo "archive=$archive" >> "$GITHUB_OUTPUT"
+
+      - name: Upload archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls the upload_url from the draft_release job, referencing its
+          # outputs object, so the archive lands on the same release.
+          upload_url: ${{ needs.draft_release.outputs.upload_url }}
+          asset_path: ${{ steps.pack.outputs.archive }}
+          asset_name: Startup.v${{ needs.draft_release.outputs.version }}.${{ matrix.target }}.zip
+          asset_content_type: application/zip

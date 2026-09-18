@@ -16,29 +16,6 @@
 - 产物命名为 `Startup.v<版本号>.b<major><minor>.zip`，如 `Startup.v<版本号>.b45.zip`
 - 当前构建目标为 `b45`（Blender 4.5+）和 `b52`（Blender 5.2+）
 
-## 项目结构
-
-```text
-.
-├── README.md                    # 用户入口、安装方法与功能用法
-├── mkdocs.yml                   # MkDocs Material 与 Mike 配置
-├── docs/                        # 产品文档、使用说明与快捷键参考
-├── pyproject.toml               # 项目版本与 uv 环境配置
-├── src/startup/
-│   ├── __init__.py              # 模板运行时入口与功能注册
-│   ├── camera_bookmark/         # Camera Bookmark
-│   └── toggle_phantom/          # Toggle Phantom
-├── template/
-│   ├── splash.png               # 所有构建目标共用的启动图
-│   ├── startup.b45.blend        # 按 Blender 版本区分的 Startup File
-│   ├── userpref.b45.blend       # 按 Blender 版本区分的 Preferences
-│   └── keyconfig.b45.py         # 按 Blender 版本区分的 Keymap
-├── tools/
-│   ├── pack.py                  # 发现构建目标并生成 Application Template ZIP
-│   ├── keymap.py                # 生成相对 Blender Default 的快捷键差异参考
-│   └── docs.py                  # 构建、预览与发布文档的命令行入口
-└── tests/                       # Python 自动化测试
-```
 
 - `src/startup/` 只放所有构建目标共用的运行时代码，根 `__init__.py` 是唯一入口
 - 每项功能使用独立目录并暴露 `register()` / `unregister()`；入口按 `FEATURE_MODULE_NAMES` 顺序注册，按相反顺序注销
@@ -57,7 +34,7 @@
 uv sync
 
 # 运行全部测试
-uv run python -m unittest discover -s tests -v
+uv run pytest
 
 # 构建所有版本到 dist/
 uv run pack
@@ -65,22 +42,45 @@ uv run pack
 # 只构建一个目标
 uv run pack --target b45
 
-# 构建文档并把警告视为错误
+# 本地构建多版本静态页面（只提交到本地 gh-pages 分支，不推送）
 uv run docs build
 
-# 本地预览文档
+# 本地预览多版本静态页面
 uv run docs dev
 
 # 生成相对 Blender Default 的快捷键差异参考
 uv run docs keymap
 
-# 用 pyproject.toml 中的版本发布文档，并让 latest 指向它
+# 用 pyproject.toml 中的版本发布文档并让 latest 指向它（内部执行 mike deploy --update-aliases --push --allow-empty）
 uv run docs deploy
 ```
 
 修改运行时代码、模板发现逻辑或打包规则后，至少运行全部测试；修改构建相关内容后还要实际执行一次打包。
 
-修改文档、Keymap 或文档配置后，运行严格文档构建；修改 Keymap 后还要重新生成对应版本的差异参考。快捷键差异只与同版本 `Blender Default` 比较，不以 `Industry Compatible` 为比较基线。
+修改文档、Keymap 或文档配置后，运行 `uv run docs build` 在本地构建多版本站点；修改 Keymap 后还要重新生成对应版本的差异参考。快捷键差异只与同版本 `Blender Default` 比较，不以 `Industry Compatible` 为比较基线。
+
+## 发布流程
+
+发布由 `.github/` 中的工作流执行，本地只负责改版本号和打标签。
+
+`.github/` 下的工作流与 Release Drafter 配置统一使用英文，包括工作流名称、步骤名、注释和 Release Notes 模板。
+
+1. 更新 `pyproject.toml` 中的 `version`，提交并推送 `main`
+2. 打标签 `v<版本号>`（需与 `pyproject.toml` 完全一致）并推送
+3. `release.yml` 校验版本、用 Release Drafter 发布 Release，再把每个目标的 ZIP 作为附件上传
+4. Release Notes 由 `.github/release-drafter.yml` 按 PR 标签分组生成
+
+```bash
+git tag v<版本号>
+git push origin v<版本号>
+```
+
+- `test.yml` 在 `main` 推送和 PR 上只运行 `uv run pytest`
+- `release-drafter.yml` 在 `main` 推送和 PR 事件上维护 Release 草稿，Release Notes 来自 PR 标签
+- `release.yml` 只由 `v*` 标签触发，按 `b45`、`b52` 矩阵分别构建并上传 `Startup.v<版本号>.b<目标>.zip`；标签与项目版本不一致时终止发布
+- `docs.yml` 在 `main` 上文档、素材或版本变化时直接调用 `mike deploy --update-aliases --push <版本号> latest`，`latest` 指向当前版本
+- mike 默认只提交不推送，`--push` 不能省；内容没有变化时 mike 会跳过提交并连带跳过推送，所以 `uv run docs deploy` 额外带 `--allow-empty`
+- 安装包命名、目标发现和校验规则仍由 `tools/pack.py` 负责，工作流不重复实现
 
 ## 命名规范
 
