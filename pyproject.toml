@@ -1,6 +1,6 @@
 [project]
 name = "startup"
-version = "0.2.24"
+version = "0.2.25"
 description = "OmooLab application template for Blender"
 readme = "README.md"
 requires-python = ">=3.11"

@@ -1,6 +1,6 @@
 # Blender Startup
 
-[中文文档](https://docs.omoolab.xyz/blender-startup/0.2.x/)
+[中文文档](https://docs.omoolab.xyz/blender-startup/latest/)
 
 ![cover](https://docs.omoolab.xyz/blender-startup/latest/assets/cover.png)
 

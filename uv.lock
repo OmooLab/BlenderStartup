@@ -707,7 +707,7 @@ wheels = [
 
 [[package]]
 name = "startup"
-version = "0.2.24"
+version = "0.2.25"
 source = { editable = "." }
 
 [package.dev-dependencies]
